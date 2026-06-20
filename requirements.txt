@@ -1,0 +1,33 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# Load-bearing pins (training stack)
+torch==2.5.1
+torchvision==0.20.1
+transformers==4.46.3
+trl==0.15.2
+peft==0.13.2
+accelerate==1.1.1
+datasets==3.1.0
+vllm==0.6.4
+numpy<2
+tokenizers==0.20.3
+xformers==0.0.28.post3
+
+# Companion libs - let pip resolve compatible versions
+huggingface_hub<1.0
+sentencepiece>=0.2
+protobuf>=3.20,<6
+pyarrow>=15
+pandas
+scikit-learn>=1.4
+matplotlib>=3.8
+pyyaml
+tqdm>=4.66
+einops>=0.7
+wandb
+# lighteval intentionally NOT pinned here - it's only needed in Phase 3+ eval harness
+# and its newer versions force transformers>=4.51 which conflicts with our trl pin.
+ollama
+requests
+math-verify
+python-dotenv

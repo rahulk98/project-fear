@@ -1,0 +1,27 @@
+seed: 42
+dtype: bf16
+primary_device: cuda:0
+rollout_device: cuda:1
+
+models:
+  primary: qwen2_5_1_5b
+
+paths:
+  models: ~/models
+  data: data/processed
+
+trace_generation:
+  generator: qwen3:30b
+  temperature: 0.7
+  math:
+    levels: [4, 5]
+    k_samples: 4
+    max_tokens: 4096
+  gsm8k:
+    k_samples: 8
+    max_tokens: 1024
+
+# Phase 2+ uses configs/training.yaml for GRPO + eval hyperparameters.
+# Reward conditions (S0-S4, C1-C2) are constants defined in
+# src/asym_rewards/reward.py::CONDITIONS - not duplicated here.
+training_config: configs/training.yaml

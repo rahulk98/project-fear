@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.python-version
+
+# Secrets and credentials
+.env
+.env.*
+*.key
+*.token
+secrets.*
+
+# Generated artifacts (never commit these)
+data/
+models/
+outputs/
+checkpoints/
+wandb/
+*.parquet
+*.jsonl
+*.npz
+*.pt
+*.bin
+*.safetensors
+
+# Notebooks and scratch
+.ipynb_checkpoints/
+*.log
+tmp/
+tmp_*
+scratch/
+
+# OS and editor
+.DS_Store
+.idea/
+.vscode/
+*.swp

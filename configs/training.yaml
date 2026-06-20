@@ -1,0 +1,73 @@
+common:
+  seed: 42
+  # bf16 (Ampere+ native). A100 has bf16 hardware; we no longer fall back to fp16.
+  # If you train on a Volta/Turing card (V100/2080 Ti), set this to fp16 - the
+  # grpo.py vllm LLM monkeypatch will force fp16 in vllm regardless.
+  dtype: bf16
+  primary_device: cuda:0
+  # vLLM 0.6.4 single-GPU executor co-loads on cuda:0 with the policy. The
+  # CUDA_VISIBLE_DEVICES env var selects which GPU is visible at launch.
+  rollout_device: cuda:0
+  output_root: outputs/grpo
+  # After training, push the adapter folder to a private HF repo. {model}, {condition},
+  # and {seed} get formatted in. Set to null/empty to skip. HF_TOKEN must be set in env.
+  hf_repo_template: "ndsanjana/fear-{model}-{condition}-s{seed}"
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+
+grpo:
+  # Production HP targets A100 40 GB + Qwen 2.5 1.5B + vllm co-resident. Memory budget:
+  # policy 3 GB + vllm 3 GB + KV cache 1 GB + logits buffer (16 seqs * 1024 comp * 152K
+  # vocab * bf16) 5 GB + activations 1 GB = ~13 GB of 40 GB. Plenty of headroom.
+  # On an 11 GB 2080 Ti this overflows: use the smoke path or drop to G=4 comp=512.
+  num_generations: 8
+  max_prompt_length: 1024
+  max_completion_length: 1024
+  # TRL constraint: per_device_train_batch_size MUST be divisible by num_generations.
+  # batch=G is the minimum: 1 unique prompt per device-step, expanded to G completions.
+  per_device_train_batch_size: 8
+  gradient_accumulation_steps: 2   # Effective batch = 16 completions per optimizer step.
+  gradient_checkpointing: true     # Cheap insurance even with A100 headroom.
+  learning_rate: 1.0e-6
+  max_steps: 1500
+  # save_steps: 30 chosen for spot-preemption resilience on Jarvis Labs
+  # (2026-06-02). Each save is ~80MB LoRA adapter + ~150MB optimizer; on a
+  # 100GB spot disk this fits 1500/30 = 50 ckpts comfortably (~12GB total).
+  # A SIGTERM trap in scripts/spot_safe_runner.sh pushes the latest local
+  # checkpoint dir to HF before exit, so a spot preemption loses at most ~11
+  # minutes of training (one save_steps interval).
+  save_steps: 30
+  logging_steps: 10
+  temperature: 0.7
+  use_vllm: true
+  # 0.30 on A100 40 GB = 12 GB for vllm (3 GB model + KV cache). Lowered from
+  # 0.40 to give the PEFT training-side allocator more headroom; co-resident
+  # vLLM 0.6.4 + GRPO weight sync at 0.40 hit illegal-memory-access at step 3
+  # on Orion (probably allocator collision between vLLM KV blocks and the
+  # growing training-side gradient/activation arena).
+  vllm_gpu_memory_utilization: 0.30
+  beta: 0.04         # KL coefficient against the frozen reference.
+  std_floor: 1.0e-4  # S4 alpha=0 guard.
+
+eval:
+  k_samples: 16
+  k_samples_deep: 256        # Pass@256 only on the deep MATH-test slice.
+  deep_subset_size: 200
+  # TruthfulQA-MC added for cross-domain calibration claim (ICLR defensibility).
+  # The same trained model should show calibration improvements on a NON-math benchmark
+  # if asymmetric reward genuinely shifts the abstention threshold rather than learning
+  # math-specific heuristics.
+  benchmarks: [math_test, gsm8k_test, aime_2024, aime_2025, mmlu_stem, truthful_qa_mc]
+  temperature: 0.7
+  max_completion_length: 1024
+
+# Multi-seed sweep policy (ICLR error bars):
+#   S0, S3, C2: 3 seeds each = {42, 123, 456}
+#   S1, S2, S4, C1: 1 seed each = {42}
+#   Total: 7 conditions x avg 1.86 seeds = 13 runs at Qwen 1.5B per model.
+# The seed is passed via `python scripts/train_grpo.py --seed N`; output dirs and
+# wandb run_names auto-suffix with `_s{seed}`.

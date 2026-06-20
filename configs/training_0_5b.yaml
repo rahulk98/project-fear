@@ -1,0 +1,59 @@
+common:
+  seed: 42
+  # fp16 chosen after fp32 didn't fit alongside vllm + alhaji's ollama on 2080 Ti.
+  # The fp16+autocast+gradckpt cast-input_ids-to-Float bug is worked around by a
+  # Qwen2Model.forward monkey-patch in grpo.py (ensures input_ids stays Long even
+  # if the autocast tape restores it as a float during gradient checkpointing).
+  dtype: fp16
+  primary_device: cuda:0
+  rollout_device: cuda:0
+  output_root: outputs/grpo
+  hf_repo_template: "ndsanjana/fear-{model}-{condition}-s{seed}"
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+
+grpo:
+  # 0.5B fits a single 2080 Ti at G=4 batch=4 comp=256 prompt=512 fp16 with
+  # vllm co-resident at 55% memory. Validated end-to-end in Session 5 at 8.5 s/step.
+  # CWAR adds one extra policy forward per step (~+0.5 s) -> ~9 s/step ~ 3.75 h / 1500 steps.
+  num_generations: 4
+  max_prompt_length: 512
+  max_completion_length: 256
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 1
+  # gradient_checkpointing re-enabled now that dtype=fp32 bypasses the autocast
+  # wrapper that triggered the earlier embedding cast bug. Saves activation memory
+  # to keep us under the 11 GB 2080 Ti budget alongside vllm at 0.40.
+  gradient_checkpointing: true
+  learning_rate: 1.0e-6
+  max_steps: 1500
+  save_steps: 250
+  logging_steps: 10
+  temperature: 0.7
+  use_vllm: false
+  # vllm DISABLED: the in-process vllm engine kept hitting 'No memory for cache
+  # blocks' on any 2080 Ti because alhaji's ollama pins 4-9 GB across the pool.
+  # Without vllm, generation falls back to HF generate (slow, ~30-60 s/step at
+  # 0.5B vs 4.5 s/step with vllm), but the policy + grads + activations fit in
+  # ~3 GB and no co-tenant fights for memory. Earlier crash at step 213 (fp16+
+  # gradckpt+PEFT+vllm) also went away in tests without vllm, suggesting the
+  # vllm-side adapter sync was the source of the input_ids cast bug.
+  vllm_gpu_memory_utilization: 0.35
+  beta: 0.04
+  std_floor: 1.0e-4
+
+eval:
+  k_samples: 16
+  k_samples_deep: 256
+  deep_subset_size: 200
+  benchmarks: [math_test, gsm8k_test, mmlu_stem, truthful_qa_mc]
+  temperature: 0.7
+  max_completion_length: 256
+
+# Use case: rapid iteration on reward-design variants (e.g. CW = confidence-weighted
+# reward) on Qwen2.5-0.5B before committing to a 1.5B A100 run. Drives the CWAR
+# Finding-O-refinement experiment in scripts/launch_cwar_0_5b.sh.
