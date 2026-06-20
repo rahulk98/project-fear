@@ -250,4 +250,3 @@ compute and hardware, not because the questions were answered.
 - Rahul Krishnan
 - Sanjana Deshpande
 
-Advised by Prof. Dr. Achim Rettinger, University of Trier.
