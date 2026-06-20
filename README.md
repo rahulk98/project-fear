@@ -7,7 +7,6 @@ asymmetric reinforcement-learning rewards, where the penalty for a wrong answer 
 larger than the reward for a correct one, make language models better calibrated and more
 willing to abstain when they are uncertain.
 
-**Institution:** University of Trier, Department of Computational Linguistics (Prof. Dr. Achim Rettinger)
 **Period:** March 2026 to June 2026
 **Status:** Trained and evaluated at 1.5B and 3B scale. Stopped before larger-scale (7B and full multi-seed) confirmation for lack of compute, not because the questions were closed. See [Limitations](#limitations-why-this-stopped).
 
