@@ -12,7 +12,7 @@ The decision theory is clean. With reward $+\alpha$ for a correct answer, $-\bet
 
 $$\tau = \frac{\beta + r_a}{\alpha + \beta}.$$
 
-The hope is that RL then teaches the model to abstain on the specific questions it would get wrong, a per-question calibration skill. Under GRPO as usually implemented, the reward cannot teach that skill; it can only move a global threshold.
+The hope is that RL then teaches the model to abstain on the specific questions it would get wrong, a per-question calibration skill. Under GRPO as usually implemented, reward design in this family reduces to one parameter, and in our experiments that parameter moved how often the model abstained, not how well it chose when to abstain.
 
 ## Setup
 

@@ -55,18 +55,20 @@ the mechanism that limits it.
 
 ## Key contribution: Finding O
 
-**Finding O.** Under GRPO with within-group z-score normalization, every two-outcome rollout
-group produces identical advantages regardless of alpha and beta (an affine invariance of
-the z-score). The seven-condition sweep is therefore really a one-dimensional
-abstention-threshold dial, not seven independent experiments. Per-question discrimination
-cannot improve, because the gradient carries no per-question confidence signal. Only a
-global threshold can shift.
+**Finding O.** Under GRPO with within-group z-score normalization, every
+(correct, wrong, abstain) reward triple is equivalent to (1, 0, t) with
+t = (beta + abstain) / (alpha + beta), so reward design in this family has one effective
+degree of freedom. The reward values add no per-question information beyond what the
+group's outcome composition already carries. In our experiments, raising t changed how
+often the model abstained without improving accuracy when answering, the confidence
+ranking, or how well abstention targeted hard problems. This is an empirical finding for
+this reward family and these runs, not an impossibility result.
 
-Three results harden this from a derivation into a defensible empirical claim:
+Supporting results:
 
-1. **Equivalence (C2 is equivalent to S2).** Explicit abstention (a positive reward for
-   silence) and implicit abstention (avoiding the wrong-answer penalty) reach the same
-   policy when matched on the implied threshold, confirmed on every corrected metric.
+1. **Explicit and implicit abstention behave alike.** C2 (a positive reward for silence,
+   t = 0.75) and S2 (a larger wrong-answer penalty, t = 0.80) reach nearly the same policy
+   on every corrected metric. Their thresholds are close, not identical.
 2. **3B check.** S0 and P0 (which differ only in where abstention sits) reach the same MATH
    accuracy at 3B (0.422 and 0.419) while S0 abstains about twice as often on MATH (0.069
    versus 0.032). One seed per condition.

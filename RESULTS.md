@@ -268,7 +268,8 @@ Outputs: results/followups/q3_results.json.
 
 **Stale summary file.** results/analysis_summary.json (dated 2026-05-25) predates the final
 S1 and S3 rollouts (2026-05-26): 11 S1/S3 abstention cells differ from the raw rollouts by up
-to 0.004. fig01 now uses the raw values; fig02 to fig08 still read the summary file.
+to 0.004. Fixed on 2026-10-18: the summary files were regenerated from the final rollouts
+and fig02 to fig08 redrawn (see CHANGELOG.md).
 
 ---
 
