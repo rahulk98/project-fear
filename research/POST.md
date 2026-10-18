@@ -2,7 +2,7 @@
 
 *Rahul Krishnan. Work done March to June 2026, in collaboration with Sanjana Deshpande. Code: https://github.com/rahulk98/project-fear*
 
-**TL;DR.** We trained Qwen 2.5 1.5B and 3B base models with GRPO under seven reward schemes that punish wrong answers more than they reward right ones, hoping the models would learn to abstain when they are likely to be wrong. The rewards changed how often the models abstained. They did not improve accuracy on the questions the models still answered, and they did not change how well the models' confidence ranked right versus wrong answers. The reason is an elementary property of GRPO's within-group z-score normalization: after z-scoring, every (correct, wrong, abstain) reward triple is equivalent to (1, 0, t) for a single number t. The seven-condition sweep is one dial, not seven designs. A concurrent paper (Che et al. 2026) derives a closely related result formally; our contribution is the empirical side, including explicit abstention rewards, a 3B check, a no-normalization ablation and a cross-task transfer test.
+**TL;DR.** We trained Qwen 2.5 1.5B and 3B base models with GRPO under seven reward schemes that punish wrong answers more than they reward right ones, hoping the models would learn to abstain when they are likely to be wrong. The rewards changed how often the models abstained, but not accuracy on the questions they still answered, not how well their confidence ranked right versus wrong answers, and the extra abstention landed less on hard problems. The reason is elementary: after GRPO's within-group z-scoring, every (correct, wrong, abstain) reward triple is equivalent to (1, 0, t) for a single number t, so the seven-condition sweep is one dial. Concurrent work (Che et al. 2026) derives a closely related result formally; ours is the empirical side, with explicit abstention rewards, a 3B check, a no-normalization ablation and a cross-task transfer test.
 
 ## Why this matters for honesty
 
@@ -12,7 +12,7 @@ The decision theory is clean. With reward $+\alpha$ for a correct answer, $-\bet
 
 $$\tau = \frac{\beta + r_a}{\alpha + \beta}.$$
 
-So the reward ratio looks like a knob for "answer only when you are at least $\tau$ confident". The hope is that RL then teaches the model to abstain on the specific questions it would get wrong, which is a per-question calibration skill. We found that, under GRPO as usually implemented, the reward cannot teach that skill. It can only move a global threshold.
+The hope is that RL then teaches the model to abstain on the specific questions it would get wrong, a per-question calibration skill. Under GRPO as usually implemented, the reward cannot teach that skill; it can only move a global threshold.
 
 ## Setup
 
@@ -64,7 +64,7 @@ A worked example: a group of 4 with one correct, two wrong and one abstained res
 
 By contrast, a group of 8 with two correct and six wrong answers gets advantages +1.620 and -0.540 under all seven conditions.
 
-Raising $t$ raises the abstain advantage in mixed groups, which pushes the model to abstain more. But the reward values carry no information about which question the model is likely to get wrong; any per-question signal has to come from the group composition, and that is the same for every condition. So we should expect the sweep to move a global abstention rate and leave the per-question ranking alone. S4 is a degenerate corner: at $t = 1$, abstaining is worth as much as being right.
+Raising $t$ raises the abstain advantage in mixed groups, which pushes the model to abstain more. But the reward values carry no information about which question the model is likely to get wrong; any per-question signal comes from the group composition, which is the same for every condition. The sweep should move a global abstention rate and leave the per-question ranking alone. S4 is a degenerate corner: at $t = 1$, abstaining is worth as much as being right.
 
 None of this is deep: affine invariance of the z-score is standard, and `tests/test_advantage_invariance.py` in the repository checks it with the trainer's z-score formula. The point is the consequence for reward design: tuning the wrong-answer penalty under GRPO is tuning one scalar.
 
@@ -84,7 +84,7 @@ Greedy decoding on MATH test (5000 problems), 1.5B:
 | S3 | 0.91 | 0.836 | 0.602 |
 | S4 | 1.00 | 0.325 | 0.513 |
 
-As $t$ rises the model answers less often, and its remaining answers are no more accurate. If punishment taught the model to drop the questions it would get wrong, accuracy when answering would rise. Instead it falls slightly through S3 and sharply at S4. GSM8K is the same (attempt rate and accuracy when answering: S0 0.951 and 0.722, S3 0.717 and 0.699, S4 0.017 and 0.591).
+As $t$ rises the model answers less often, and its remaining answers are no more accurate: if punishment taught the model to drop the questions it would get wrong, accuracy when answering would rise, but it falls slightly through S3 and sharply at S4. GSM8K is the same (attempt rate and accuracy when answering: S0 0.951 and 0.722, S3 0.717 and 0.699, S4 0.017 and 0.591).
 
 With K=16 sampling, accuracy when answering on MATH goes from 0.535 (S0) to 0.510 (S3) and 0.410 (S4). This is not only a selection effect: on the 1324 MATH problems that all seven conditions attempt by majority vote, per-attempt accuracy still drops from 0.626 (S0) to 0.494 (S4).
 
@@ -96,7 +96,7 @@ Abstention rises with $t$ on every benchmark except AIME 2024 and 2025, where S1
 
 ### 2. The confidence ranking does not change
 
-If the rewards improved per-question calibration, the model's own confidence (agreement of the majority answer across K=16 samples) would separate right from wrong answers better. Figure 2 shows the selective-accuracy curves on MATH: S0 to S3, C1 and C2 lie on top of each other. Only S4 is worse.
+Better per-question calibration would show up as the model's own confidence (agreement of the majority answer across K=16 samples) separating right from wrong answers better. It does not: on MATH the selective-accuracy curves of S0 to S3, C1 and C2 lie on top of each other, and only S4 is worse (Figure 2).
 
 ![Selective accuracy curves on MATH](../docs/figures/fig04_auacc_curves.png)
 
@@ -124,11 +124,11 @@ C2 pays for abstaining; S2 punishes wrong answers; their thresholds are 0.75 and
 
 ### 4. The 3B check
 
-At 3B we trained S0 and P0 (one seed each, K=32 evaluation), which differ only in $t$. MATH accuracy over all problems is 0.422 for S0 and 0.419 for P0, while S0 abstains more: 0.069 versus 0.032 on MATH, 0.067 versus 0.010 on GSM8K. On MMLU-STEM accuracy (0.185 versus 0.184) and abstention (0.653 versus 0.654) match. Because S0 abstains more at the same MATH accuracy, its MATH accuracy when answering is about 2 points higher (0.453 versus 0.432, derived from the numbers above). With one seed per condition we cannot tell whether that gap is real. On GSM8K, S0 has lower accuracy (0.689 versus 0.729).
+At 3B we trained S0 and P0 (one seed each, K=32 evaluation), which differ only in $t$. MATH accuracy over all problems is 0.422 for S0 and 0.419 for P0, while S0 abstains more: 0.069 versus 0.032 on MATH, 0.067 versus 0.010 on GSM8K. On MMLU-STEM accuracy (0.185 versus 0.184) and abstention (0.653 versus 0.654) match. S0's MATH accuracy when answering is therefore about 2 points higher (0.453 versus 0.432); with one seed per condition we cannot tell whether that gap is real. On GSM8K, S0 has lower accuracy (0.689 versus 0.729).
 
 ### 5. Removing the normalization lets the magnitude through, badly
 
-If z-scoring is what erases the reward values, removing it should bring them back. We trained S0 and S2 with a signed, unnormalized advantage (1.5B, one seed, K=32):
+We trained S0 and S2 with a signed, unnormalized advantage (1.5B, one seed, K=32):
 
 | Benchmark | S0 abstention | S2 abstention |
 |---|---|---|
@@ -140,11 +140,11 @@ Now the penalty reaches behavior: S2 abstains three times as often as S0 on MATH
 
 ### 6. The threshold transfers to another task, competence does not
 
-We used the 1.5B adapters zero-shot as step-correctness judges on PRM800K. Judge abstention rises with $t$: 0.342, 0.367, 0.386, 0.426 and 0.549 for S0 to S4 at temperature 0, with the same order at 0.7. At 1.0 the order breaks (S0 0.717, S1 0.699, S2 0.743, S3 0.718, S4 0.747), with n = 2000. Judging accuracy on attempted items stays flat across S0 to S4 (0.635 to 0.648 at temperature 0). The willingness to abstain carries over; the competence does not change.
+We used the 1.5B adapters zero-shot as step-correctness judges on PRM800K. Judge abstention rises with $t$: 0.342, 0.367, 0.386, 0.426 and 0.549 for S0 to S4 at temperature 0, with the same order at 0.7. At 1.0 the order breaks (S0 0.717, S1 0.699, S2 0.743, S3 0.718, S4 0.747; n = 2000). Judging accuracy on attempted items stays flat (0.635 to 0.648 at temperature 0): the willingness to abstain carries over, the competence does not.
 
 ### 7. When the model abstains, was it likely to be wrong?
 
-Abstention rate alone does not say whether the model abstains on the right questions. For each problem we estimate how hard it is from the base model's K=16 samples (the fraction of its answered samples that are correct), independent of the condition being judged. We call an abstention "wise" if the problem's estimated accuracy is below 0.5. A model that abstained at random would get a wise fraction equal to the share of hard problems.
+We estimate each problem's difficulty from the base model's K=16 samples (accuracy among its answered samples), independent of the condition being judged, and call an abstention "wise" if that accuracy is below 0.5. A random abstainer's wise fraction equals the share of hard problems.
 
 | Condition | $t$ | MATH abstention | MATH wise fraction [95% CI] | GSM8K wise fraction |
 |---|---|---|---|---|
@@ -158,7 +158,7 @@ Abstention rate alone does not say whether the model abstains on the right quest
 | S4 | 1.00 | 0.613 | 0.526 [0.511, 0.540] | 0.291 |
 | random abstainer | | | 0.501 | 0.290 |
 
-On MATH, abstentions do land on hard problems more often than chance, but the wise fraction falls as $t$ rises: the extra abstention that a larger penalty buys is spread over easy and hard problems alike, and at S4 it is close to random. On GSM8K, abstention is unrelated to difficulty in every penalty condition (wise fraction equal to the random baseline), and on MMLU-STEM it is at or slightly below it. Raising the penalty buys more abstention, not better-targeted abstention, which is what the mechanism predicts. The advantages show why. Holding S0's samples fixed and changing only $t$, the share of abstentions on easy problems that receive a positive advantage rises from 0.19 at $t = 0.5$ to 0.69 at $t = 0.91$ on MATH (0.05 to 0.49 on GSM8K): a higher $t$ rewards abstaining on problems the model would have solved. Two caveats: the difficulty estimate uses 16 samples per problem, and it is computed only from the base model's answered samples.
+On MATH, abstentions land on hard problems more often than chance, but the wise fraction falls as $t$ rises, and at S4 it is close to random. On GSM8K abstention is unrelated to difficulty in every penalty condition, and on MMLU-STEM it is at or slightly below the random baseline. Raising the penalty buys more abstention, not better-targeted abstention. The advantages show why. Holding S0's samples fixed and changing only $t$, the share of abstentions on easy problems that receive a positive advantage rises from 0.19 at $t = 0.5$ to 0.69 at $t = 0.91$ on MATH (0.05 to 0.49 on GSM8K): a higher $t$ rewards abstaining on problems the model would have solved. Caveat: the difficulty estimate uses only 16 samples per problem.
 
 ### 8. The information is in the model, but the reward cannot use it
 
@@ -171,7 +171,7 @@ A linear probe on the S0 model's last-token hidden state predicts whether its ma
 | semantic entropy, K=4 | 4 generations | 0.808 | 0.756 |
 | self-consistency, K=2 / 4 / 8 | 2 / 4 / 8 generations | 0.725 / 0.831 / 0.878 | 0.637 / 0.736 / 0.816 |
 
-One probe pass is worth about three self-consistency samples (2.96 on MATH, 3.69 on GSM8K), while asking the model whether its answer is true is near chance at this scale. A text-only baseline (TF-IDF on question and answer) reaches 0.776 against the probe's 0.824 in a per-sample version of the task on MATH, so part of the signal is visible in the text itself. The self-consistency and semantic-entropy rows share samples with the label, so they are optimistic. The point for this post: a per-question confidence signal exists in the model's representations, and the z-scored reward has no channel through which it could shape the abstention decision (section 7).
+One probe pass is worth about three self-consistency samples (2.96 on MATH, 3.69 on GSM8K), while asking the model whether its answer is true is near chance at this scale. A text-only baseline (TF-IDF on question and answer) reaches 0.776 against the probe's 0.824 in a per-sample version of the task on MATH, so part of the signal is visible in the text itself. The sampled rows share samples with the label and are optimistic. The point: a per-question confidence signal exists in the model's representations, and the z-scored reward has no channel to use it.
 
 ## What we can and cannot conclude
 
@@ -192,20 +192,20 @@ One probe pass is worth about three self-consistency samples (2.96 on MATH, 3.69
 
 ## Related work and what is new
 
-- **Che, Yuan, Zhao and Yu (2026), arXiv 2608.00301**, is the closest work. For the +1 / $-\lambda$ / 0 rule they show that in the sparse-answer regime GRPO's group normalization replaces every designed penalty with an effective penalty of one, moving the learned threshold to 1/2, with experiments at 1.5B and 7B. Their treatment is formal and covers penalty-only rules. Ours was done independently and is empirical, covering explicit abstention rewards, their equivalence with penalties, accuracy when answering and confidence ranking, a normalization ablation and cross-task transfer.
+- **Che, Yuan, Zhao and Yu (2026), arXiv 2608.00301**, is the closest work. For the +1 / $-\lambda$ / 0 rule they show that in the sparse-answer regime GRPO's group normalization replaces every designed penalty with an effective penalty of one, moving the learned threshold to 1/2, with experiments at 1.5B and 7B. Their treatment is formal and covers penalty-only rules; ours was done independently and is empirical.
 - **Liu et al. (2025), arXiv 2503.20783 (Dr. GRPO)**, show that dividing by the group standard deviation biases updates by question difficulty, and remove it. They do not discuss reward-scale invariance.
 - **Zhu et al. (2025), arXiv 2506.01347**, study negative-sample reinforcement; our S3 matches their weighting.
 - **Abstention and calibration rewards.** TruthRL (arXiv 2509.25760) uses a ternary reward with z-scored GRPO. Reinforced Hesitation (arXiv 2511.11500) uses +1 / 0 / $-\lambda$ without dividing by the standard deviation. TIAR (arXiv 2605.25850) notes that an abstention reward shifts the group statistics and decouples the abstention advantage. RLCR (arXiv 2507.16806) rewards verbalized confidence with a Brier score.
 
-What we think is new: the reduction stated for full three-level designs (every scheme is (1, 0, t)), and evidence that the full sweep behaves as that one dial, including the C2 and S2 equivalence, the unchanged confidence ranking, the less-targeted abstention, the ablation and the transfer to step judging.
+What we think is new: the reduction stated for full three-level designs including explicit abstention rewards (every scheme is (1, 0, t)), and evidence that a full sweep behaves as that one dial: the C2 and S2 equivalence, the unchanged confidence ranking, the less-targeted abstention, the ablation and the transfer to step judging.
 
 ## Next steps
 
 1. **Rewards that vary within an outcome class.** Any reward under which two correct answers can score differently escapes the reduction. A verbalized confidence scored with a proper scoring rule (as in RLCR) is one option. A probe score is another: the probe in section 8 carries per-question correctness information, so a probe-shaped reward would add a per-sample signal that group composition at $G = 8$ cannot.
-   A caution from an offline check on cached samples (no training): two simple per-question abstention rewards, one set by within-group answer agreement and one by the probe score, did not separate hard from easy problems better than a fixed $t = 0.5$. The per-question signal has to be strong to beat what group composition already provides.
+   Caution: in an offline check on cached samples (no training), abstention rewards set by within-group answer agreement or by the probe score did not separate hard from easy problems better than a fixed $t = 0.5$.
 2. **Estimators that keep magnitude without collapsing.** RLOO or a mean-only baseline keep the reward scale, but our ablation suggests they need a guard against over-abstention, such as a decoupled abstention advantage (TIAR) or Che et al.'s report-level repair.
 3. **Measure per-question calibration directly.** Report the wise fraction of abstentions (section 7) next to the abstention rate, so that more abstention is not mistaken for better abstention. The repository packages this as an Inspect eval that runs on any model (`evals/abstention/`).
-4. **More seeds and error bars** for the main 1.5B conditions, and the no-normalization ablation at 3B.
+4. **More seeds** for the main 1.5B conditions, and the no-normalization ablation at 3B.
 
 ## Acknowledgements
 
