@@ -6,7 +6,7 @@
 - [ ] A7 Rahul: review research/POST.md, publish on LessWrong, send URL (then add to README + project page)
 
 ### Part B: website (handed to website-builder session, 2026-10-18)
-- [ ] B1 Project page grpo-abstention-dial/ in rahulk98.github.io; waiting on website-builder report
+- [ ] B1 Project page grpo-abstention-dial/ built and checked locally by website-builder (1280px, 390px); awaiting Rahul's push approval in that session
 
 ### Part C: follow-up experiments (WAIT for Rahul's go before starting any)
 Raw data: deeplearning.cl.uni-trier.de (ldvpc84, account s2sadesh) ~/master-thesis-asymmetric-training/outputs (eval rollouts, probing npz). Shared box, other jobs running there.
