@@ -48,7 +48,7 @@ $$t = \frac{r_a + \beta}{\alpha + \beta},$$
 
 which is exactly the threshold $\tau$. Every condition in the table is therefore the triple (correct = 1, wrong = 0, abstain = t), and GRPO can only tell conditions apart through $t$. Two consequences follow.
 
-1. **Two-outcome groups ignore the reward values.** If a group contains only two distinct outcomes, for example only correct and wrong answers, every condition gives the same advantages. With $k$ of $G$ responses at the higher reward they are $+\sqrt{(G-k)(G-1)/(Gk)}$ and $-\sqrt{k(G-1)/(G(G-k))}$, functions of the counts alone.
+1. **Two-outcome groups ignore the reward values.** If a group contains only two distinct outcomes, for example only correct and wrong answers, every condition gives the same advantages (for groups mixing abstention with one other outcome this holds for $0 < t < 1$; at $t = 0$ or $t = 1$ abstention ties with a wrong or a correct answer). With $k$ of $G$ responses at the higher reward they are $+\sqrt{(G-k)(G-1)/(Gk)}$ and $-\sqrt{k(G-1)/(G(G-k))}$, functions of the counts alone.
 2. **Three-outcome groups see only $t$.** When correct, wrong and abstained responses all occur, the design enters only through where abstention sits between wrong and correct.
 
 A worked example: a group of 4 with one correct, two wrong and one abstained response, z-scored with the sample standard deviation as in the trainer.
@@ -66,7 +66,7 @@ By contrast, a group of 8 with two correct and six wrong answers gets advantages
 
 Raising $t$ raises the abstain advantage in mixed groups, which pushes the model to abstain more. But the reward values carry no information about which question the model is likely to get wrong; any per-question signal has to come from the group composition, and that is the same for every condition. So we should expect the sweep to move a global abstention rate and leave the per-question ranking alone. S4 is a degenerate corner: at $t = 1$, abstaining is worth as much as being right.
 
-None of this is deep: affine invariance of the z-score is standard. The point is the consequence for reward design: tuning the wrong-answer penalty under GRPO is tuning one scalar.
+None of this is deep: affine invariance of the z-score is standard, and `tests/test_advantage_invariance.py` in the repository checks it with the trainer's z-score formula. The point is the consequence for reward design: tuning the wrong-answer penalty under GRPO is tuning one scalar.
 
 ## Results
 
@@ -158,7 +158,7 @@ Abstention rate alone does not say whether the model abstains on the right quest
 | S4 | 1.00 | 0.613 | 0.526 [0.511, 0.540] | 0.291 |
 | random abstainer | | | 0.501 | 0.290 |
 
-On MATH, abstentions do land on hard problems more often than chance, but the wise fraction falls as $t$ rises: the extra abstention that a larger penalty buys is spread over easy and hard problems alike, and at S4 it is close to random. On GSM8K, abstention is unrelated to difficulty in every penalty condition (wise fraction equal to the random baseline), and on MMLU-STEM it is at or slightly below it. Raising the penalty buys more abstention, not better-targeted abstention, which is what the mechanism predicts. Two caveats: the difficulty estimate uses 16 samples per problem, and it is computed only from the base model's answered samples.
+On MATH, abstentions do land on hard problems more often than chance, but the wise fraction falls as $t$ rises: the extra abstention that a larger penalty buys is spread over easy and hard problems alike, and at S4 it is close to random. On GSM8K, abstention is unrelated to difficulty in every penalty condition (wise fraction equal to the random baseline), and on MMLU-STEM it is at or slightly below it. Raising the penalty buys more abstention, not better-targeted abstention, which is what the mechanism predicts. The advantages show why. Holding S0's samples fixed and changing only $t$, the share of abstentions on easy problems that receive a positive advantage rises from 0.19 at $t = 0.5$ to 0.69 at $t = 0.91$ on MATH (0.05 to 0.49 on GSM8K): a higher $t$ rewards abstaining on problems the model would have solved. Two caveats: the difficulty estimate uses 16 samples per problem, and it is computed only from the base model's answered samples.
 
 ### 8. The information is in the model, but the reward cannot use it
 
@@ -202,6 +202,7 @@ What we think is new: the reduction stated for full three-level designs (every s
 ## Next steps
 
 1. **Rewards that vary within an outcome class.** Any reward under which two correct answers can score differently escapes the reduction. A verbalized confidence scored with a proper scoring rule (as in RLCR) is one option. A probe score is another: the probe in section 8 carries per-question correctness information, so a probe-shaped reward would add a per-sample signal that group composition at $G = 8$ cannot.
+   A caution from an offline check on cached samples (no training): two simple per-question abstention rewards, one set by within-group answer agreement and one by the probe score, did not separate hard from easy problems better than a fixed $t = 0.5$. The per-question signal has to be strong to beat what group composition already provides.
 2. **Estimators that keep magnitude without collapsing.** RLOO or a mean-only baseline keep the reward scale, but our ablation suggests they need a guard against over-abstention, such as a decoupled abstention advantage (TIAR) or Che et al.'s report-level repair.
 3. **Measure per-question calibration directly.** Report the wise fraction of abstentions (section 7) next to the abstention rate, so that more abstention is not mistaken for better abstention.
 4. **More seeds and error bars** for the main 1.5B conditions, and the no-normalization ablation at 3B.

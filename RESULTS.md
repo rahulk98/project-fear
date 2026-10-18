@@ -219,6 +219,26 @@ target is computed from the same 16 samples that semantic entropy draws from, so
 rows share samples with the label and are optimistic; the same applies to self-consistency.
 The 2-shot negative example is the gold answer plus 2, which is crude.
 
+**Offline advantage analysis (Q3).** S0's cached K=16 MATH and GSM8K samples, split into
+groups of 8, re-scored with reward (correct 1, wrong 0, abstain t) for each condition's t, no
+training. Easy = base-model accuracy on answered samples >= 0.5.
+
+| t | MATH: easy abstentions with positive advantage | MATH AUROC (hard vs easy) | GSM8K: easy abstentions with positive advantage |
+|---|---|---|---|
+| 0 (P0) | 0.00 | 0.927 | 0.00 |
+| 0.50 (S0) | 0.19 | 0.936 | 0.05 |
+| 0.67 (S1) | 0.41 | 0.915 | 0.21 |
+| 0.80 (S2) | 0.49 | 0.893 | 0.28 |
+| 0.91 (S3) | 0.69 | 0.859 | 0.49 |
+| 1.00 (S4) | 0.69 | 0.814 | 0.49 |
+
+Higher t makes abstaining on easy problems advantageous, which explains the falling wise
+fraction above. Two per-question abstain rewards (t_q = 1 - within-group answer agreement; t_q =
+1 - mean probe score, thin coverage) did not beat fixed t = 0.5 on this AUROC. In every group of
+exactly two outcome types, advantages are identical for all interior t (0.50 to 0.91). Rollouts
+are held fixed, so this says nothing about how a policy trained on these rewards would behave.
+Outputs: results/followups/q3_results.json.
+
 **Stale summary file.** results/analysis_summary.json (dated 2026-05-25) predates the final
 S1 and S3 rollouts (2026-05-26): 11 S1/S3 abstention cells differ from the raw rollouts by up
 to 0.004. fig01 now uses the raw values; fig02 to fig08 still read the summary file.

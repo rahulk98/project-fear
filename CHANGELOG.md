@@ -12,3 +12,4 @@
 - Follow-up E1: probe re-check with question-grouped CV, nested layer selection, shuffled-label and text-only controls. Probe vs self-consistency (K*) and MATH-to-GSM8K/MMLU-STEM transfer reproduce and are restored.
 - Retracted: TruthfulQA-MC probe AUROC 0.990. The correct option is always listed first in the project's TruthfulQA-MC data, so the probe reads the chosen letter; all TruthfulQA-MC accuracy numbers are flagged.
 - Corrected: the cross-condition probe transfer (0.989 / 0.992) was an abstained-vs-attempted probe, not a correctness probe; the "shared correctness direction" claim is withdrawn from README, RESULTS.md and the post.
+- Follow-up Q3: offline advantage analysis explaining the falling wise fraction; simple per-question abstain rewards did not help offline. Post mechanism wording made precise for t = 0 and t = 1. Post links the invariance test.
