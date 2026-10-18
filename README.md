@@ -52,8 +52,10 @@ To rebuild the summaries from your own evaluation outputs: `scripts/analyze_roll
 | Same t, same advantages | `q8_matched_t.py`, `tests/test_advantage_invariance.py` |
 | TruthfulQA-MC with shuffled options | `q1_truthfulqa_shuffled.py` |
 
-**4. Measure skip quality on any model** with the Inspect eval in
-[evals/abstention/](evals/abstention/README.md).
+**4. Measure skip quality on any model** with an evaluation built on
+[Inspect](https://inspect.aisi.org.uk/), the UK AI Security Institute's open-source evaluation
+framework, in [evals/abstention/](evals/abstention/README.md). It reports how often a model skips
+and whether its skips land on hard problems.
 
 ## Tests
 
