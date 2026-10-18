@@ -10,6 +10,8 @@ willing to abstain when they are uncertain.
 **Period:** March 2026 to June 2026
 **Status:** Trained and evaluated at 1.5B and 3B scale. Stopped before larger-scale (7B and full multi-seed) confirmation for lack of compute, not because the questions were closed. See [Limitations](#limitations-why-this-stopped).
 
+**Write-up:** [Under GRPO, asymmetric "don't guess" rewards reduce to a single abstention dial](research/POST.md). Every number in it is recomputed from the raw evaluation files.
+
 ---
 
 ## TL;DR
@@ -23,10 +25,11 @@ Under GRPO with within-group z-score advantage normalization, the entire reward 
 (reward for correct, penalty for wrong, reward for abstaining) collapses to a single
 effective degree of freedom: an abstention-threshold dial. Asymmetry shifts how often the
 model stays silent, but it does not improve per-question calibration or
-accuracy-when-answering. We call this **Finding O**. It gives a mechanistic reason for the
-field's convergence on simple positive-only rewards, a point no published GRPO paper had
-stated, and it is backed by a 3B-scale confirmation, an ablation that removes the
-normalization, and a cross-task transfer test.
+accuracy-when-answering. We call this **Finding O**. The underlying math (affine invariance
+of the z-score) is elementary, and concurrent work (Che et al. 2026, arXiv:2608.00301)
+derives the penalty-washout effect formally for penalty-only rules. Our contribution is
+empirical: a seven-condition sweep including explicit abstention rewards, a 3B check, an
+ablation that removes the normalization, and a cross-task transfer test.
 
 ---
 
@@ -64,8 +67,9 @@ Three results harden this from a derivation into a defensible empirical claim:
 1. **Equivalence (C2 is equivalent to S2).** Explicit abstention (a positive reward for
    silence) and implicit abstention (avoiding the wrong-answer penalty) reach the same
    policy when matched on the implied threshold, confirmed on every corrected metric.
-2. **3B scale-up.** Per-attempt accuracy across the frontier conditions matched to within
-   about 0.004; only the abstention rate moved. The 1.5B mechanism reappears unchanged at 3B.
+2. **3B check.** S0 and P0 (which differ only in where abstention sits) reach the same MATH
+   accuracy at 3B (0.422 and 0.419) while S0 abstains about twice as often on MATH (0.069
+   versus 0.032). One seed per condition.
 3. **The normalization is what stabilizes it.** Removing the z-score normalization
    (`zhu_signed`) lets the raw reward magnitude reach behavior again: a high-penalty
    condition abstained roughly three times as often, but toward over-abstention and
@@ -89,19 +93,23 @@ end-to-end [project report](docs/PROJECT_REPORT.md).
 - **The sweep is a 1-D dial.** On the single-shot frontier, attempt rate drops monotonically
   from S0 to S4 while accuracy-on-attempted stays flat, so punishment does not
   preferentially remove wrong answers.
-- **S4 (pure penalty) collapses** to near-total abstention, exactly the predicted degenerate
-  corner.
+- **S4 (pure penalty) collapses** into mostly abstaining (0.61 on MATH, 0.90 on GSM8K at
+  K=16), the predicted degenerate corner.
 - **No fear condition beats its non-fear counterpart** on the risk-coverage frontier
   (matched-compute AURC).
-- **A single forward-pass probe is the cheap win.** A linear probe on last-token hidden
-  states is a selective-prediction signal worth roughly three self-consistency samples
-  (compute-crossover K* around 3.1 on MATH and 3.7 on GSM8K), and it transfers within the
-  reasoning family. On TruthfulQA the in-domain probe reaches AUROC 0.990, a striking gap
-  between what the model knows internally and what it says.
+- **All conditions share one correctness direction.** A linear correctness probe trained on
+  one condition's hidden states decodes correctness on the others almost as well as their own
+  probes (mean off-diagonal AUROC 0.989 on MATH, 0.992 on GSM8K).
 
 ![Abstention sweep: the 1-D dial](docs/figures/fig01_abstention_sweep.png)
 
-![Discrimination heatmap](docs/figures/fig05_discrimination_heatmap.png)
+![Selective accuracy curves](docs/figures/fig04_auacc_curves.png)
+
+Regenerate the figures (needs only numpy and matplotlib; inputs are in `results/`):
+
+```bash
+python scripts/make_plots.py
+```
 
 ---
 
@@ -158,6 +166,7 @@ project-fear/
   README.md                 this file
   RESULTS.md                curated headline tables and the 23-finding catalogue
   requirements.txt          pinned dependency versions
+  results/                  summary JSONs that scripts/make_plots.py turns into the figures
   docs/
     PROJECT_REPORT.md       end-to-end, layman-readable project report
     figures/                calibration, abstention, and discrimination figures
@@ -238,6 +247,9 @@ compute and hardware, not because the questions were answered.
 
 ## Related work
 
+- Che, Yuan, Zhao and Yu, 2026 (arXiv:2608.00301), group normalization erases the designed
+  wrong-answer penalty in error-penalized RL (concurrent, formal treatment).
+- Liu et al., 2025 (arXiv:2503.20783), Dr. GRPO, removes GRPO's std normalization.
 - Zhu et al., 2025 (arXiv:2506.01347), asymmetric and abstention-aware RLVR rewards.
 - Chen et al., 2025, SimpleRL-Zoo (base-model bootstrapping under RL).
 - Shao et al., 2024, DeepSeekMath (GRPO).

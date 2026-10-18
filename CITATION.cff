@@ -7,8 +7,8 @@ abstract: >-
   abstention, and judge capability in language models. The central result
   (Finding O) shows that under GRPO with within-group z-score advantage
   normalization, the reward design collapses to a single abstention-threshold
-  dial, which gives a mechanistic reason for the field's convergence on simple
-  positive-only rewards.
+  dial: asymmetry changes how often the model abstains, not per-question
+  calibration.
 type: software
 authors:
   - family-names: Krishnan
@@ -24,4 +24,5 @@ keywords:
   - abstention
   - asymmetric rewards
 license: MIT
+repository-code: "https://github.com/rahulk98/project-fear"
 date-released: 2026-06
