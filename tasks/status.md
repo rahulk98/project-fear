@@ -5,4 +5,3 @@
 - Waiting on Rahul: (1) approve the project-page push in the website-builder session (my approval was blocked as a public action); (2) post research/POST.md on LessWrong + Alignment Forum, send URL; (3) go/no-go on the workshop-paper plan (fix + 3 seeds, ~40-70 GPU-h, needs A100 or rented GPU; 2080 Ti cannot run vLLM GRPO).
 - Anthropic Fellows Nov 2026: declined at finalist stage (email 2026-10-17). Goal: reapply after 3-6 months of public safety work.
 - Server workdir ldvpc84:~/fear_followups_20261018 (small JSONs, scripts). /home there is 100% full; nothing else of ours there.
-- Known stale: results/analysis_summary.json S1/S3 abstention (<= 0.004 off) feeds fig02-fig08.
