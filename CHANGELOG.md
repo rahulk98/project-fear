@@ -15,3 +15,4 @@
 - Follow-up Q3: offline advantage analysis explaining the falling wise fraction; simple per-question abstain rewards did not help offline. Post mechanism wording made precise for t = 0 and t = 1. Post links the invariance test.
 - Regenerated results/analysis_summary.json, trajectory_summary.json and stacking_null.json from the final rollouts with stored labels (S1/S3 were stale); fig02 to fig08 redrawn. The all-attempted MATH subset is 1324 problems (was 1326), S4 per-attempt accuracy 0.494 (was 0.493); stacking significance 25 to 98 sigma (was 99).
 - Added evals/abstention/: an Inspect (UK AISI) eval of wise versus wasteful abstention on MATH and GSM8K for any model, with unit tests.
+- Follow-up Q1: TruthfulQA-MC re-evaluated with shuffled answer options for all 9 models (K=16). Accuracy changes by 2 to 3.5 points, ordering unchanged; abstention not targeted at hard questions; S0 probe AUROC 0.79 on shuffled data (text-only 0.67, chosen letter 0.59).

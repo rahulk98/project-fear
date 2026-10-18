@@ -158,7 +158,7 @@ We estimate each problem's difficulty from the base model's K=16 samples (accura
 | S4 | 1.00 | 0.613 | 0.526 [0.511, 0.540] | 0.291 |
 | random abstainer | | | 0.501 | 0.290 |
 
-On MATH, abstentions land on hard problems more often than chance, but the wise fraction falls as $t$ rises, and at S4 it is close to random. On GSM8K abstention is unrelated to difficulty in every penalty condition, and on MMLU-STEM it is at or slightly below the random baseline. Raising the penalty buys more abstention, not better-targeted abstention. The advantages show why. Holding S0's samples fixed and changing only $t$, the share of abstentions on easy problems that receive a positive advantage rises from 0.19 at $t = 0.5$ to 0.69 at $t = 0.91$ on MATH (0.05 to 0.49 on GSM8K): a higher $t$ rewards abstaining on problems the model would have solved. Caveat: the difficulty estimate uses only 16 samples per problem.
+On MATH, abstentions land on hard problems more often than chance, but the wise fraction falls as $t$ rises, and at S4 it is close to random. On GSM8K abstention is unrelated to difficulty in every penalty condition, and on MMLU-STEM and TruthfulQA-MC (shuffled options) it is at or slightly below the random baseline. Raising the penalty buys more abstention, not better-targeted abstention. The advantages show why. Holding S0's samples fixed and changing only $t$, the share of abstentions on easy problems that receive a positive advantage rises from 0.19 at $t = 0.5$ to 0.69 at $t = 0.91$ on MATH (0.05 to 0.49 on GSM8K): a higher $t$ rewards abstaining on problems the model would have solved. Caveat: the difficulty estimate uses only 16 samples per problem.
 
 ### 8. The information is in the model, but the reward cannot use it
 
@@ -171,7 +171,7 @@ A linear probe on the S0 model's last-token hidden state predicts whether its ma
 | semantic entropy, K=4 | 4 generations | 0.808 | 0.756 |
 | self-consistency, K=2 / 4 / 8 | 2 / 4 / 8 generations | 0.725 / 0.831 / 0.878 | 0.637 / 0.736 / 0.816 |
 
-One probe pass is worth about three self-consistency samples (2.96 on MATH, 3.69 on GSM8K), while asking the model whether its answer is true is near chance at this scale. A text-only baseline (TF-IDF on question and answer) reaches 0.776 against the probe's 0.824 in a per-sample version of the task on MATH, so part of the signal is visible in the text itself. The sampled rows share samples with the label and are optimistic. The point: a per-question confidence signal exists in the model's representations, and the z-scored reward has no channel to use it.
+One probe pass is worth about three self-consistency samples (2.96 on MATH, 3.69 on GSM8K), while asking the model whether its answer is true is near chance at this scale. A text-only baseline (TF-IDF on question and answer) reaches 0.776 against the probe's 0.824 in a per-sample version of the task on MATH, so part of the signal is visible in the text itself. The sampled rows share samples with the label and are optimistic. On TruthfulQA-MC with shuffled answer options the same kind of probe reaches 0.79 [0.76, 0.82] on S0's answers, against 0.67 for a text-only baseline and 0.59 for the chosen option letter. The point: a per-question confidence signal exists in the model's representations, and the z-scored reward has no channel to use it.
 
 ## What we can and cannot conclude
 
@@ -187,7 +187,7 @@ One probe pass is worth about three self-consistency samples (2.96 on MATH, 3.69
 - **Seeds.** Most runs have one seed. S0, S3 and C2 have a second seed at K=16, and the seeds agree closely on MATH (accuracy 0.459 and 0.458, 0.406 and 0.401, 0.426 and 0.426). All other conditions, the 3B runs and the ablations have one seed and no error bars.
 - **3B coverage.** Only S0 and P0 were trained at 3B: two points on the dial, not the sweep.
 - **Abstention format.** "No boxed answer" mixes deliberate refusal with failures to finish. Mean completion length falls with $t$ (1519 characters for S0, 1466 for S3, 976 for S4 on MATH), which argues against truncation as the cause.
-- **TruthfulQA-MC.** In our copy of the data the correct option is always listed first, so accuracy there measures how often the model picks option A. We report only abstention on it. (This also explains a TruthfulQA probe AUROC of 0.99 in our earlier notes, now retracted.)
+- **TruthfulQA-MC.** Our original copy listed the correct option first, so we re-evaluated all models with shuffled options. Accuracy when answering changes by 2 to 3.5 points and the ordering of conditions is unchanged; a TruthfulQA probe AUROC of 0.99 in our earlier notes was this artifact and is retracted. Figure 1 shows abstention from the original runs (within 0.015 of the shuffled re-run).
 - **Estimators.** We tested z-score, global-mean and unnormalized advantages, not RLOO, Dr. GRPO or decoupled abstention advantages.
 
 ## Related work and what is new

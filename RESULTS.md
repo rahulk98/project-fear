@@ -138,9 +138,9 @@ is optimistic here and K* is, if anything, an underestimate.
 correct option is always listed first (all 817 questions), and options were never shuffled.
 "Correct" is therefore identical to "the model chose option A": a baseline that reads only the
 chosen letter reaches AUROC 1.0. The probe (0.995 on re-check) reads the model's own answer
-choice, not a correctness signal. For the same reason, every TruthfulQA-MC accuracy and
-calibration number in this repository measures how often the model picks the first option;
-only abstention rates on TruthfulQA-MC remain meaningful. The MATH-to-TruthfulQA transfer value
+choice, not a correctness signal. TruthfulQA-MC was re-evaluated with shuffled options on
+2026-10-18 (section 9, Q1); accuracy and calibration numbers from the original runs are
+superseded by that re-run. The MATH-to-TruthfulQA transfer value
 (0.663) is withdrawn with it. MMLU-STEM is not affected (correct options are spread over all
 four positions).
 
@@ -218,6 +218,33 @@ own cluster. P(True) asks the same model whether the majority answer is correct.
 target is computed from the same 16 samples that semantic entropy draws from, so the larger-K
 rows share samples with the label and are optimistic; the same applies to self-consistency.
 The 2-shot negative example is the gold answer plus 2, which is crude.
+
+**TruthfulQA-MC with shuffled options (Q1).** All 817 questions re-evaluated with a fixed
+random permutation of the answer options (gold position consistent with uniform: chi-square
+8.53, 12 df), K=16, same prompt, sampling and scoring as the original runs. 95% bootstrap
+intervals over questions.
+
+| Condition | Accuracy, original -> shuffled | Abstention, original -> shuffled | Accuracy when answering, original -> shuffled |
+|---|---|---|---|
+| base | 0.078 -> 0.078 [0.070, 0.087] | 0.790 -> 0.779 | 0.372 -> 0.354 [0.325, 0.384] |
+| S0 | 0.087 -> 0.085 | 0.771 -> 0.757 | 0.379 -> 0.351 |
+| S1 | 0.084 -> 0.082 | 0.778 -> 0.766 | 0.377 -> 0.351 |
+| S2 | 0.082 -> 0.079 | 0.783 -> 0.772 | 0.376 -> 0.346 |
+| S3 | 0.075 -> 0.073 | 0.799 -> 0.786 | 0.373 -> 0.344 |
+| S4 | 0.051 -> 0.048 | 0.867 -> 0.863 | 0.381 -> 0.346 |
+| C1 | 0.086 -> 0.085 | 0.772 -> 0.760 | 0.377 -> 0.352 |
+| C2 | 0.080 -> 0.077 | 0.787 -> 0.778 | 0.375 -> 0.347 |
+| P0 | 0.140 -> 0.142 [0.131, 0.154] | 0.637 -> 0.612 | 0.385 -> 0.366 |
+
+Among answered samples the rate of choosing the first-listed option falls from 0.37 to 0.38
+to 0.21 to 0.22 (chance 0.226), so the original accuracies were inflated by a first-option
+preference only slightly; the ordering of conditions is unchanged. Wise fraction of
+abstentions: 0.618 to 0.621 against a random baseline of 0.625, AUROC 0.46 to 0.48 (all
+intervals include 0.5): abstention on TruthfulQA-MC is not targeted at hard questions.
+S0 correctness probe on the shuffled data (1600 answered rows, 582 questions, question-grouped
+5-fold CV): nested 0.792 [0.762, 0.821]; chosen-letter baseline 0.589; TF-IDF text baseline
+0.669; shuffled-label controls 0.53. The probe signal survives the shuffle.
+Outputs: results/followups/q1_results.json.
 
 **Offline advantage analysis (Q3).** S0's cached K=16 MATH and GSM8K samples, split into
 groups of 8, re-scored with reward (correct 1, wrong 0, abstain t) for each condition's t, no
