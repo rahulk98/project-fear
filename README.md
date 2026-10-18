@@ -10,7 +10,7 @@ willing to abstain when they are uncertain.
 **Period:** March 2026 to June 2026
 **Status:** Trained and evaluated at 1.5B and 3B scale. Stopped before larger-scale (7B and full multi-seed) confirmation for lack of compute, not because the questions were closed. See [Limitations](#limitations-why-this-stopped).
 
-**Write-up:** [Under GRPO, asymmetric "don't guess" rewards reduce to a single abstention dial](research/POST.md). Every number in it is recomputed from the raw evaluation files.
+**Write-up:** the project page at [rahulkrishnan.me/grpo-abstention-dial](https://rahulkrishnan.me/grpo-abstention-dial/). The numbers behind it are in [RESULTS.md](RESULTS.md).
 
 ---
 
@@ -67,8 +67,7 @@ this reward family and these runs, not an impossibility result.
 An audit of the abstained answers shows they are almost never refusals (at most 0.5%): they
 are truncated solutions, or, as the penalty grows, answers in Python code or unboxed text that
 the grader cannot score. A probe on the symmetric model's hidden state, used to abstain at the
-same answer rate, matches or beats the penalty-trained models. Write-up:
-[research/POST.md](research/POST.md).
+same answer rate, matches or beats the penalty-trained models.
 
 Supporting results:
 

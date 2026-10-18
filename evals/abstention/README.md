@@ -42,7 +42,7 @@ Local open model, no API: `--model hf/Qwen/Qwen2.5-0.5B-Instruct -M device=mps` 
 
 ## Limitations
 
-- **Self-referenced difficulty.** Difficulty comes from the evaluated model's own answered samples. The project's analysis (research/POST.md, section 7) used the base model's samples as the reference, so abstention could not influence the difficulty label. Self-reference is a variant: a model that abstains on everything it is unsure about leaves only its confident samples to define difficulty, and a problem with no answers is labeled hard by construction. This pushes `wise_fraction` up for heavy abstainers. Use the same reference model across compared models if you need a fair comparison.
+- **Self-referenced difficulty.** Difficulty comes from the evaluated model's own answered samples. The project's analysis (RESULTS.md, section 9) used the base model's samples as the reference, so abstention could not influence the difficulty label. Self-reference is a variant: a model that abstains on everything it is unsure about leaves only its confident samples to define difficulty, and a problem with no answers is labeled hard by construction. This pushes `wise_fraction` up for heavy abstainers. Use the same reference model across compared models if you need a fair comparison.
 - Difficulty is noisy at small K. With K=4, the accuracy among answered samples takes few values, and ties at 0.5 are labeled easy.
 - No boxed answer is treated as abstention, so truncated or malformed outputs count as abstentions. Set `max_tokens` high enough that reasoning is not cut off. A 512-token cap on a 0.5B model mostly measures truncation.
 - Equivalence is whatever `math_verify` accepts. Gold answers for MATH are the last `\boxed{}` in the reference solution.

@@ -43,3 +43,6 @@ scratch/
 .idea/
 .vscode/
 *.swp
+
+# write-up is kept locally and published on the personal site only
+research/POST.md
