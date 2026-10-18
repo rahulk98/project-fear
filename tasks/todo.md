@@ -10,14 +10,18 @@
 
 ### Part C: follow-up experiments (WAIT for Rahul's go before starting any)
 Raw data: deeplearning.cl.uni-trier.de (ldvpc84, account s2sadesh) ~/master-thesis-asymmetric-training/outputs (eval rollouts, probing npz). Shared box, other jobs running there.
-- [ ] C1 TruthfulQA-MC probe AUROC 0.990 sanity check (GroupKFold, shuffled labels, text-only baseline, n, bootstrap CI). Data: outputs/probing/qwen2_5_1_5b_S0_float32_truthful_qa_mc_hidden.npz, 1600 committed rows, 598 unique questions. Currently withdrawn from all public pages.
-- [ ] C2 Wise vs wasteful abstention split on cached rollouts
-- [ ] C3 P(True) + semantic entropy at matched compute, same questions as probe
 - [ ] C4 Missing seeds for main 1.5B conditions (>=3), error bars on dial plot. Existing: S0/S3/C2 seeds 42+123; others seed 42 only.
 - [ ] C5 3B no-normalization ablation, more seeds (only if compute allows)
-- [ ] C6 Re-run lost analyses (matched_population, cross_domain_probe, sc_selectivity) so the probe K* numbers can return
+
+- [ ] D1 Workshop paper plan (Rahul's go needed): one fix that can carry per-question confidence (proper-scoring confidence reward or decoupled abstention advantage), wise-fraction metric, 3 seeds; ~40-70 GPU-h on A100/rented GPU
+- [ ] D2 RCoT CoT-faithfulness project: project page + post in the same format
+- [ ] D3 Regenerate results/analysis_summary.json (S1/S3 stale) and fig02-fig08
 
 ## Done
+- [x] C1/C6 E1 probe re-check (2026-10-18): TruthfulQA 0.990 retracted (gold always option A); K* and MATH->GSM8K/MMLU transfer reproduce; cross-condition "correctness" transfer was an abstention probe, claim withdrawn. Commit 20385c0
+- [x] C2 E2 wise vs wasteful (2026-10-18): wise fraction falls with t on MATH, random on GSM8K. Commit 528ee4b
+- [x] C3 E3 P(True) near chance, semantic entropy K=4 0.81 MATH (2026-10-18). Commit 1ce907a
+- [x] E4 fig01 bootstrap error bars (2026-10-18). Commit 528ee4b
 - [x] A1 Novelty check: Che et al. arXiv 2608.00301 (31 Jul 2026) derives GRPO penalty washout formally; affine invariance is textbook. Framed as independent empirical work.
 - [x] A2 Number audit vs raw files on ldvpc84. Untraceable and removed: 3B FD1, TruthfulQA 0.990, probe K*/transfer (JSONs never saved). Fixed: 3B GSM8K ratio ~7x not 2x, PRM800K order breaks at T=1.0, fig01 title.
 - [x] A3 research/POST.md drafted (2396 words of prose), commit 17d53a8
