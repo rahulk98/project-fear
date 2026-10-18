@@ -121,18 +121,17 @@ def fig03_reliability_diagrams():
 
 def fig04_auacc_curves():
     fig, ax = plt.subplots(figsize=(8, 5.5))
-    covs = [0.1, 0.25, 0.5, 0.75, 0.9, 1.0]
+    curves = json.loads((REPO / "results" / "selective_curves.json").read_text())
+    covs = curves["coverage"]
     for c in CONDS:
-        sel = A["per_condition_bench"][c]["math_test"]["selective_accuracy"]
-        ys = [sel[f"selacc_at_cov_{cov}"] for cov in covs]
-        ax.plot(covs, ys, marker="o", label=c, color=COND_COLOR[c], linewidth=2)
+        ax.plot(covs, curves[c], label=c, color=COND_COLOR[c], linewidth=2)
     ax.set_xlabel("Coverage (fraction of problems ranked by mode-vote confidence)")
     ax.set_ylabel("Accuracy in covered subset")
     ax.set_title("Selective accuracy curves on MATH-test "
                  "(higher = better selective prediction)")
     ax.legend(ncol=4, fontsize=9, frameon=False, loc="lower left")
     ax.grid(alpha=0.3)
-    ax.set_xlim(0.05, 1.05)
+    ax.set_xlim(0.0, 1.02)
     ax.set_ylim(0.0, 1.05)
     fig.tight_layout()
     fig.savefig(FIG / "fig04_auacc_curves.png", dpi=130)
