@@ -73,6 +73,8 @@ AUROC 0.744 ~ in-domain 0.751; TruthfulQA in-domain 0.99). This is a real,
 reproducible, paper-ready empirical contribution, but lower ceiling: it is a
 measurement / practitioner-guide result, not a new method or theorem.
 
+**[Retracted 2026-10-18]** The TruthfulQA-MC in-domain AUROC (0.990) is an artifact: in this data the correct option is always listed first, so the probe reads which letter the model chose. The MATH-to-TruthfulQA transfer value is withdrawn with it. See RESULTS.md section 5.
+
 ## Recommendation
 
 Pick **Pivot 1 (Abstaining Verifier)**. It is the only finalist that is both

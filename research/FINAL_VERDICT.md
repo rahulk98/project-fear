@@ -67,6 +67,8 @@ Trained the probe on MATH (best layer 22, group-CV AUROC 0.828) and applied it t
 | MMLU-STEM | 0.574 | 0.673 | transfer degrades; MC task type differs |
 | TruthfulQA-MC | 0.663 | 0.990 | barely transfers, but in-domain is NEAR-PERFECT |
 
+**[Retracted 2026-10-18]** The TruthfulQA-MC in-domain AUROC (0.990) is an artifact: in this data the correct option is always listed first, so the probe reads which letter the model chose. The MATH-to-TruthfulQA transfer value is withdrawn with it. See RESULTS.md section 5.
+
 Two real findings: (1) the single forward-pass probe transfers within a task family (math->gsm8k = in-domain
 quality) but needs per-family refitting for MC/factual tasks -- an honest, publishable boundary. (2) On
 TruthfulQA the in-domain probe reaches AUROC 0.990: the model internally separates right-from-wrong almost
@@ -75,6 +77,8 @@ near-perfect single-shot selective prediction on a hallucination benchmark. This
 project-core/workshop story = "a single cheap probe pass is a strong, family-transferable selective-prediction
 signal (and near-oracle on TruthfulQA), worth ~3 self-consistency samples (K* law); RL 'fear' training adds
 nothing." Net: GO, confidence raised.
+
+**[Retracted 2026-10-18]** The TruthfulQA-MC in-domain AUROC (0.990) is an artifact: in this data the correct option is always listed first, so the probe reads which letter the model chose. The MATH-to-TruthfulQA transfer value is withdrawn with it. See RESULTS.md section 5.
 
 ## ADDENDUM 2 -- matched-population, matched-compute, bootstrap CIs (the reviewer-proof K* fix)
 

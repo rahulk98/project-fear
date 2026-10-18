@@ -66,7 +66,7 @@ By contrast, a group of 8 with two correct and six wrong answers gets advantages
 
 Raising $t$ raises the abstain advantage in mixed groups, which pushes the model to abstain more. But the reward values carry no information about which question the model is likely to get wrong; any per-question signal has to come from the group composition, and that is the same for every condition. So we should expect the sweep to move a global abstention rate and leave the per-question ranking alone. S4 is a degenerate corner: at $t = 1$, abstaining is worth as much as being right.
 
-None of this is deep. Affine invariance of the z-score is standard, and analyses of binary-reward GRPO use the closed form above. The point is the consequence for reward design: tuning the wrong-answer penalty under GRPO is tuning one scalar.
+None of this is deep: affine invariance of the z-score is standard. The point is the consequence for reward design: tuning the wrong-answer penalty under GRPO is tuning one scalar.
 
 ## Results
 
@@ -116,11 +116,11 @@ Area under the risk-coverage curve (AURC, lower is better), recomputed from the 
 | S3 | 0.1219 | 0.0644 |
 | S4 | 0.2537 | 0.2859 |
 
-No punishment condition beats the symmetric baseline, and the positive-only control P0 is best. S0 and P0 are identical in two-outcome groups, since {+1, -1} is an affine image of {+1, 0}. They differ only in $t$: 0.5 for S0, 0 for P0, where abstaining is as bad as being wrong.
+No punishment condition beats the symmetric baseline, and the positive-only control P0 ($t = 0$) is best.
 
 ### 3. Explicit and implicit abstention are interchangeable
 
-C2 pays for abstaining; S2 punishes wrong answers; their thresholds are 0.75 and 0.80. With K=16, C2 and S2 have MATH abstention 0.178 and 0.183 and accuracy when answering 0.518 and 0.519; on GSM8K, 0.339 and 0.347 abstention and 0.653 and 0.652 accuracy when answering. Their AURC values are adjacent. Two different-looking designs give the same policy.
+C2 pays for abstaining; S2 punishes wrong answers; their thresholds are 0.75 and 0.80. With K=16 they have MATH abstention 0.178 and 0.183 and accuracy when answering 0.518 and 0.519 (GSM8K: 0.339 and 0.347, 0.653 and 0.652). Two different-looking designs give the same policy.
 
 ### 4. The 3B check
 
@@ -158,21 +158,28 @@ Abstention rate alone does not say whether the model abstains on the right quest
 | S4 | 1.00 | 0.613 | 0.526 [0.511, 0.540] | 0.291 |
 | random abstainer | | | 0.501 | 0.290 |
 
-On MATH, abstentions do land on hard problems more often than chance, but the wise fraction falls as $t$ rises: the extra abstention that a larger penalty buys is spread over easy and hard problems alike, and at S4 it is close to random. On GSM8K, abstention is unrelated to difficulty in every penalty condition (wise fraction equal to the random baseline). On MMLU-STEM and TruthfulQA-MC it is at or slightly below the random baseline. Raising the penalty buys more abstention, not better-targeted abstention, which is what the mechanism predicts. Two caveats: the difficulty estimate uses 16 samples per problem, and it is computed only from the base model's answered samples.
+On MATH, abstentions do land on hard problems more often than chance, but the wise fraction falls as $t$ rises: the extra abstention that a larger penalty buys is spread over easy and hard problems alike, and at S4 it is close to random. On GSM8K, abstention is unrelated to difficulty in every penalty condition (wise fraction equal to the random baseline), and on MMLU-STEM it is at or slightly below it. Raising the penalty buys more abstention, not better-targeted abstention, which is what the mechanism predicts. Two caveats: the difficulty estimate uses 16 samples per problem, and it is computed only from the base model's answered samples.
 
-### 8. What the probes showed
+### 8. The information is in the model, but the reward cannot use it
 
-We trained linear probes on last-token hidden states to predict whether a sampled answer is correct. A probe trained on one condition's rollouts decodes correctness on every other condition almost as well as that condition's own probe: across 14 trained conditions, mean off-diagonal AUROC is 0.989 on MATH and 0.992 on GSM8K, against 0.998 and 1.000 on the diagonal (worst single pair 0.787 on MATH). The conditions appear to share one internal correctness direction and differ mainly in the abstention threshold, as the mechanism predicts.
+A linear probe on the S0 model's last-token hidden state predicts whether its majority answer is correct. On the same problems we compare it with other confidence signals (AUROC, question-grouped cross-validation, nested layer selection):
 
-We also compared probes against self-consistency and across domains. The output files behind those numbers were not preserved, so we leave them out until they are re-run.
+| Signal | Cost | MATH (n = 1663) | GSM8K (n = 1033) |
+|---|---|---|---|
+| linear probe | 1 forward pass | 0.776 | 0.721 |
+| P(True), zero-shot | 1 forward pass | 0.48 to 0.57 | 0.57 to 0.59 |
+| semantic entropy, K=4 | 4 generations | 0.808 | 0.756 |
+| self-consistency, K=2 / 4 / 8 | 2 / 4 / 8 generations | 0.725 / 0.831 / 0.878 | 0.637 / 0.736 / 0.816 |
+
+One probe pass is worth about three self-consistency samples (2.96 on MATH, 3.69 on GSM8K), while asking the model whether its answer is true is near chance at this scale. A text-only baseline (TF-IDF on question and answer) reaches 0.776 against the probe's 0.824 in a per-sample version of the task on MATH, so part of the signal is visible in the text itself. The self-consistency and semantic-entropy rows share samples with the label, so they are optimistic. The point for this post: a per-question confidence signal exists in the model's representations, and the z-scored reward has no channel through which it could shape the abstention decision (section 7).
 
 ## What we can and cannot conclude
 
-**Observed.** Across seven conditions at 1.5B, abstention moved with $t$ while accuracy when answering stayed flat or fell and the confidence ranking did not change. The two matched-threshold conditions behaved alike. At 3B, the two conditions differed in abstention, not MATH accuracy. Without normalization, the reward magnitude mattered, in the over-abstaining direction.
+**Observed.** Across seven conditions at 1.5B, abstention moved with $t$ while accuracy when answering stayed flat or fell, the confidence ranking did not change, and extra abstention became less targeted at hard problems. The two matched-threshold conditions behaved alike. At 3B, the two conditions differed in abstention, not MATH accuracy. Without normalization, the reward magnitude mattered, in the over-abstaining direction.
 
 **Inferred.** Under z-scored GRPO with a scalar correct/wrong/abstain reward, the penalty acts as a global abstention bias, not a per-question calibration signal.
 
-**Not shown.** That asymmetric rewards cannot teach calibration with other estimators, reward shapes, larger models or longer training; or whether the 3B accuracy-when-answering gap is real.
+**Not shown.** That asymmetric rewards cannot teach calibration with other estimators, reward shapes, larger models or longer training.
 
 ## Limitations
 
@@ -180,6 +187,7 @@ We also compared probes against self-consistency and across domains. The output 
 - **Seeds.** Most runs have one seed. S0, S3 and C2 have a second seed at K=16, and the seeds agree closely on MATH (accuracy 0.459 and 0.458, 0.406 and 0.401, 0.426 and 0.426). All other conditions, the 3B runs and the ablations have one seed and no error bars.
 - **3B coverage.** Only S0 and P0 were trained at 3B: two points on the dial, not the sweep.
 - **Abstention format.** "No boxed answer" mixes deliberate refusal with failures to finish. Mean completion length falls with $t$ (1519 characters for S0, 1466 for S3, 976 for S4 on MATH), which argues against truncation as the cause.
+- **TruthfulQA-MC.** In our copy of the data the correct option is always listed first, so accuracy there measures how often the model picks option A. We report only abstention on it. (This also explains a TruthfulQA probe AUROC of 0.99 in our earlier notes, now retracted.)
 - **Estimators.** We tested z-score, global-mean and unnormalized advantages, not RLOO, Dr. GRPO or decoupled abstention advantages.
 
 ## Related work and what is new
@@ -189,11 +197,11 @@ We also compared probes against self-consistency and across domains. The output 
 - **Zhu et al. (2025), arXiv 2506.01347**, study negative-sample reinforcement; our S3 matches their weighting.
 - **Abstention and calibration rewards.** TruthRL (arXiv 2509.25760) uses a ternary reward with z-scored GRPO. Reinforced Hesitation (arXiv 2511.11500) uses +1 / 0 / $-\lambda$ without dividing by the standard deviation. TIAR (arXiv 2605.25850) notes that an abstention reward shifts the group statistics and decouples the abstention advantage. RLCR (arXiv 2507.16806) rewards verbalized confidence with a Brier score.
 
-What we think is new: the reduction stated for full three-level designs (every scheme is (1, 0, t)), and evidence that the full sweep behaves as that one dial, including the C2 and S2 equivalence, the unchanged confidence ranking, the 3B check, the ablation and the transfer to step judging.
+What we think is new: the reduction stated for full three-level designs (every scheme is (1, 0, t)), and evidence that the full sweep behaves as that one dial, including the C2 and S2 equivalence, the unchanged confidence ranking, the less-targeted abstention, the ablation and the transfer to step judging.
 
 ## Next steps
 
-1. **Rewards that vary within an outcome class.** Any reward under which two correct answers can score differently escapes the reduction. A verbalized confidence scored with a proper scoring rule (as in RLCR) is one option. A probe score is another: our probes decode correctness well, so a probe-shaped reward would add a per-sample signal that group composition at $G = 8$ cannot.
+1. **Rewards that vary within an outcome class.** Any reward under which two correct answers can score differently escapes the reduction. A verbalized confidence scored with a proper scoring rule (as in RLCR) is one option. A probe score is another: the probe in section 8 carries per-question correctness information, so a probe-shaped reward would add a per-sample signal that group composition at $G = 8$ cannot.
 2. **Estimators that keep magnitude without collapsing.** RLOO or a mean-only baseline keep the reward scale, but our ablation suggests they need a guard against over-abstention, such as a decoupled abstention advantage (TIAR) or Che et al.'s report-level repair.
 3. **Measure per-question calibration directly.** Report the wise fraction of abstentions (section 7) next to the abstention rate, so that more abstention is not mistaken for better abstention.
 4. **More seeds and error bars** for the main 1.5B conditions, and the no-normalization ablation at 3B.

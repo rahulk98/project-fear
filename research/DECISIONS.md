@@ -40,6 +40,7 @@ PIVOT_OPTIONS_GPU_RELAXED.md (10 trainable). Finalists:
    Condorcet rule. Pure theory + CPU, no GPU. NeurIPS/ICLR-theory path. Biggest profile swing, highest risk.
 3. Pivot A: compute-aware selective prediction (probe-gate + K*(c) law) -- already de-risked end-to-end
    (matched-population K*, cross-domain transfer, TruthfulQA in-domain 0.99). Safest, fastest to a paper.
+  **[Retracted 2026-10-18]** The TruthfulQA-MC in-domain AUROC (0.990) is an artifact: in this data the correct option is always listed first, so the probe reads which letter the model chose. The MATH-to-TruthfulQA transfer value is withdrawn with it. See RESULTS.md section 5.
 
 >>> DECISION 2: pick 1, 2, or 3 (or another from the files). On your pick I will: scaffold the repo, run the
     first de-risk experiment, add the killer baselines, and draft the paper outline. <<<

@@ -96,18 +96,53 @@ two, confirming the mechanism end to end.
 
 ---
 
-## 5. Hidden-state probes: one shared correctness direction
+## 5. Hidden-state probes
 
-A linear correctness probe trained on one condition's last-token hidden states decodes
-correctness on every other condition almost as well as that condition's own probe. Across 14
-trained conditions (1.5B), the mean off-diagonal AUROC is 0.989 on MATH and 0.992 on GSM8K,
-against 0.998 and 1.000 on the diagonal (worst single pair: 0.787 on MATH, 0.832 on GSM8K).
-All conditions appear to share one correctness direction and differ in abstention threshold.
+**Corrected (2026-10-18).** An earlier version of this section described a cross-condition
+"correctness" probe transfer (mean off-diagonal AUROC 0.989 MATH, 0.992 GSM8K). That matrix
+comes from an abstained-versus-attempted probe (scripts/probe_analysis.py,
+cross_condition_transfer), not a correctness probe. Abstained completions lack a boxed answer,
+which is visible at the last token, so near-perfect separation is expected and says nothing
+about a shared correctness direction. The claim is withdrawn.
 
-Earlier versions of this file also reported a probe-versus-self-consistency compute crossover
-(K*), cross-domain probe transfer, and a TruthfulQA-MC in-domain probe AUROC of 0.990. The
-output files behind those numbers were not preserved, so they are withdrawn until re-run
-with question-grouped cross-validation, a shuffled-label control and bootstrap intervals.
+**Re-check (2026-10-18, follow-up E1).** The withdrawn probe numbers were re-run from the
+cached hidden states with question-grouped 5-fold cross-validation, nested layer selection,
+shuffled-label controls, a text-only baseline (TF-IDF on prompt plus completion) and 95%
+question-level cluster bootstrap intervals. Outputs: results/followups/e1_results.json.
+
+| Quantity | Earlier value | Re-check (nested layer selection) | Text-only baseline |
+|---|---|---|---|
+| MATH in-domain probe AUROC | 0.828 | 0.824 [0.806, 0.843] | 0.776 |
+| GSM8K in-domain probe AUROC | 0.751 | 0.779 [0.756, 0.802] | 0.690 |
+| MMLU-STEM in-domain probe AUROC | 0.673 | 0.689 [0.660, 0.716] | 0.641 |
+| MATH probe transferred to GSM8K | 0.744 | 0.744 [0.720, 0.767] | |
+| MATH probe transferred to MMLU-STEM | 0.574 | 0.574 [0.543, 0.604] | |
+
+Shuffled-label controls stay near chance (0.51 to 0.55). On MATH the text-only baseline comes
+within 0.05 of the probe, so part of the probe's signal is likely visible in the text itself.
+
+Probe versus self-consistency on the matched population (per problem, target = K=16 majority
+answer correct):
+
+| | MATH (n = 1663) | GSM8K (n = 1033) |
+|---|---|---|
+| probe, 1 forward pass (nested) | 0.776 | 0.721 |
+| free logit confidence | 0.563 | 0.595 |
+| self-consistency K=2 / 4 / 8 / 16 | 0.725 / 0.831 / 0.878 / 0.904 | 0.637 / 0.736 / 0.816 / 0.850 |
+| K* where self-consistency matches the probe | 2.96 (non-nested 3.13 [2.70, 3.59]) | 3.69 (non-nested 3.68 [2.82, 5.32]) |
+
+The self-consistency target shares samples with the K=16 majority label, so self-consistency
+is optimistic here and K* is, if anything, an underestimate.
+
+**Retracted: TruthfulQA-MC probe AUROC 0.990.** In this project's TruthfulQA-MC data the
+correct option is always listed first (all 817 questions), and options were never shuffled.
+"Correct" is therefore identical to "the model chose option A": a baseline that reads only the
+chosen letter reaches AUROC 1.0. The probe (0.995 on re-check) reads the model's own answer
+choice, not a correctness signal. For the same reason, every TruthfulQA-MC accuracy and
+calibration number in this repository measures how often the model picks the first option;
+only abstention rates on TruthfulQA-MC remain meaningful. The MATH-to-TruthfulQA transfer value
+(0.663) is withdrawn with it. MMLU-STEM is not affected (correct options are spread over all
+four positions).
 
 ---
 

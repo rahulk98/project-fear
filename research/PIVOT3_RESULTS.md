@@ -135,6 +135,8 @@ in-domain CV AUROC at the same layer.
 | MMLU-STEM | 0.5735 | 0.6729 | -0.099 | transfer degrades; MC task type differs |
 | TruthfulQA-MC | 0.6632 | 0.9896 | -0.326 | strong in-domain; MATH probe underfits factual domain |
 
+**[Retracted 2026-10-18]** The TruthfulQA-MC in-domain AUROC (0.990) is an artifact: in this data the correct option is always listed first, so the probe reads which letter the model chose. The MATH-to-TruthfulQA transfer value is withdrawn with it. See RESULTS.md section 5.
+
 Key findings:
 - Within reasoning family (MATH->GSM8K): transfer AUROC 0.7443 vs in-domain 0.7507 (-0.006).
   This is effectively lossless, supporting the claim that probe generalizes across math reasoning.

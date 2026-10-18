@@ -9,3 +9,6 @@
 - Follow-up E4: 95% bootstrap error bars on fig01.
 - Follow-up E2: wise versus wasteful abstention split (RESULTS.md section 9, POST.md section 7).
 - Follow-up E3: P(True) and semantic-entropy baselines on the probe population (RESULTS.md section 9).
+- Follow-up E1: probe re-check with question-grouped CV, nested layer selection, shuffled-label and text-only controls. Probe vs self-consistency (K*) and MATH-to-GSM8K/MMLU-STEM transfer reproduce and are restored.
+- Retracted: TruthfulQA-MC probe AUROC 0.990. The correct option is always listed first in the project's TruthfulQA-MC data, so the probe reads the chosen letter; all TruthfulQA-MC accuracy numbers are flagged.
+- Corrected: the cross-condition probe transfer (0.989 / 0.992) was an abstained-vs-attempted probe, not a correctness probe; the "shared correctness direction" claim is withdrawn from README, RESULTS.md and the post.

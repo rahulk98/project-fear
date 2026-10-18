@@ -97,9 +97,9 @@ end-to-end [project report](docs/PROJECT_REPORT.md).
   K=16), the predicted degenerate corner.
 - **No fear condition beats its non-fear counterpart** on the risk-coverage frontier
   (matched-compute AURC).
-- **All conditions share one correctness direction.** A linear correctness probe trained on
-  one condition's hidden states decodes correctness on the others almost as well as their own
-  probes (mean off-diagonal AUROC 0.989 on MATH, 0.992 on GSM8K).
+- **The confidence signal exists but the reward cannot use it.** A one-pass linear probe on
+  hidden states predicts answer correctness (AUROC 0.776 on MATH, 0.721 on GSM8K), worth about
+  three self-consistency samples; asking the model P(True) is near chance at 1.5B.
 
 ![Abstention sweep: the 1-D dial](docs/figures/fig01_abstention_sweep.png)
 

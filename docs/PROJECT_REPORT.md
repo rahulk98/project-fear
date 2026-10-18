@@ -1,5 +1,7 @@
 # FEAR: Fear-Enhanced Asymmetric Rewards for LLM Calibration
 
+> **Note (2026-10-18).** In this project's TruthfulQA-MC data the correct option is always listed first and options were never shuffled, so TruthfulQA-MC accuracy, calibration and probe numbers below measure how often the model picks option A. Only abstention rates on TruthfulQA-MC remain meaningful. See RESULTS.md section 5.
+
 **An End-to-End Project Report (Phases 0 - 3 complete; Phases 4 - 5 designed)**
 
 Authors: Rahul Krishnan and Sanjana Deshpande
