@@ -1,9 +1,9 @@
 """Q6: paired problem-level bootstrap CIs (same resampled problem indices for both conditions in a pair).
 Run on the server: python q6_paired_ci.py out.json"""
-import json, sys, collections
+import json, os, sys, collections
 import numpy as np
 
-EVAL = "/home/s2sadesh/master-thesis-asymmetric-training/outputs/eval/"
+EVAL = os.environ.get("FEAR_EVAL_DIR", "outputs/eval") + "/"
 K, NB = 16, 2000
 BENCH = ["math_test", "gsm8k_test"]
 

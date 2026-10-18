@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """E1: re-verify withdrawn probe numbers (nested layer selection, controls, transfer, K*).
 
-Runs on the Trier box (CPU). Usage:
+Runs on CPU. Usage:
   e1_probe_recheck.py bench <bench>   # A, B, C for one benchmark -> bench_<bench>.json
   e1_probe_recheck.py combine         # D, E, merge -> e1_results.json
 Positive class everywhere: label 1 = CORRECT (old convention). Committed rows only (correct/incorrect).
@@ -16,12 +16,11 @@ from sklearn.metrics import roc_auc_score
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.preprocessing import OneHotEncoder
 
-HOME = os.path.expanduser("~")
-REPO = HOME + "/master-thesis-asymmetric-training"
-BASE = REPO + "/outputs/probing/qwen2_5_1_5b_S0_float32_%s_hidden"
-EVAL = REPO + "/outputs/eval/qwen2_5_1_5b_S0_float16_%s_rollouts.jsonl"
+REPO = os.environ.get("FEAR_REPO_DIR", ".")
+BASE = os.environ.get("FEAR_PROBING_DIR", "outputs/probing") + "/qwen2_5_1_5b_S0_float32_%s_hidden"
+EVAL = os.environ.get("FEAR_EVAL_DIR", "outputs/eval") + "/qwen2_5_1_5b_S0_float16_%s_rollouts.jsonl"
 K16 = REPO + "/research/data/uc_strip/K16_S0_%s.jsonl"
-OUT = HOME + "/fear_followups_20261018/e1"
+OUT = os.environ.get("FEAR_WORK_DIR", "outputs/followups") + "/e1"
 BENCHES = ["math_test", "gsm8k_test", "mmlu_stem", "truthful_qa_mc"]
 LAYERS = list(range(8, 25))
 C = 0.5

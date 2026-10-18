@@ -7,7 +7,7 @@ with a fixed seed and re-runs the eval with the original prompt, sampling settin
 (scripts/eval_calibration.py: MMLU_TEMPLATE, temperature 0.7, top_p 1.0, max_tokens 1024, K=16,
 seed_for(pid, sample_idx), extract_boxed_answer + score_mc).
 
-Runs on the Trier box (py = ~/.conda/envs/asym-thesis/bin/python), work dir ~/fear_followups_20261018/q1.
+Work dir: $FEAR_WORK_DIR/q1.
   q1_truthfulqa_shuffled.py perm
   q1_truthfulqa_shuffled.py gen <cond> [--limit N]     # GPU, vLLM; cond in base,S0,S1,S2,S3,S4,C1,C2,P0
   q1_truthfulqa_shuffled.py analyze                    # CPU: tables (old vs new), wise-vs-wasteful
@@ -19,12 +19,12 @@ import argparse, collections, gzip, hashlib, json, os, re, sys, time
 from pathlib import Path
 import numpy as np
 
-HOME = os.path.expanduser("~")
-REPO = HOME + "/master-thesis-asymmetric-training"
-OUT = Path(HOME + "/fear_followups_20261018/q1")
+REPO = os.environ.get("FEAR_REPO_DIR", ".")
+OUTPUTS = os.environ.get("FEAR_OUTPUTS_DIR", "outputs")
+OUT = Path(os.environ.get("FEAR_WORK_DIR", "outputs/followups") + "/q1")
 PARQ = REPO + "/data/processed/truthful_qa_mc.parquet"
-BASE_MODEL = HOME + "/models/qwen2_5_1_5b"
-OLD = REPO + "/outputs/eval/qwen2_5_1_5b_%s_float16_truthful_qa_mc_rollouts.jsonl"
+BASE_MODEL = os.environ.get("FEAR_MODELS_DIR", "models") + "/qwen2_5_1_5b"
+OLD = os.environ.get("FEAR_EVAL_DIR", "outputs/eval") + "/qwen2_5_1_5b_%s_float16_truthful_qa_mc_rollouts.jsonl"
 CONDS = ["base", "S0", "S1", "S2", "S3", "S4", "C1", "C2", "P0"]
 PERM_SEED, K, NB = 20261018, 16, 2000
 LETTERS = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
@@ -129,7 +129,7 @@ def shuffled_rows():
 def gen(cond, limit):
     from vllm import LLM, SamplingParams
     rows = shuffled_rows()[: limit or None]
-    path = BASE_MODEL if cond == "base" else f"{REPO}/outputs/grpo/qwen2_5_1_5b_{cond}_s42/_merged_for_vllm_float16"
+    path = BASE_MODEL if cond == "base" else f"{OUTPUTS}/grpo/qwen2_5_1_5b_{cond}_s42/_merged_for_vllm_float16"
     prompts, seeds, meta = [], [], []
     for r in rows:
         for s in range(K):
@@ -279,7 +279,7 @@ def probe_extract():
     items = probe_items()
     dev = "cuda:0"
     model = AutoModelForCausalLM.from_pretrained(BASE_MODEL, torch_dtype=torch.float32, device_map={"": dev}, attn_implementation="eager")
-    model = PeftModel.from_pretrained(model, REPO + "/outputs/grpo/qwen2_5_1_5b_S0_s42").merge_and_unload().eval()
+    model = PeftModel.from_pretrained(model, OUTPUTS + "/grpo/qwen2_5_1_5b_S0_s42").merge_and_unload().eval()
     tok = AutoTokenizer.from_pretrained(BASE_MODEL, use_fast=True); tok.padding_side = "left"
     if tok.pad_token is None:
         tok.pad_token = tok.eos_token

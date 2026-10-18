@@ -1,11 +1,10 @@
 """Q3: offline analysis of z-scored GRPO advantages for abstention. No training. S0 rollouts held fixed, only the reward varies."""
-import json, sys
+import json, os, sys
 import numpy as np
 from scipy.stats import rankdata
 
-ROOT = "/home/s2sadesh/"
-EVAL = ROOT + "master-thesis-asymmetric-training/outputs/eval/qwen2_5_1_5b_%s_float16_%s_rollouts.jsonl"
-E1 = ROOT + "fear_followups_20261018/e1/bench_%s.json"
+EVAL = os.environ.get("FEAR_EVAL_DIR", "outputs/eval") + "/qwen2_5_1_5b_%s_float16_%s_rollouts.jsonl"
+E1 = os.environ.get("FEAR_WORK_DIR", "outputs/followups") + "/e1/bench_%s.json"
 TS = dict(P0=0.0, S0=.50, C1=.60, S1=.67, C2=.75, S2=.80, S3=.91, S4=1.0)
 BENCHES = ["math_test", "gsm8k_test"]
 K, G, NB, FLOOR, MIN_SCORED = 16, 8, 1000, 1e-6, 1

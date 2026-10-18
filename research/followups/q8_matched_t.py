@@ -4,12 +4,12 @@
 Trainer formula (src/asym_rewards/grpo.py, z_score branch, std_floor default 1e-4):
   low = std < floor;  adv = where(low, 0, (r - mean) / (where(low, 1, std) + 1e-4)), std = torch.std (ddof=1).
 Real groups: S0 cached K=16 rollouts (research/data/uc_strip/K16_S0_{bench}.jsonl), split into
-groups of 8 (si 0-7, 8-15). Outcome: a==1 abstain, else c==1 correct, else wrong. Runs on the Trier box.
+groups of 8 (si 0-7, 8-15). Outcome: a==1 abstain, else c==1 correct, else wrong. Runs on CPU.
 """
 import json, os, sys, collections
 import numpy as np, torch
 torch.set_num_threads(1)
-REPO = os.path.expanduser("~/master-thesis-asymmetric-training")
+REPO = os.environ.get("FEAR_REPO_DIR", ".")
 OUT = sys.argv[1]
 FLOOR = 1e-4
 TRI = {"A_t.75 (1,-3,0)": (1, -3, 0), "B_t.75 (1,-1,.5)": (1, -1, .5),

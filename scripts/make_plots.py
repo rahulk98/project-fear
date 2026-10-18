@@ -1,6 +1,6 @@
 """Generate 8 project-report figures from existing analysis JSONs.
 
-One-off helper for docs/PROJECT_REPORT.md. Reads:
+Generates the project figures. Reads:
   results/analysis_summary.json   (per-condition x per-benchmark metrics)
   results/trajectory_summary.json (per-problem stacking + difficulty axis)
   results/stacking_null.json      (empirical null comparison)

@@ -10,13 +10,13 @@ Population: problems that have >=1 scored probe row (cannot score others: no hid
 SC K=4: agreement = top-vote count / 4 over the first 4 non-abstained K16 samples (ties broken by fixed noise).
 Conditions: S1,S2,S3,S4,C2 greedy with their natural abstention. Bootstrap: 2000 paired problem resamples;
 within each resample the S0 selector's coverage = the condition's answer rate in that resample.
-Runs on the Trier box (CPU). Usage: q7_probe_matched_coverage.py OUT.json
+Runs on CPU. Usage: q7_probe_matched_coverage.py OUT.json
 """
 import json, os, sys, collections
 import numpy as np
-REPO = os.path.expanduser("~/master-thesis-asymmetric-training")
-E1 = os.path.expanduser("~/fear_followups_20261018/e1")
-EV = REPO + "/outputs/eval/qwen2_5_1_5b_%s_float16_greedy_%s_rollouts.jsonl"
+REPO = os.environ.get("FEAR_REPO_DIR", ".")
+E1 = os.environ.get("FEAR_WORK_DIR", "outputs/followups") + "/e1"
+EV = os.environ.get("FEAR_EVAL_DIR", "outputs/eval") + "/qwen2_5_1_5b_%s_float16_greedy_%s_rollouts.jsonl"
 K16 = REPO + "/research/data/uc_strip/K16_S0_%s.jsonl"
 CONDS = ["S1", "S2", "S3", "S4", "C2"]
 COVS = [0.5, 0.6, 0.7, 0.8, 0.9]

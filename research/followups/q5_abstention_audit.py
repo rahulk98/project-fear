@@ -7,8 +7,8 @@ Put your final answer in \\boxed{}.' (scripts/eval_calibration.py PROMPT_TEMPLAT
 import json, sys, re, zlib, random, collections, os
 import numpy as np
 
-EVAL = "/home/s2sadesh/master-thesis-asymmetric-training/outputs/eval/"
-TOK = "/home/s2sadesh/models/qwen2_5_1_5b"
+EVAL = os.environ.get("FEAR_EVAL_DIR", "outputs/eval") + "/"
+TOK = os.environ.get("FEAR_MODELS_DIR", "models") + "/qwen2_5_1_5b"
 CONDS = ["S0", "S3", "S4", "P0"]
 BENCH = ["math_test", "gsm8k_test"]
 K, CAP, MARGIN = 16, 1024, 8

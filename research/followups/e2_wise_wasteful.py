@@ -1,8 +1,8 @@
 """E2: is abstention wise (problem likely wrong) or wasteful? Difficulty from a reference model's committed samples."""
-import json, sys
+import json, os, sys
 import numpy as np
 
-EVAL = "/home/s2sadesh/master-thesis-asymmetric-training/outputs/eval/"
+EVAL = os.environ.get("FEAR_EVAL_DIR", "outputs/eval") + "/"
 CONDS = ["S0", "C1", "S1", "C2", "S2", "S3", "S4", "P0"]
 T = dict(S0=.50, C1=.60, S1=.67, C2=.75, S2=.80, S3=.91, S4=1.0, P0=0.0)
 BENCHES = ["math_test", "gsm8k_test", "aime_2024", "aime_2025", "mmlu_stem", "truthful_qa_mc"]

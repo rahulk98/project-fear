@@ -1,8 +1,8 @@
 """E4: abstention rate per condition x benchmark with problem-level bootstrap 95% CI."""
-import json, sys
+import json, os, sys
 import numpy as np
 
-EVAL = "/home/s2sadesh/master-thesis-asymmetric-training/outputs/eval/"
+EVAL = os.environ.get("FEAR_EVAL_DIR", "outputs/eval") + "/"
 CONDS = ["S0", "S1", "S2", "S3", "S4", "C1", "C2"]
 BENCHES = ["math_test", "gsm8k_test", "aime_2024", "aime_2025", "mmlu_stem", "truthful_qa_mc"]
 K, NB = 16, 2000

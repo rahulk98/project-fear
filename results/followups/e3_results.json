@@ -1,5 +1,5 @@
 {
-  "model": "/home/s2sadesh/master-thesis-asymmetric-training/outputs/grpo/qwen2_5_1_5b_S0_s42/_merged_for_vllm_float16",
+  "model": "outputs/grpo/qwen2_5_1_5b_S0_s42/_merged_for_vllm_float16",
   "note": "bootstrap 2000x over problems; label=K16 mode answer correct; SE/vote use first K cached samples (K=16 shares samples with the label)",
   "benches": {
     "math_test": {

@@ -11,9 +11,9 @@ import json, os, sys, math, time
 from collections import Counter, defaultdict
 import numpy as np
 
-HOME = os.path.expanduser("~")
-REPO = f"{HOME}/master-thesis-asymmetric-training"
-S0 = f"{REPO}/outputs/grpo/qwen2_5_1_5b_S0_s42/_merged_for_vllm_float16"
+REPO = os.environ.get("FEAR_REPO_DIR", ".")
+OUTPUTS = os.environ.get("FEAR_OUTPUTS_DIR", "outputs")
+S0 = f"{OUTPUTS}/grpo/qwen2_5_1_5b_S0_s42/_merged_for_vllm_float16"
 BENCHES = ["math_test", "gsm8k_test"]
 TRAIN = {"math_test": "math_train", "gsm8k_test": "gsm8k_train"}
 KS = [2, 4, 8, 16]
@@ -22,7 +22,7 @@ ZS = ("Question: {q}\nProposed answer: {a}\nIs the proposed answer correct?\n"
 
 
 def load_pop(bench):
-    meta = json.load(open(f"{REPO}/outputs/probing/qwen2_5_1_5b_S0_float32_{bench}_hidden.meta.json"))
+    meta = json.load(open(os.environ.get("FEAR_PROBING_DIR", "outputs/probing") + f"/qwen2_5_1_5b_S0_float32_{bench}_hidden.meta.json"))
     cp = {i["problem_id"] for i in meta["items"] if i["label"] in ("correct", "incorrect")}
     byp = defaultdict(list)
     for l in open(f"{REPO}/research/data/uc_strip/K16_S0_{bench}.jsonl"):
