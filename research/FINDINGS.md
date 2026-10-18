@@ -1,6 +1,12 @@
-# Goal 1: where punishment-oriented (FEAR) training actually wins
+# Goal 1: single-shot utility under asymmetric cost (RETRACTED)
 
 Date: 2026-06-04. Analysis: `cost_sensitive_utility.py` (no GPU, offline on cached rollouts).
+
+**Status: retracted (2026-06-04, see FINAL_VERDICT.md, Part 1).** The apparent win below relied
+on a cost metric constructed for this test, and S0 was compared at its own operating point with
+no single-pass confidence signal of its own. Under the standard matched-compute metrics
+(risk-coverage, selective accuracy, AUROC) no punishment condition shows an advantage. The
+analysis is kept as a record of what was tried; none of its numbers support a claim.
 
 ## The question
 
@@ -18,7 +24,7 @@ S0/P0 confidence dominates. That rebuttal hides a compute cost: the threshold is
 K=16 mode-vote confidence (16x inference). This analysis isolates the regime where that
 rebuttal does not apply: SINGLE-SHOT (K=1) deployment.
 
-## Result 1 (the win): single-shot FEAR is utility-optimal under asymmetric cost
+## Result 1 (retracted): single-shot FEAR appeared utility-optimal under asymmetric cost
 
 Using the greedy (T=0, K=1) rollouts -- one forward pass per problem, the cost-efficient
 deployment regime -- the maximum-punishment policy S4 overtakes the symmetric baseline S0
@@ -45,7 +51,7 @@ above a benchmark-specific crossover cost c*:
 
 Figure: `figures/fig1_single_shot_utility.png`, `figures/fig3_crossover_by_benchmark.png`.
 
-## Result 2 (the honest boundary): the win is specific to K=1
+## Result 2 (retracted with Result 1): the apparent win was specific to K=1
 
 `figures/fig2_utility_per_sample.png`. The "just threshold confidence" baseline is genuinely
 strong, but it REQUIRES K>=2 samples (self-consistency); at K=1 it is undefined and reduces
@@ -69,7 +75,5 @@ to the main eval pipeline); not yet written -- awaiting go-ahead.
 
 ## One-line takeaway
 
-Punishment-oriented (FEAR) training is the expected-utility-optimal SINGLE-SHOT policy under
-asymmetric error cost -- decisively on honesty benchmarks (crossover < 1) and significantly on
-MATH at cost >= 3 -- which is exactly the regime where the standard "threshold the confidence"
-fix is unavailable.
+Retracted. The single-shot utility advantage of punishment training came from the constructed
+cost metric and the missing single-pass confidence baseline, not from better abstention.

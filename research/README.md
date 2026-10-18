@@ -11,8 +11,8 @@ the cross-domain transfer test.
   written, run on the cached rollouts, each refuted, then combined. All numbers recomputed
   from raw files. Contains the matched-population, matched-compute, bootstrap-CI version of
   the probe-versus-self-consistency comparison (the reviewer-proof K* fix).
-- `FINDINGS.md` - where punishment-oriented training actually wins: single-shot expected
-  utility under asymmetric error cost, with per-benchmark cost crossovers.
+- `FINDINGS.md` - the single-shot expected-utility analysis under asymmetric error cost.
+  Retracted (constructed cost metric, no single-pass confidence baseline); kept as a record.
 - `INSIGHTS.md` - the long-form running insights log behind the 23-finding catalogue.
 - `RESULTS_THREE_PIVOTS.md`, `PIVOT1_RESULTS.md`, `PIVOT3_RESULTS.md` - results from the
   exploratory pivots evaluated on the cached rollouts.
@@ -23,7 +23,7 @@ the cross-domain transfer test.
 
 These run offline on cached rollouts (no training, mostly no GPU):
 
-- `cost_sensitive_utility.py` - the asymmetric-cost deployment-utility analysis.
+- `cost_sensitive_utility.py` - the asymmetric-cost deployment-utility analysis (retracted).
 - `cross_domain_probe.py`, `matched_population.py`, `fear_domain_split.py` - the
   cross-domain probe transfer and the matched-population K* recomputation.
 - `probe_gate.py`, `probe_bestofn.py`, `probe_adaptive_compute.py`,
@@ -34,5 +34,6 @@ These run offline on cached rollouts (no training, mostly no GPU):
 
 ## Figures
 
-`figures/` holds the single-shot utility, per-sample utility, cost-crossover, and
-selectivity-versus-compute plots referenced in `FINDINGS.md` and `FINAL_VERDICT.md`.
+`figures/` holds the single-shot utility, per-sample utility and cost-crossover plots from the
+retracted `FINDINGS.md` analysis, and the selectivity-versus-compute plot referenced in
+`FINAL_VERDICT.md`.

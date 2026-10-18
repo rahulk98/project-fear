@@ -114,9 +114,10 @@ with question-grouped cross-validation, a shuffled-label control and bootstrap i
 ## 6. Retracted: single-shot utility under asymmetric cost
 
 An earlier analysis reported that the maximum-punishment policy beats the symmetric baseline
-in single-shot expected utility above a cost crossover. That result relied on a constructed
-cost metric with no single-pass confidence baseline; once a free logit-confidence baseline
-was added, the advantage disappeared. It is retracted (see research/FINAL_VERDICT.md).
+in single-shot expected utility above a cost crossover. That result relied on a cost metric
+constructed for the test, and S0 was compared with no single-pass confidence signal of its own.
+Under the standard matched-compute metrics no punishment condition shows an advantage. It is
+retracted (see research/FINAL_VERDICT.md and research/FINDINGS.md).
 
 ---
 
