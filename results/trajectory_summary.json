@@ -1,0 +1,481 @@
+{
+  "math_test": {
+    "trajectory": {
+      "n_problems": 5000,
+      "stacked": 4619,
+      "stacked_pct": 0.9238,
+      "abst_count_distribution": {
+        "0": 1326,
+        "1": 2899,
+        "2": 161,
+        "3": 102,
+        "4": 91,
+        "5": 79,
+        "6": 100,
+        "7": 242
+      },
+      "border_first_abstainer": {
+        "S0": 198,
+        "C1": 94,
+        "S1": 76,
+        "C2": 72,
+        "S2": 42,
+        "S3": 64,
+        "S4": 2886
+      }
+    },
+    "consistent_attempters": {
+      "subset_sizes": {
+        "n_total": 5000,
+        "always_attempted": 1326,
+        "unanimous": 11,
+        "always_abstained": 242
+      },
+      "always_attempted_acc": {
+        "S0": {
+          "pass_at_K": 0.8966817496229261,
+          "mean_p_per_sample": 0.5921474358974359,
+          "mean_p_per_attempt": 0.6257720661486352,
+          "n": 1326,
+          "total_attempts": 20076,
+          "total_samples": 21216
+        },
+        "C1": {
+          "pass_at_K": 0.8853695324283559,
+          "mean_p_per_sample": 0.5849830316742082,
+          "mean_p_per_attempt": 0.6209536198529044,
+          "n": 1326,
+          "total_attempts": 19987,
+          "total_samples": 21216
+        },
+        "S1": {
+          "pass_at_K": 0.8861236802413273,
+          "mean_p_per_sample": 0.5805524132730016,
+          "mean_p_per_attempt": 0.6195362406317589,
+          "n": 1326,
+          "total_attempts": 19881,
+          "total_samples": 21216
+        },
+        "C2": {
+          "pass_at_K": 0.8846153846153846,
+          "mean_p_per_sample": 0.5655165912518854,
+          "mean_p_per_attempt": 0.6083869986309011,
+          "n": 1326,
+          "total_attempts": 19721,
+          "total_samples": 21216
+        },
+        "S2": {
+          "pass_at_K": 0.8808446455505279,
+          "mean_p_per_sample": 0.5628770739064857,
+          "mean_p_per_attempt": 0.6077972312703583,
+          "n": 1326,
+          "total_attempts": 19648,
+          "total_samples": 21216
+        },
+        "S3": {
+          "pass_at_K": 0.8815987933634992,
+          "mean_p_per_sample": 0.5499151583710408,
+          "mean_p_per_attempt": 0.5990142219027571,
+          "n": 1326,
+          "total_attempts": 19477,
+          "total_samples": 21216
+        },
+        "S4": {
+          "pass_at_K": 0.8491704374057315,
+          "mean_p_per_sample": 0.34026206636500755,
+          "mean_p_per_attempt": 0.49289908507442304,
+          "n": 1326,
+          "total_attempts": 14646,
+          "total_samples": 21216
+        }
+      },
+      "unanimous_acc": {
+        "S0": {
+          "pass_at_K": 1.0,
+          "mean_p_per_sample": 0.7840909090909091,
+          "mean_p_per_attempt": 0.7840909090909091,
+          "n": 11,
+          "total_attempts": 176,
+          "total_samples": 176
+        },
+        "C1": {
+          "pass_at_K": 1.0,
+          "mean_p_per_sample": 0.7613636363636364,
+          "mean_p_per_attempt": 0.7613636363636364,
+          "n": 11,
+          "total_attempts": 176,
+          "total_samples": 176
+        },
+        "S1": {
+          "pass_at_K": 1.0,
+          "mean_p_per_sample": 0.7840909090909091,
+          "mean_p_per_attempt": 0.7840909090909091,
+          "n": 11,
+          "total_attempts": 176,
+          "total_samples": 176
+        },
+        "C2": {
+          "pass_at_K": 1.0,
+          "mean_p_per_sample": 0.7670454545454546,
+          "mean_p_per_attempt": 0.7670454545454546,
+          "n": 11,
+          "total_attempts": 176,
+          "total_samples": 176
+        },
+        "S2": {
+          "pass_at_K": 1.0,
+          "mean_p_per_sample": 0.7443181818181818,
+          "mean_p_per_attempt": 0.7443181818181818,
+          "n": 11,
+          "total_attempts": 176,
+          "total_samples": 176
+        },
+        "S3": {
+          "pass_at_K": 1.0,
+          "mean_p_per_sample": 0.7954545454545454,
+          "mean_p_per_attempt": 0.7954545454545454,
+          "n": 11,
+          "total_attempts": 176,
+          "total_samples": 176
+        },
+        "S4": {
+          "pass_at_K": 1.0,
+          "mean_p_per_sample": 0.7102272727272727,
+          "mean_p_per_attempt": 0.7102272727272727,
+          "n": 11,
+          "total_attempts": 176,
+          "total_samples": 176
+        }
+      },
+      "always_abstained_acc": {
+        "S0": {
+          "pass_at_K": 0.2231404958677686,
+          "mean_p_per_sample": 0.02660123966942149,
+          "mean_p_per_attempt": 0.08810949529512403,
+          "n": 242,
+          "total_attempts": 1169,
+          "total_samples": 3872
+        },
+        "C1": {
+          "pass_at_K": 0.2231404958677686,
+          "mean_p_per_sample": 0.02453512396694215,
+          "mean_p_per_attempt": 0.0837742504409171,
+          "n": 242,
+          "total_attempts": 1134,
+          "total_samples": 3872
+        },
+        "S1": {
+          "pass_at_K": 0.1859504132231405,
+          "mean_p_per_sample": 0.02246900826446281,
+          "mean_p_per_attempt": 0.07726465364120781,
+          "n": 242,
+          "total_attempts": 1126,
+          "total_samples": 3872
+        },
+        "C2": {
+          "pass_at_K": 0.19834710743801653,
+          "mean_p_per_sample": 0.023760330578512397,
+          "mean_p_per_attempt": 0.07896995708154507,
+          "n": 242,
+          "total_attempts": 1165,
+          "total_samples": 3872
+        },
+        "S2": {
+          "pass_at_K": 0.19421487603305784,
+          "mean_p_per_sample": 0.021952479338842975,
+          "mean_p_per_attempt": 0.0763016157989228,
+          "n": 242,
+          "total_attempts": 1114,
+          "total_samples": 3872
+        },
+        "S3": {
+          "pass_at_K": 0.2231404958677686,
+          "mean_p_per_sample": 0.02324380165289256,
+          "mean_p_per_attempt": 0.07936507936507936,
+          "n": 242,
+          "total_attempts": 1134,
+          "total_samples": 3872
+        },
+        "S4": {
+          "pass_at_K": 0.11983471074380166,
+          "mean_p_per_sample": 0.011363636363636364,
+          "mean_p_per_attempt": 0.05194805194805195,
+          "n": 242,
+          "total_attempts": 847,
+          "total_samples": 3872
+        }
+      }
+    },
+    "difficulty_axis": {
+      "spearman_level_vs_abst_count": {
+        "rho": 0.2342576321087311,
+        "p": 2.673624624461274e-63
+      },
+      "by_level": [
+        {
+          "level": 1,
+          "mean_abst_count": 0.6407322654462243,
+          "std": 0.7145200571703744,
+          "n": 437,
+          "pct_always_attempted": 0.425629290617849,
+          "pct_always_abstained": 0.002288329519450801
+        },
+        {
+          "level": 2,
+          "mean_abst_count": 0.819910514541387,
+          "std": 0.862303480924894,
+          "n": 894,
+          "pct_always_attempted": 0.31096196868008946,
+          "pct_always_abstained": 0.0044742729306487695
+        },
+        {
+          "level": 3,
+          "mean_abst_count": 1.103448275862069,
+          "std": 1.4163697056625812,
+          "n": 1131,
+          "pct_always_attempted": 0.28116710875331563,
+          "pct_always_abstained": 0.028293545534924844
+        },
+        {
+          "level": 4,
+          "mean_abst_count": 1.4514003294892917,
+          "std": 1.8327947340192041,
+          "n": 1214,
+          "pct_always_attempted": 0.23887973640856672,
+          "pct_always_abstained": 0.057660626029654036
+        },
+        {
+          "level": 5,
+          "mean_abst_count": 1.9312688821752266,
+          "std": 2.2112106089142687,
+          "n": 1324,
+          "pct_always_attempted": 0.19184290030211482,
+          "pct_always_abstained": 0.10196374622356495
+        }
+      ],
+      "by_subject_sorted_easiest_to_hardest": [
+        {
+          "subject": "Prealgebra",
+          "mean_abst_count": 0.8805970149253731,
+          "n": 871
+        },
+        {
+          "subject": "Algebra",
+          "mean_abst_count": 0.9300758213984835,
+          "n": 1187
+        },
+        {
+          "subject": "Counting & Probability",
+          "mean_abst_count": 0.9936708860759493,
+          "n": 474
+        },
+        {
+          "subject": "Geometry",
+          "mean_abst_count": 1.0730688935281838,
+          "n": 479
+        },
+        {
+          "subject": "Number Theory",
+          "mean_abst_count": 1.1611111111111112,
+          "n": 540
+        },
+        {
+          "subject": "Intermediate Algebra",
+          "mean_abst_count": 2.132890365448505,
+          "n": 903
+        },
+        {
+          "subject": "Precalculus",
+          "mean_abst_count": 2.1446886446886446,
+          "n": 546
+        }
+      ]
+    }
+  },
+  "gsm8k_test": {
+    "trajectory": {
+      "n_problems": 1319,
+      "stacked": 1238,
+      "stacked_pct": 0.9385898407884761,
+      "abst_count_distribution": {
+        "0": 0,
+        "1": 755,
+        "2": 233,
+        "3": 82,
+        "4": 124,
+        "5": 72,
+        "6": 35,
+        "7": 18
+      },
+      "border_first_abstainer": {
+        "S0": 11,
+        "C1": 34,
+        "S1": 83,
+        "C2": 146,
+        "S2": 57,
+        "S3": 215,
+        "S4": 755
+      }
+    },
+    "consistent_attempters": {
+      "subset_sizes": {
+        "n_total": 1319,
+        "always_attempted": 0,
+        "unanimous": 0,
+        "always_abstained": 18
+      },
+      "always_attempted_acc": {
+        "S0": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "C1": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "S1": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "C2": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "S2": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "S3": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "S4": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        }
+      },
+      "unanimous_acc": {
+        "S0": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "C1": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "S1": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "C2": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "S2": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "S3": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        },
+        "S4": {
+          "pass_at_K": null,
+          "mean_p_per_sample": null,
+          "mean_p_per_attempt": null,
+          "n": 0
+        }
+      },
+      "always_abstained_acc": {
+        "S0": {
+          "pass_at_K": 0.8888888888888888,
+          "mean_p_per_sample": 0.2916666666666667,
+          "mean_p_per_attempt": 0.6614173228346457,
+          "n": 18,
+          "total_attempts": 127,
+          "total_samples": 288
+        },
+        "C1": {
+          "pass_at_K": 0.8888888888888888,
+          "mean_p_per_sample": 0.2743055555555556,
+          "mean_p_per_attempt": 0.6694915254237288,
+          "n": 18,
+          "total_attempts": 118,
+          "total_samples": 288
+        },
+        "S1": {
+          "pass_at_K": 0.8333333333333334,
+          "mean_p_per_sample": 0.22569444444444445,
+          "mean_p_per_attempt": 0.65,
+          "n": 18,
+          "total_attempts": 100,
+          "total_samples": 288
+        },
+        "C2": {
+          "pass_at_K": 0.8333333333333334,
+          "mean_p_per_sample": 0.1736111111111111,
+          "mean_p_per_attempt": 0.5952380952380952,
+          "n": 18,
+          "total_attempts": 84,
+          "total_samples": 288
+        },
+        "S2": {
+          "pass_at_K": 0.8333333333333334,
+          "mean_p_per_sample": 0.1840277777777778,
+          "mean_p_per_attempt": 0.6235294117647059,
+          "n": 18,
+          "total_attempts": 85,
+          "total_samples": 288
+        },
+        "S3": {
+          "pass_at_K": 0.8333333333333334,
+          "mean_p_per_sample": 0.14583333333333334,
+          "mean_p_per_attempt": 0.5833333333333334,
+          "n": 18,
+          "total_attempts": 72,
+          "total_samples": 288
+        },
+        "S4": {
+          "pass_at_K": 0.5,
+          "mean_p_per_sample": 0.0763888888888889,
+          "mean_p_per_attempt": 0.7333333333333333,
+          "n": 18,
+          "total_attempts": 30,
+          "total_samples": 288
+        }
+      }
+    },
+    "difficulty_axis": {
+      "spearman_prompt_len_vs_abst_count": {
+        "rho": 0.04666294300413026,
+        "p": 0.09026097773411947
+      }
+    }
+  }
+}

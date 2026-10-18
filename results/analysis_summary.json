@@ -1,0 +1,5033 @@
+{
+  "per_condition_bench": {
+    "S0": {
+      "math_test": {
+        "n_problems": 5000,
+        "K": 16,
+        "accuracy_any": 0.7962,
+        "accuracy_mode_vote": 0.6346,
+        "abstention_rate_mean": 0.1424875,
+        "abstention_rate_all_K": 0.0008,
+        "ece_passatk_vs_any": 0.33736249999999995,
+        "ece_modeconf_vs_modecorrect": 0.1257,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 1.0,
+          "selacc_at_cov_0.25": 0.9888,
+          "selacc_at_cov_0.5": 0.9372,
+          "selacc_at_cov_0.75": 0.7962666666666667,
+          "selacc_at_cov_0.9": 0.6971111111111111,
+          "selacc_at_cov_1.0": 0.6346
+        },
+        "auacc_mode_vote": 0.8873771556596791,
+        "oracle_adj_selectivity": 1.1145153926898759,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 356,
+            "bin_conf_mean": 0.06179775280898876,
+            "bin_accuracy": 0.02247191011235955,
+            "gap": 0.03932584269662921
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 912,
+            "bin_conf_mean": 0.15549616228070176,
+            "bin_accuracy": 0.20614035087719298,
+            "gap": 0.050644188596491224
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 340,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.37058823529411766,
+            "gap": 0.12058823529411766
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 589,
+            "bin_conf_mean": 0.3423174872665535,
+            "bin_accuracy": 0.5195246179966044,
+            "gap": 0.17720713073005095
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 249,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6305220883534136,
+            "gap": 0.1930220883534136
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 441,
+            "bin_conf_mean": 0.532454648526077,
+            "bin_accuracy": 0.800453514739229,
+            "gap": 0.26799886621315194
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 423,
+            "bin_conf_mean": 0.6566193853427896,
+            "bin_accuracy": 0.8983451536643026,
+            "gap": 0.24172576832151293
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 244,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.9508196721311475,
+            "gap": 0.2008196721311475
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 664,
+            "bin_conf_mean": 0.8449736445783133,
+            "bin_accuracy": 0.9728915662650602,
+            "gap": 0.12791792168674698
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 782,
+            "bin_conf_mean": 0.967391304347826,
+            "bin_accuracy": 0.9936061381074168,
+            "gap": 0.026214833759590772
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.4588375,
+          "4": 0.6684793406593406,
+          "8": 0.7398053146853147,
+          "16": 0.7962
+        },
+        "ans_entropy_mean": 1.1772910909793122,
+        "mean_chars_per_completion": 1519.0210125,
+        "p_correct_given_attempted": 0.5350796635617556
+      },
+      "gsm8k_test": {
+        "n_problems": 1319,
+        "K": 16,
+        "accuracy_any": 0.9499620924943138,
+        "accuracy_mode_vote": 0.8225928733889311,
+        "abstention_rate_mean": 0.1729529946929492,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.3937642153146323,
+        "ece_modeconf_vs_modecorrect": 0.23559514783927216,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.9924242424242424,
+          "selacc_at_cov_0.25": 0.9787878787878788,
+          "selacc_at_cov_0.5": 0.9651515151515152,
+          "selacc_at_cov_0.75": 0.9362992922143579,
+          "selacc_at_cov_0.9": 0.8786857624262847,
+          "selacc_at_cov_1.0": 0.8225928733889311
+        },
+        "auacc_mode_vote": 0.9495749217578164,
+        "oracle_adj_selectivity": 0.9995924355934237,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 11,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.09090909090909091,
+            "gap": 0.02840909090909091
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 99,
+            "bin_conf_mean": 0.16351010101010102,
+            "bin_accuracy": 0.31313131313131315,
+            "gap": 0.14962121212121213
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 66,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.4393939393939394,
+            "gap": 0.1893939393939394
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 141,
+            "bin_conf_mean": 0.3475177304964539,
+            "bin_accuracy": 0.6453900709219859,
+            "gap": 0.29787234042553196
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 104,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.7692307692307693,
+            "gap": 0.3317307692307693
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 215,
+            "bin_conf_mean": 0.5345930232558139,
+            "bin_accuracy": 0.9023255813953488,
+            "gap": 0.36773255813953487
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 230,
+            "bin_conf_mean": 0.657608695652174,
+            "bin_accuracy": 0.9434782608695652,
+            "gap": 0.28586956521739126
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 125,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.968,
+            "gap": 0.21799999999999997
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 233,
+            "bin_conf_mean": 0.8417381974248928,
+            "bin_accuracy": 0.9699570815450643,
+            "gap": 0.12821888412017157
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 95,
+            "bin_conf_mean": 0.9506578947368421,
+            "bin_accuracy": 1.0,
+            "gap": 0.049342105263157854
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.5561978771796816,
+          "4": 0.8500720659174034,
+          "8": 0.9126593396494838,
+          "16": 0.9499620924943138
+        },
+        "ans_entropy_mean": 0.8225053826570761,
+        "mean_chars_per_completion": 1069.3703563305535,
+        "p_correct_given_attempted": 0.6725105992895611
+      },
+      "aime_2024": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.06666666666666667,
+        "accuracy_mode_vote": 0.06666666666666667,
+        "abstention_rate_mean": 0.4041666666666667,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.05416666666666667,
+        "ece_modeconf_vs_modecorrect": 0.06666666666666667,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.3333333333333333,
+          "selacc_at_cov_0.25": 0.125,
+          "selacc_at_cov_0.5": 0.13333333333333333,
+          "selacc_at_cov_0.75": 0.09090909090909091,
+          "selacc_at_cov_0.9": 0.07407407407407407,
+          "selacc_at_cov_1.0": 0.06666666666666667
+        },
+        "auacc_mode_vote": 0.1092169057791231,
+        "oracle_adj_selectivity": 1.6382535866868466,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 11,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 13,
+            "bin_conf_mean": 0.1346153846153846,
+            "bin_accuracy": 0.07692307692307693,
+            "gap": 0.05769230769230768
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 5,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.2,
+            "gap": 0.04999999999999999
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 1,
+            "bin_conf_mean": 0.3125,
+            "bin_accuracy": 0.0,
+            "gap": 0.3125
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0125,
+          "4": 0.03926739926739927,
+          "8": 0.05760683760683761,
+          "16": 0.06666666666666667
+        },
+        "ans_entropy_mean": 1.888737079514876,
+        "mean_chars_per_completion": 2311.525,
+        "p_correct_given_attempted": 0.02097902097902098
+      },
+      "aime_2025": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.03333333333333333,
+        "accuracy_mode_vote": 0.0,
+        "abstention_rate_mean": 0.3854166666666667,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.03125,
+        "ece_modeconf_vs_modecorrect": 0.12708333333333333,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.0,
+          "selacc_at_cov_0.75": 0.0,
+          "selacc_at_cov_0.9": 0.0,
+          "selacc_at_cov_1.0": 0.0
+        },
+        "auacc_mode_vote": 0.0,
+        "oracle_adj_selectivity": 0.0,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 13,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 14,
+            "bin_conf_mean": 0.14285714285714285,
+            "bin_accuracy": 0.0,
+            "gap": 0.14285714285714285
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 3,
+            "bin_conf_mean": 0.3333333333333333,
+            "bin_accuracy": 0.0,
+            "gap": 0.3333333333333333
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0020833333333333333,
+          "4": 0.008333333333333333,
+          "8": 0.016666666666666666,
+          "16": 0.03333333333333333
+        },
+        "ans_entropy_mean": 1.9994524305389787,
+        "mean_chars_per_completion": 2213.4354166666667,
+        "p_correct_given_attempted": 0.003389830508474576
+      },
+      "mmlu_stem": {
+        "n_problems": 3153,
+        "K": 16,
+        "accuracy_any": 0.8420551855375833,
+        "accuracy_mode_vote": 0.5797653028861401,
+        "abstention_rate_mean": 0.4827743418966064,
+        "abstention_rate_all_K": 0.03425309229305423,
+        "ece_passatk_vs_any": 0.5859697113859815,
+        "ece_modeconf_vs_modecorrect": 0.25103076435141136,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.8126984126984127,
+          "selacc_at_cov_0.25": 0.7576142131979695,
+          "selacc_at_cov_0.5": 0.6897208121827412,
+          "selacc_at_cov_0.75": 0.627061310782241,
+          "selacc_at_cov_0.9": 0.6053558844256519,
+          "selacc_at_cov_1.0": 0.5797653028861401
+        },
+        "auacc_mode_vote": 0.7034388635961509,
+        "oracle_adj_selectivity": 0.8353833284062764,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 391,
+            "bin_conf_mean": 0.04523657289002558,
+            "bin_accuracy": 0.36061381074168797,
+            "gap": 0.3153772378516624
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 730,
+            "bin_conf_mean": 0.15573630136986302,
+            "bin_accuracy": 0.49726027397260275,
+            "gap": 0.3415239726027397
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 385,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.535064935064935,
+            "gap": 0.285064935064935
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 628,
+            "bin_conf_mean": 0.33966958598726116,
+            "bin_accuracy": 0.5828025477707006,
+            "gap": 0.24313296178343946
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 260,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6692307692307692,
+            "gap": 0.23173076923076918
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 363,
+            "bin_conf_mean": 0.5273760330578512,
+            "bin_accuracy": 0.7052341597796143,
+            "gap": 0.17785812672176315
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 203,
+            "bin_conf_mean": 0.6554802955665024,
+            "bin_accuracy": 0.7881773399014779,
+            "gap": 0.13269704433497542
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 80,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.8,
+            "gap": 0.050000000000000044
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 78,
+            "bin_conf_mean": 0.8381410256410257,
+            "bin_accuracy": 0.8333333333333334,
+            "gap": 0.004807692307692291
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 35,
+            "bin_conf_mean": 0.9517857142857142,
+            "bin_accuracy": 0.9428571428571428,
+            "gap": 0.008928571428571397
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.25608547415160166,
+          "4": 0.5696280883721416,
+          "8": 0.7241988550266382,
+          "16": 0.8420551855375833
+        },
+        "ans_entropy_mean": 0.7071775223547637,
+        "mean_chars_per_completion": 1017.3469513162067,
+        "p_correct_given_attempted": 0.49511363200858466
+      },
+      "truthful_qa_mc": {
+        "n_problems": 817,
+        "K": 16,
+        "accuracy_any": 0.5361077111383109,
+        "accuracy_mode_vote": 0.3635250917992656,
+        "abstention_rate_mean": 0.770578335373317,
+        "abstention_rate_all_K": 0.13341493268053856,
+        "ece_passatk_vs_any": 0.44912790697674415,
+        "ece_modeconf_vs_modecorrect": 0.21664626682986537,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.5853658536585366,
+          "selacc_at_cov_0.25": 0.5049019607843137,
+          "selacc_at_cov_0.5": 0.4803921568627451,
+          "selacc_at_cov_0.75": 0.44861337683523655,
+          "selacc_at_cov_0.9": 0.40408163265306124,
+          "selacc_at_cov_1.0": 0.3635250917992656
+        },
+        "auacc_mode_vote": 0.49352788118060376,
+        "oracle_adj_selectivity": 0.920575979279802,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 343,
+            "bin_conf_mean": 0.04263848396501458,
+            "bin_accuracy": 0.22157434402332363,
+            "gap": 0.17893586005830905
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 300,
+            "bin_conf_mean": 0.15020833333333333,
+            "bin_accuracy": 0.4266666666666667,
+            "gap": 0.27645833333333336
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 64,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.4375,
+            "gap": 0.1875
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 72,
+            "bin_conf_mean": 0.3359375,
+            "bin_accuracy": 0.5277777777777778,
+            "gap": 0.1918402777777778
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 18,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6111111111111112,
+            "gap": 0.17361111111111116
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 9,
+            "bin_conf_mean": 0.5416666666666666,
+            "bin_accuracy": 0.6666666666666666,
+            "gap": 0.125
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 9,
+            "bin_conf_mean": 0.6458333333333334,
+            "bin_accuracy": 0.8888888888888888,
+            "gap": 0.24305555555555547
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 1,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 1.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 1,
+            "bin_conf_mean": 0.8125,
+            "bin_accuracy": 1.0,
+            "gap": 0.1875
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.08697980416156671,
+          "4": 0.2566633488910111,
+          "8": 0.3905184031255023,
+          "16": 0.5361077111383109
+        },
+        "ans_entropy_mean": 0.494783887973906,
+        "mean_chars_per_completion": 485.8882343941248,
+        "p_correct_given_attempted": 0.37912637545848615
+      }
+    },
+    "S1": {
+      "math_test": {
+        "n_problems": 5000,
+        "K": 16,
+        "accuracy_any": 0.7878,
+        "accuracy_mode_vote": 0.6322,
+        "abstention_rate_mean": 0.16065,
+        "abstention_rate_all_K": 0.0006,
+        "ece_passatk_vs_any": 0.34642500000000004,
+        "ece_modeconf_vs_modecorrect": 0.1416375,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.994,
+          "selacc_at_cov_0.25": 0.9888,
+          "selacc_at_cov_0.5": 0.9364,
+          "selacc_at_cov_0.75": 0.792,
+          "selacc_at_cov_0.9": 0.6971111111111111,
+          "selacc_at_cov_1.0": 0.6322
+        },
+        "auacc_mode_vote": 0.8857388299723581,
+        "oracle_adj_selectivity": 1.124319408444222,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 371,
+            "bin_conf_mean": 0.06199460916442048,
+            "bin_accuracy": 0.029649595687331536,
+            "gap": 0.032345013477088944
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 947,
+            "bin_conf_mean": 0.15397307286166842,
+            "bin_accuracy": 0.21647307286166842,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 370,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.35405405405405405,
+            "gap": 0.10405405405405405
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 578,
+            "bin_conf_mean": 0.3414792387543253,
+            "bin_accuracy": 0.5346020761245674,
+            "gap": 0.19312283737024216
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 254,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.7086614173228346,
+            "gap": 0.2711614173228346
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 480,
+            "bin_conf_mean": 0.5315104166666667,
+            "bin_accuracy": 0.80625,
+            "gap": 0.27473958333333337
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 472,
+            "bin_conf_mean": 0.6588983050847458,
+            "bin_accuracy": 0.9279661016949152,
+            "gap": 0.26906779661016944
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 279,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.9498207885304659,
+            "gap": 0.19982078853046592
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 609,
+            "bin_conf_mean": 0.84688013136289,
+            "bin_accuracy": 0.9835796387520526,
+            "gap": 0.1366995073891626
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 640,
+            "bin_conf_mean": 0.9623046875,
+            "bin_accuracy": 0.99375,
+            "gap": 0.031445312500000044
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.441375,
+          "4": 0.6595616483516483,
+          "8": 0.7310089355089355,
+          "16": 0.7878
+        },
+        "ans_entropy_mean": 1.2007567278203135,
+        "mean_chars_per_completion": 1504.3851875,
+        "p_correct_given_attempted": 0.5258533388931912
+      },
+      "gsm8k_test": {
+        "n_problems": 1319,
+        "K": 16,
+        "accuracy_any": 0.9393479909021987,
+        "accuracy_mode_vote": 0.824109173616376,
+        "abstention_rate_mean": 0.26871683093252463,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.45214177407126604,
+        "ece_modeconf_vs_modecorrect": 0.30984647460197123,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.9772727272727273,
+          "selacc_at_cov_0.25": 0.9818181818181818,
+          "selacc_at_cov_0.5": 0.9606060606060606,
+          "selacc_at_cov_0.75": 0.9292214357937311,
+          "selacc_at_cov_0.9": 0.8778433024431339,
+          "selacc_at_cov_1.0": 0.824109173616376
+        },
+        "auacc_mode_vote": 0.946282862365502,
+        "oracle_adj_selectivity": 1.0073826436320397,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 16,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.125,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 139,
+            "bin_conf_mean": 0.1618705035971223,
+            "bin_accuracy": 0.3669064748201439,
+            "gap": 0.20503597122302158
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 79,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.5569620253164557,
+            "gap": 0.30696202531645567
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 212,
+            "bin_conf_mean": 0.3440448113207547,
+            "bin_accuracy": 0.8018867924528302,
+            "gap": 0.4578419811320755
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 118,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.8305084745762712,
+            "gap": 0.3930084745762712
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 232,
+            "bin_conf_mean": 0.5320581896551724,
+            "bin_accuracy": 0.9267241379310345,
+            "gap": 0.3946659482758621
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 241,
+            "bin_conf_mean": 0.658454356846473,
+            "bin_accuracy": 0.9543568464730291,
+            "gap": 0.2959024896265561
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 125,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.984,
+            "gap": 0.23399999999999999
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 127,
+            "bin_conf_mean": 0.8366141732283464,
+            "bin_accuracy": 0.9763779527559056,
+            "gap": 0.13976377952755914
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 30,
+            "bin_conf_mean": 0.9458333333333333,
+            "bin_accuracy": 1.0,
+            "gap": 0.054166666666666696
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.4872062168309325,
+          "4": 0.8220542535553909,
+          "8": 0.8980592653071805,
+          "16": 0.9393479909021987
+        },
+        "ans_entropy_mean": 0.8142764086911157,
+        "mean_chars_per_completion": 1037.0538760424563,
+        "p_correct_given_attempted": 0.6662346918939934
+      },
+      "aime_2024": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.16666666666666666,
+        "accuracy_mode_vote": 0.06666666666666667,
+        "abstention_rate_mean": 0.3770833333333333,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.15,
+        "ece_modeconf_vs_modecorrect": 0.08125,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.125,
+          "selacc_at_cov_0.5": 0.06666666666666667,
+          "selacc_at_cov_0.75": 0.09090909090909091,
+          "selacc_at_cov_0.9": 0.07407407407407407,
+          "selacc_at_cov_1.0": 0.06666666666666667
+        },
+        "auacc_mode_vote": 0.06610182641404376,
+        "oracle_adj_selectivity": 0.3966109584842626,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 9,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 16,
+            "bin_conf_mean": 0.15234375,
+            "bin_accuracy": 0.125,
+            "gap": 0.02734375
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 3,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 2,
+            "bin_conf_mean": 0.34375,
+            "bin_accuracy": 0.0,
+            "gap": 0.34375
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.016666666666666666,
+          "4": 0.060238095238095236,
+          "8": 0.10555555555555556,
+          "16": 0.16666666666666666
+        },
+        "ans_entropy_mean": 1.9509770582856738,
+        "mean_chars_per_completion": 2282.5104166666665,
+        "p_correct_given_attempted": 0.026755852842809364
+      },
+      "aime_2025": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.03333333333333333,
+        "accuracy_mode_vote": 0.0,
+        "abstention_rate_mean": 0.3645833333333333,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.03125,
+        "ece_modeconf_vs_modecorrect": 0.1375,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.0,
+          "selacc_at_cov_0.75": 0.0,
+          "selacc_at_cov_0.9": 0.0,
+          "selacc_at_cov_1.0": 0.0
+        },
+        "auacc_mode_vote": 0.0,
+        "oracle_adj_selectivity": 0.0,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 11,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 15,
+            "bin_conf_mean": 0.14583333333333334,
+            "bin_accuracy": 0.0,
+            "gap": 0.14583333333333334
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 1,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 3,
+            "bin_conf_mean": 0.3333333333333333,
+            "bin_accuracy": 0.0,
+            "gap": 0.3333333333333333
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0020833333333333333,
+          "4": 0.008333333333333333,
+          "8": 0.016666666666666666,
+          "16": 0.03333333333333333
+        },
+        "ans_entropy_mean": 1.9931387837266865,
+        "mean_chars_per_completion": 2215.64375,
+        "p_correct_given_attempted": 0.003278688524590164
+      },
+      "mmlu_stem": {
+        "n_problems": 3153,
+        "K": 16,
+        "accuracy_any": 0.833174754202347,
+        "accuracy_mode_vote": 0.5699333967649858,
+        "abstention_rate_mean": 0.495500317158262,
+        "abstention_rate_all_K": 0.035838883602917856,
+        "ece_passatk_vs_any": 0.5840865842055185,
+        "ece_modeconf_vs_modecorrect": 0.25099111956866477,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.8095238095238095,
+          "selacc_at_cov_0.25": 0.7449238578680203,
+          "selacc_at_cov_0.5": 0.6865482233502538,
+          "selacc_at_cov_0.75": 0.6228329809725158,
+          "selacc_at_cov_0.9": 0.5979563072586328,
+          "selacc_at_cov_1.0": 0.5699333967649858
+        },
+        "auacc_mode_vote": 0.6965344486751137,
+        "oracle_adj_selectivity": 0.8360004250752316,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 447,
+            "bin_conf_mean": 0.04670022371364653,
+            "bin_accuracy": 0.3512304250559284,
+            "gap": 0.30453020134228187
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 733,
+            "bin_conf_mean": 0.15731582537517053,
+            "bin_accuracy": 0.47748976807639837,
+            "gap": 0.32017394270122784
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 380,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.5236842105263158,
+            "gap": 0.27368421052631575
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 626,
+            "bin_conf_mean": 0.34035543130990414,
+            "bin_accuracy": 0.6214057507987221,
+            "gap": 0.2810503194888179
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 251,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6254980079681275,
+            "gap": 0.1879980079681275
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 331,
+            "bin_conf_mean": 0.529833836858006,
+            "bin_accuracy": 0.7129909365558912,
+            "gap": 0.18315709969788518
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 204,
+            "bin_conf_mean": 0.6531862745098039,
+            "bin_accuracy": 0.7696078431372549,
+            "gap": 0.11642156862745101
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 68,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.8382352941176471,
+            "gap": 0.08823529411764708
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 83,
+            "bin_conf_mean": 0.8381024096385542,
+            "bin_accuracy": 0.8192771084337349,
+            "gap": 0.01882530120481929
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 30,
+            "bin_conf_mean": 0.95,
+            "bin_accuracy": 0.9,
+            "gap": 0.04999999999999993
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.24908816999682842,
+          "4": 0.5589832463762054,
+          "8": 0.7137897553692034,
+          "16": 0.833174754202347
+        },
+        "ans_entropy_mean": 0.6998273510938969,
+        "mean_chars_per_completion": 1013.6771725340946,
+        "p_correct_given_attempted": 0.493733055675612
+      },
+      "truthful_qa_mc": {
+        "n_problems": 817,
+        "K": 16,
+        "accuracy_any": 0.5336597307221542,
+        "accuracy_mode_vote": 0.3537331701346389,
+        "abstention_rate_mean": 0.7774632802937577,
+        "abstention_rate_all_K": 0.13341493268053856,
+        "ece_passatk_vs_any": 0.44981640146878826,
+        "ece_modeconf_vs_modecorrect": 0.2128212974296206,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.5487804878048781,
+          "selacc_at_cov_0.25": 0.5049019607843137,
+          "selacc_at_cov_0.5": 0.46568627450980393,
+          "selacc_at_cov_0.75": 0.43066884176182707,
+          "selacc_at_cov_0.9": 0.39319727891156464,
+          "selacc_at_cov_1.0": 0.3537331701346389
+        },
+        "auacc_mode_vote": 0.4831925546977143,
+        "oracle_adj_selectivity": 0.9054319201560381,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 362,
+            "bin_conf_mean": 0.04368093922651934,
+            "bin_accuracy": 0.23756906077348067,
+            "gap": 0.19388812154696133
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 296,
+            "bin_conf_mean": 0.14991554054054054,
+            "bin_accuracy": 0.40202702702702703,
+            "gap": 0.2521114864864865
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 58,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.46551724137931033,
+            "gap": 0.21551724137931033
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 67,
+            "bin_conf_mean": 0.33302238805970147,
+            "bin_accuracy": 0.47761194029850745,
+            "gap": 0.14458955223880599
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 11,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.7272727272727273,
+            "gap": 0.2897727272727273
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 13,
+            "bin_conf_mean": 0.5288461538461539,
+            "bin_accuracy": 0.5384615384615384,
+            "gap": 0.009615384615384581
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 10,
+            "bin_conf_mean": 0.64375,
+            "bin_accuracy": 1.0,
+            "gap": 0.35624999999999996
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.08384332925336598,
+          "4": 0.2505030465250784,
+          "8": 0.38434024835493624,
+          "16": 0.5336597307221542
+        },
+        "ans_entropy_mean": 0.4852328629536782,
+        "mean_chars_per_completion": 478.0093329253366,
+        "p_correct_given_attempted": 0.3767617738054314
+      }
+    },
+    "S2": {
+      "math_test": {
+        "n_problems": 5000,
+        "K": 16,
+        "accuracy_any": 0.7782,
+        "accuracy_mode_vote": 0.6268,
+        "abstention_rate_mean": 0.18295,
+        "abstention_rate_all_K": 0.001,
+        "ece_passatk_vs_any": 0.35409999999999997,
+        "ece_modeconf_vs_modecorrect": 0.1557,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.99,
+          "selacc_at_cov_0.25": 0.984,
+          "selacc_at_cov_0.5": 0.9316,
+          "selacc_at_cov_0.75": 0.7949333333333334,
+          "selacc_at_cov_0.9": 0.6895555555555556,
+          "selacc_at_cov_1.0": 0.6268
+        },
+        "auacc_mode_vote": 0.8833538145818102,
+        "oracle_adj_selectivity": 1.1351244083549348,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 400,
+            "bin_conf_mean": 0.06171875,
+            "bin_accuracy": 0.03,
+            "gap": 0.031718750000000004
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 988,
+            "bin_conf_mean": 0.15397267206477733,
+            "bin_accuracy": 0.1882591093117409,
+            "gap": 0.034286437246963564
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 383,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.4412532637075718,
+            "gap": 0.19125326370757179
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 582,
+            "bin_conf_mean": 0.3445017182130584,
+            "bin_accuracy": 0.5652920962199313,
+            "gap": 0.22079037800687284
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 265,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.7320754716981132,
+            "gap": 0.29457547169811316
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 495,
+            "bin_conf_mean": 0.530429292929293,
+            "bin_accuracy": 0.8383838383838383,
+            "gap": 0.30795454545454537
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 485,
+            "bin_conf_mean": 0.6583762886597938,
+            "bin_accuracy": 0.9360824742268041,
+            "gap": 0.2777061855670103
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 306,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.9673202614379085,
+            "gap": 0.2173202614379085
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 629,
+            "bin_conf_mean": 0.8454888712241654,
+            "bin_accuracy": 0.9809220985691574,
+            "gap": 0.13543322734499197
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 467,
+            "bin_conf_mean": 0.9607869379014989,
+            "bin_accuracy": 0.9892933618843683,
+            "gap": 0.0285064239828694
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.4241,
+          "4": 0.651181978021978,
+          "8": 0.7230734421134422,
+          "16": 0.7782
+        },
+        "ans_entropy_mean": 1.2138051456718983,
+        "mean_chars_per_completion": 1487.2691625,
+        "p_correct_given_attempted": 0.5190624808763233
+      },
+      "gsm8k_test": {
+        "n_problems": 1319,
+        "K": 16,
+        "accuracy_any": 0.9317664897649734,
+        "accuracy_mode_vote": 0.8172858225928734,
+        "abstention_rate_mean": 0.34709059893858984,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.5062073540561031,
+        "ece_modeconf_vs_modecorrect": 0.3673711144806671,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.9772727272727273,
+          "selacc_at_cov_0.25": 0.9757575757575757,
+          "selacc_at_cov_0.5": 0.95,
+          "selacc_at_cov_0.75": 0.9211324570273003,
+          "selacc_at_cov_0.9": 0.8778433024431339,
+          "selacc_at_cov_1.0": 0.8172858225928734
+        },
+        "auacc_mode_vote": 0.936240221170034,
+        "oracle_adj_selectivity": 1.004801343957099,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 28,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.14285714285714285,
+            "gap": 0.08035714285714285
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 182,
+            "bin_conf_mean": 0.1620879120879121,
+            "bin_accuracy": 0.42857142857142855,
+            "gap": 0.2664835164835164
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 101,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.7128712871287128,
+            "gap": 0.46287128712871284
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 247,
+            "bin_conf_mean": 0.34058704453441296,
+            "bin_accuracy": 0.8299595141700404,
+            "gap": 0.48937246963562747
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 135,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.8962962962962963,
+            "gap": 0.45879629629629626
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 283,
+            "bin_conf_mean": 0.530256183745583,
+            "bin_accuracy": 0.9293286219081273,
+            "gap": 0.39907243816254423
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 206,
+            "bin_conf_mean": 0.6532160194174758,
+            "bin_accuracy": 0.9757281553398058,
+            "gap": 0.3225121359223301
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 61,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 1.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 66,
+            "bin_conf_mean": 0.8314393939393939,
+            "bin_accuracy": 0.9696969696969697,
+            "gap": 0.1382575757575758
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 10,
+            "bin_conf_mean": 0.95,
+            "bin_accuracy": 0.9,
+            "gap": 0.04999999999999993
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.42555913570887033,
+          "4": 0.7884677869514867,
+          "8": 0.8818386230061742,
+          "16": 0.9317664897649734
+        },
+        "ans_entropy_mean": 0.829542883474612,
+        "mean_chars_per_completion": 1010.4768764215314,
+        "p_correct_given_attempted": 0.6517889542056753
+      },
+      "aime_2024": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.16666666666666666,
+        "accuracy_mode_vote": 0.03333333333333333,
+        "abstention_rate_mean": 0.42083333333333334,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.15208333333333332,
+        "ece_modeconf_vs_modecorrect": 0.10625000000000001,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.06666666666666667,
+          "selacc_at_cov_0.75": 0.045454545454545456,
+          "selacc_at_cov_0.9": 0.037037037037037035,
+          "selacc_at_cov_1.0": 0.03333333333333333
+        },
+        "auacc_mode_vote": 0.029170326201434872,
+        "oracle_adj_selectivity": 0.17502195720860925,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 12,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 13,
+            "bin_conf_mean": 0.13942307692307693,
+            "bin_accuracy": 0.07692307692307693,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 3,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 1,
+            "bin_conf_mean": 0.3125,
+            "bin_accuracy": 0.0,
+            "gap": 0.3125
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 1,
+            "bin_conf_mean": 0.5625,
+            "bin_accuracy": 0.0,
+            "gap": 0.5625
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.014583333333333334,
+          "4": 0.055,
+          "8": 0.10111111111111111,
+          "16": 0.16666666666666666
+        },
+        "ans_entropy_mean": 1.8532847236099286,
+        "mean_chars_per_completion": 2249.34375,
+        "p_correct_given_attempted": 0.025179856115107913
+      },
+      "aime_2025": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.03333333333333333,
+        "accuracy_mode_vote": 0.0,
+        "abstention_rate_mean": 0.39166666666666666,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.03125,
+        "ece_modeconf_vs_modecorrect": 0.12291666666666667,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.0,
+          "selacc_at_cov_0.75": 0.0,
+          "selacc_at_cov_0.9": 0.0,
+          "selacc_at_cov_1.0": 0.0
+        },
+        "auacc_mode_vote": 0.0,
+        "oracle_adj_selectivity": 0.0,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 13,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 14,
+            "bin_conf_mean": 0.13392857142857142,
+            "bin_accuracy": 0.0,
+            "gap": 0.13392857142857142
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 1,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 1,
+            "bin_conf_mean": 0.3125,
+            "bin_accuracy": 0.0,
+            "gap": 0.3125
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 1,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.0,
+            "gap": 0.4375
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0020833333333333333,
+          "4": 0.008333333333333333,
+          "8": 0.016666666666666666,
+          "16": 0.03333333333333333
+        },
+        "ans_entropy_mean": 1.9577226248429018,
+        "mean_chars_per_completion": 2225.4083333333333,
+        "p_correct_given_attempted": 0.003424657534246575
+      },
+      "mmlu_stem": {
+        "n_problems": 3153,
+        "K": 16,
+        "accuracy_any": 0.8239771646051379,
+        "accuracy_mode_vote": 0.5597843323818585,
+        "abstention_rate_mean": 0.5028940691405012,
+        "abstention_rate_all_K": 0.04154773231842689,
+        "ece_passatk_vs_any": 0.58156914050111,
+        "ece_modeconf_vs_modecorrect": 0.24700681890263237,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.8031746031746032,
+          "selacc_at_cov_0.25": 0.751269035532995,
+          "selacc_at_cov_0.5": 0.6713197969543148,
+          "selacc_at_cov_0.75": 0.6156448202959831,
+          "selacc_at_cov_0.9": 0.5866807610993657,
+          "selacc_at_cov_1.0": 0.5597843323818585
+        },
+        "auacc_mode_vote": 0.6859372698307614,
+        "oracle_adj_selectivity": 0.8324712131548848,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 449,
+            "bin_conf_mean": 0.04426503340757238,
+            "bin_accuracy": 0.33853006681514475,
+            "gap": 0.2942650334075724
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 758,
+            "bin_conf_mean": 0.15806398416886544,
+            "bin_accuracy": 0.4630606860158311,
+            "gap": 0.3049967018469657
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 397,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.5491183879093199,
+            "gap": 0.2991183879093199
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 600,
+            "bin_conf_mean": 0.33947916666666667,
+            "bin_accuracy": 0.5883333333333334,
+            "gap": 0.2488541666666667
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 254,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6496062992125984,
+            "gap": 0.21210629921259838
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 323,
+            "bin_conf_mean": 0.5249613003095975,
+            "bin_accuracy": 0.7120743034055728,
+            "gap": 0.18711300309597523
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 202,
+            "bin_conf_mean": 0.6528465346534653,
+            "bin_accuracy": 0.7722772277227723,
+            "gap": 0.11943069306930698
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 57,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.8245614035087719,
+            "gap": 0.07456140350877194
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 86,
+            "bin_conf_mean": 0.8372093023255814,
+            "bin_accuracy": 0.8023255813953488,
+            "gap": 0.03488372093023262
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 27,
+            "bin_conf_mean": 0.9537037037037037,
+            "bin_accuracy": 0.8888888888888888,
+            "gap": 0.06481481481481488
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.2424080241040279,
+          "4": 0.5480750933177194,
+          "8": 0.702393571470641,
+          "16": 0.8239771646051379
+        },
+        "ans_entropy_mean": 0.6957937626779596,
+        "mean_chars_per_completion": 1010.5474349825563,
+        "p_correct_given_attempted": 0.4876385676688731
+      },
+      "truthful_qa_mc": {
+        "n_problems": 817,
+        "K": 16,
+        "accuracy_any": 0.5214198286413708,
+        "accuracy_mode_vote": 0.3427172582619339,
+        "abstention_rate_mean": 0.7835067319461444,
+        "abstention_rate_all_K": 0.14687882496940025,
+        "ece_passatk_vs_any": 0.43994798041615674,
+        "ece_modeconf_vs_modecorrect": 0.20555385556915542,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.5975609756097561,
+          "selacc_at_cov_0.25": 0.5490196078431373,
+          "selacc_at_cov_0.5": 0.45588235294117646,
+          "selacc_at_cov_0.75": 0.4257748776508972,
+          "selacc_at_cov_0.9": 0.38095238095238093,
+          "selacc_at_cov_1.0": 0.3427172582619339
+        },
+        "auacc_mode_vote": 0.48555985326539386,
+        "oracle_adj_selectivity": 0.931226291356401,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 364,
+            "bin_conf_mean": 0.04189560439560439,
+            "bin_accuracy": 0.22252747252747251,
+            "gap": 0.18063186813186813
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 296,
+            "bin_conf_mean": 0.14907094594594594,
+            "bin_accuracy": 0.36824324324324326,
+            "gap": 0.2191722972972973
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 72,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.5555555555555556,
+            "gap": 0.3055555555555556
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 55,
+            "bin_conf_mean": 0.33181818181818185,
+            "bin_accuracy": 0.5454545454545454,
+            "gap": 0.21363636363636357
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 9,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.5555555555555556,
+            "gap": 0.11805555555555558
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 13,
+            "bin_conf_mean": 0.5336538461538461,
+            "bin_accuracy": 0.6153846153846154,
+            "gap": 0.08173076923076927
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 6,
+            "bin_conf_mean": 0.6666666666666666,
+            "bin_accuracy": 0.8333333333333334,
+            "gap": 0.16666666666666674
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 1,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 1.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 1,
+            "bin_conf_mean": 0.8125,
+            "bin_accuracy": 1.0,
+            "gap": 0.1875
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0814718482252142,
+          "4": 0.2442243802708919,
+          "8": 0.3749295991646053,
+          "16": 0.5214198286413708
+        },
+        "ans_entropy_mean": 0.47715028142030247,
+        "mean_chars_per_completion": 470.55117809057526,
+        "p_correct_given_attempted": 0.3763250883392226
+      }
+    },
+    "S3": {
+      "math_test": {
+        "n_problems": 5000,
+        "K": 16,
+        "accuracy_any": 0.7814,
+        "accuracy_mode_vote": 0.621,
+        "abstention_rate_mean": 0.201925,
+        "abstention_rate_all_K": 0.0006,
+        "ece_passatk_vs_any": 0.37531250000000005,
+        "ece_modeconf_vs_modecorrect": 0.16991249999999997,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.996,
+          "selacc_at_cov_0.25": 0.9792,
+          "selacc_at_cov_0.5": 0.926,
+          "selacc_at_cov_0.75": 0.7813333333333333,
+          "selacc_at_cov_0.9": 0.6848888888888889,
+          "selacc_at_cov_1.0": 0.621
+        },
+        "auacc_mode_vote": 0.8780569707361654,
+        "oracle_adj_selectivity": 1.1236971726851361,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 421,
+            "bin_conf_mean": 0.06205463182897862,
+            "bin_accuracy": 0.028503562945368172,
+            "gap": 0.03355106888361045
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 1063,
+            "bin_conf_mean": 0.152810442144873,
+            "bin_accuracy": 0.21072436500470368,
+            "gap": 0.057913922859830685
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 351,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.4301994301994302,
+            "gap": 0.1801994301994302
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 619,
+            "bin_conf_mean": 0.342891760904685,
+            "bin_accuracy": 0.5945072697899838,
+            "gap": 0.2516155088852988
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 259,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.722007722007722,
+            "gap": 0.284507722007722
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 527,
+            "bin_conf_mean": 0.5292931688804554,
+            "bin_accuracy": 0.8709677419354839,
+            "gap": 0.34167457305502846
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 523,
+            "bin_conf_mean": 0.6579827915869981,
+            "bin_accuracy": 0.9426386233269598,
+            "gap": 0.2846558317399617
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 291,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.9621993127147767,
+            "gap": 0.21219931271477666
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 568,
+            "bin_conf_mean": 0.8412191901408451,
+            "bin_accuracy": 0.9753521126760564,
+            "gap": 0.13413292253521125
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 378,
+            "bin_conf_mean": 0.9594907407407407,
+            "bin_accuracy": 0.9973544973544973,
+            "gap": 0.03786375661375663
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.4060875,
+          "4": 0.6431125274725275,
+          "8": 0.7201616472416472,
+          "16": 0.7814
+        },
+        "ans_entropy_mean": 1.2356303963347428,
+        "mean_chars_per_completion": 1465.5659,
+        "p_correct_given_attempted": 0.5088337562259186
+      },
+      "gsm8k_test": {
+        "n_problems": 1319,
+        "K": 16,
+        "accuracy_any": 0.9219105382865808,
+        "accuracy_mode_vote": 0.8134950720242609,
+        "abstention_rate_mean": 0.42622251705837755,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.5516015921152388,
+        "ece_modeconf_vs_modecorrect": 0.42276345716451863,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.9848484848484849,
+          "selacc_at_cov_0.25": 0.9696969696969697,
+          "selacc_at_cov_0.5": 0.9454545454545454,
+          "selacc_at_cov_0.75": 0.9191102123356926,
+          "selacc_at_cov_0.9": 0.8677337826453243,
+          "selacc_at_cov_1.0": 0.8134950720242609
+        },
+        "auacc_mode_vote": 0.9348857461699615,
+        "oracle_adj_selectivity": 1.0140742592090288,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 47,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.14893617021276595,
+            "gap": 0.08643617021276595
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 249,
+            "bin_conf_mean": 0.15813253012048192,
+            "bin_accuracy": 0.5381526104417671,
+            "gap": 0.3800200803212852
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 125,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.768,
+            "gap": 0.518
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 301,
+            "bin_conf_mean": 0.3426079734219269,
+            "bin_accuracy": 0.8903654485049833,
+            "gap": 0.5477574750830565
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 140,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.9,
+            "gap": 0.4625
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 252,
+            "bin_conf_mean": 0.5240575396825397,
+            "bin_accuracy": 0.9603174603174603,
+            "gap": 0.4362599206349207
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 125,
+            "bin_conf_mean": 0.655,
+            "bin_accuracy": 0.976,
+            "gap": 0.32099999999999995
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 45,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.9777777777777777,
+            "gap": 0.22777777777777775
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 31,
+            "bin_conf_mean": 0.8366935483870968,
+            "bin_accuracy": 0.967741935483871,
+            "gap": 0.13104838709677424
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 4,
+            "bin_conf_mean": 0.953125,
+            "bin_accuracy": 1.0,
+            "gap": 0.046875
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.3703089461713419,
+          "4": 0.7494809587682977,
+          "8": 0.8646772147909374,
+          "16": 0.9219105382865808
+        },
+        "ans_entropy_mean": 0.8178947661984829,
+        "mean_chars_per_completion": 975.4055629264594,
+        "p_correct_given_attempted": 0.6453877281360971
+      },
+      "aime_2024": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.16666666666666666,
+        "accuracy_mode_vote": 0.1,
+        "abstention_rate_mean": 0.42916666666666664,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.14791666666666667,
+        "ece_modeconf_vs_modecorrect": 0.08541666666666667,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.125,
+          "selacc_at_cov_0.5": 0.13333333333333333,
+          "selacc_at_cov_0.75": 0.13636363636363635,
+          "selacc_at_cov_0.9": 0.1111111111111111,
+          "selacc_at_cov_1.0": 0.1
+        },
+        "auacc_mode_vote": 0.11045072404405004,
+        "oracle_adj_selectivity": 0.6627043442643002,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 8,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 17,
+            "bin_conf_mean": 0.13970588235294118,
+            "bin_accuracy": 0.17647058823529413,
+            "gap": 0.03676470588235295
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 2,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 3,
+            "bin_conf_mean": 0.3125,
+            "bin_accuracy": 0.0,
+            "gap": 0.3125
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.01875,
+          "4": 0.0669047619047619,
+          "8": 0.11444444444444443,
+          "16": 0.16666666666666666
+        },
+        "ans_entropy_mean": 1.8048875477331836,
+        "mean_chars_per_completion": 2181.577083333333,
+        "p_correct_given_attempted": 0.032846715328467155
+      },
+      "aime_2025": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.03333333333333333,
+        "accuracy_mode_vote": 0.0,
+        "abstention_rate_mean": 0.42083333333333334,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.03125,
+        "ece_modeconf_vs_modecorrect": 0.13125,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.0,
+          "selacc_at_cov_0.75": 0.0,
+          "selacc_at_cov_0.9": 0.0,
+          "selacc_at_cov_1.0": 0.0
+        },
+        "auacc_mode_vote": 0.0,
+        "oracle_adj_selectivity": 0.0,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 13,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 13,
+            "bin_conf_mean": 0.14903846153846154,
+            "bin_accuracy": 0.0,
+            "gap": 0.14903846153846154
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 2,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 2,
+            "bin_conf_mean": 0.34375,
+            "bin_accuracy": 0.0,
+            "gap": 0.34375
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0020833333333333333,
+          "4": 0.008333333333333333,
+          "8": 0.016666666666666666,
+          "16": 0.03333333333333333
+        },
+        "ans_entropy_mean": 1.9200425000087116,
+        "mean_chars_per_completion": 2138.360416666667,
+        "p_correct_given_attempted": 0.0035971223021582736
+      },
+      "mmlu_stem": {
+        "n_problems": 3153,
+        "K": 16,
+        "accuracy_any": 0.8125594671741199,
+        "accuracy_mode_vote": 0.5559784332381859,
+        "abstention_rate_mean": 0.5187519822391373,
+        "abstention_rate_all_K": 0.04567078972407231,
+        "ece_passatk_vs_any": 0.5786552489692357,
+        "ece_modeconf_vs_modecorrect": 0.25279495718363465,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.8031746031746032,
+          "selacc_at_cov_0.25": 0.7525380710659898,
+          "selacc_at_cov_0.5": 0.6649746192893401,
+          "selacc_at_cov_0.75": 0.6131078224101479,
+          "selacc_at_cov_0.9": 0.5887949260042283,
+          "selacc_at_cov_1.0": 0.5559784332381859
+        },
+        "auacc_mode_vote": 0.6841706480175432,
+        "oracle_adj_selectivity": 0.8419945562838852,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 495,
+            "bin_conf_mean": 0.04431818181818182,
+            "bin_accuracy": 0.3212121212121212,
+            "gap": 0.2768939393939394
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 783,
+            "bin_conf_mean": 0.1556513409961686,
+            "bin_accuracy": 0.49680715197956576,
+            "gap": 0.3411558109833972
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 413,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.5205811138014528,
+            "gap": 0.2705811138014528
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 574,
+            "bin_conf_mean": 0.34168118466898956,
+            "bin_accuracy": 0.5853658536585366,
+            "gap": 0.243684668989547
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 224,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6875,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 323,
+            "bin_conf_mean": 0.5280572755417957,
+            "bin_accuracy": 0.7120743034055728,
+            "gap": 0.18401702786377705
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 182,
+            "bin_conf_mean": 0.6517857142857143,
+            "bin_accuracy": 0.7417582417582418,
+            "gap": 0.08997252747252749
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 59,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.864406779661017,
+            "gap": 0.11440677966101698
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 76,
+            "bin_conf_mean": 0.8396381578947368,
+            "bin_accuracy": 0.8289473684210527,
+            "gap": 0.010690789473684181
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 24,
+            "bin_conf_mean": 0.953125,
+            "bin_accuracy": 0.875,
+            "gap": 0.078125
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.23390421820488425,
+          "4": 0.5336166846157332,
+          "8": 0.688432964646095,
+          "16": 0.8125594671741199
+        },
+        "ans_entropy_mean": 0.6898756949676069,
+        "mean_chars_per_completion": 988.5655130034887,
+        "p_correct_given_attempted": 0.4860367410824615
+      },
+      "truthful_qa_mc": {
+        "n_problems": 817,
+        "K": 16,
+        "accuracy_any": 0.48714810281517745,
+        "accuracy_mode_vote": 0.3157894736842105,
+        "abstention_rate_mean": 0.7987301101591188,
+        "abstention_rate_all_K": 0.1689106487148103,
+        "ece_passatk_vs_any": 0.4121787025703795,
+        "ece_modeconf_vs_modecorrect": 0.18749999999999997,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.6097560975609756,
+          "selacc_at_cov_0.25": 0.5098039215686274,
+          "selacc_at_cov_0.5": 0.4362745098039216,
+          "selacc_at_cov_0.75": 0.399673735725938,
+          "selacc_at_cov_0.9": 0.3510204081632653,
+          "selacc_at_cov_1.0": 0.3157894736842105
+        },
+        "auacc_mode_vote": 0.463959602060367,
+        "oracle_adj_selectivity": 0.952399484631457,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 398,
+            "bin_conf_mean": 0.04082914572864322,
+            "bin_accuracy": 0.18592964824120603,
+            "gap": 0.14510050251256282
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 280,
+            "bin_conf_mean": 0.14776785714285715,
+            "bin_accuracy": 0.3821428571428571,
+            "gap": 0.23437499999999997
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 57,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.47368421052631576,
+            "gap": 0.22368421052631576
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 53,
+            "bin_conf_mean": 0.3290094339622642,
+            "bin_accuracy": 0.5471698113207547,
+            "gap": 0.21816037735849053
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 13,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6153846153846154,
+            "gap": 0.17788461538461542
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 7,
+            "bin_conf_mean": 0.5446428571428571,
+            "bin_accuracy": 0.7142857142857143,
+            "gap": 0.1696428571428572
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 8,
+            "bin_conf_mean": 0.6484375,
+            "bin_accuracy": 0.875,
+            "gap": 0.2265625
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 1,
+            "bin_conf_mean": 0.8125,
+            "bin_accuracy": 1.0,
+            "gap": 0.1875
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.07496940024479805,
+          "4": 0.22581139790442117,
+          "8": 0.34893716374744527,
+          "16": 0.48714810281517745
+        },
+        "ans_entropy_mean": 0.4546685804440739,
+        "mean_chars_per_completion": 450.48951958384333,
+        "p_correct_given_attempted": 0.3724819460281262
+      }
+    },
+    "S4": {
+      "math_test": {
+        "n_problems": 5000,
+        "K": 16,
+        "accuracy_any": 0.6154,
+        "accuracy_mode_vote": 0.4756,
+        "abstention_rate_mean": 0.61335,
+        "abstention_rate_all_K": 0.0332,
+        "ece_passatk_vs_any": 0.45695,
+        "ece_modeconf_vs_modecorrect": 0.2812875,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.966,
+          "selacc_at_cov_0.25": 0.9048,
+          "selacc_at_cov_0.5": 0.7488,
+          "selacc_at_cov_0.75": 0.5986666666666667,
+          "selacc_at_cov_0.9": 0.516,
+          "selacc_at_cov_1.0": 0.4756
+        },
+        "auacc_mode_vote": 0.7461498779225849,
+        "oracle_adj_selectivity": 1.2124632400431996,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 1833,
+            "bin_conf_mean": 0.05683987997817785,
+            "bin_accuracy": 0.13747954173486088,
+            "gap": 0.08063966175668302
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 1638,
+            "bin_conf_mean": 0.14827533577533578,
+            "bin_accuracy": 0.48473748473748474,
+            "gap": 0.336462148962149
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 404,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.7698019801980198,
+            "gap": 0.5198019801980198
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 498,
+            "bin_conf_mean": 0.3384789156626506,
+            "bin_accuracy": 0.8534136546184738,
+            "gap": 0.5149347389558232
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 175,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.9085714285714286,
+            "gap": 0.4710714285714286
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 236,
+            "bin_conf_mean": 0.5256885593220338,
+            "bin_accuracy": 0.9491525423728814,
+            "gap": 0.42346398305084754
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 125,
+            "bin_conf_mean": 0.654,
+            "bin_accuracy": 0.984,
+            "gap": 0.32999999999999996
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 45,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.9777777777777777,
+            "gap": 0.22777777777777775
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 41,
+            "bin_conf_mean": 0.8323170731707317,
+            "bin_accuracy": 1.0,
+            "gap": 0.16768292682926833
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 5,
+            "bin_conf_mean": 0.9375,
+            "bin_accuracy": 1.0,
+            "gap": 0.0625
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.15845,
+          "4": 0.38147472527472526,
+          "8": 0.5067865268065268,
+          "16": 0.6154
+        },
+        "ans_entropy_mean": 1.0207652349113339,
+        "mean_chars_per_completion": 976.0923625,
+        "p_correct_given_attempted": 0.4098021466442519
+      },
+      "gsm8k_test": {
+        "n_problems": 1319,
+        "K": 16,
+        "accuracy_any": 0.5269143290371494,
+        "accuracy_mode_vote": 0.46019711902956784,
+        "abstention_rate_mean": 0.8985974222896134,
+        "abstention_rate_all_K": 0.2403335860500379,
+        "ece_passatk_vs_any": 0.46692570128885524,
+        "ece_modeconf_vs_modecorrect": 0.38566148597422284,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.9242424242424242,
+          "selacc_at_cov_0.25": 0.8727272727272727,
+          "selacc_at_cov_0.5": 0.6893939393939394,
+          "selacc_at_cov_0.75": 0.6076845298281092,
+          "selacc_at_cov_0.9": 0.5113732097725358,
+          "selacc_at_cov_1.0": 0.46019711902956784
+        },
+        "auacc_mode_vote": 0.7135146858788574,
+        "oracle_adj_selectivity": 1.3541379434161334,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 964,
+            "bin_conf_mean": 0.041947614107883814,
+            "bin_accuracy": 0.3091286307053942,
+            "gap": 0.26718101659751037
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 308,
+            "bin_conf_mean": 0.1442775974025974,
+            "bin_accuracy": 0.8603896103896104,
+            "gap": 0.716112012987013
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 30,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.9333333333333333,
+            "gap": 0.6833333333333333
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 15,
+            "bin_conf_mean": 0.3333333333333333,
+            "bin_accuracy": 0.9333333333333333,
+            "gap": 0.6000000000000001
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 1,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 1.0,
+            "gap": 0.5625
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 1,
+            "bin_conf_mean": 0.5,
+            "bin_accuracy": 1.0,
+            "gap": 0.5
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.059988627748294165,
+          "4": 0.20680543868565093,
+          "8": 0.3485101790636287,
+          "16": 0.5269143290371494
+        },
+        "ans_entropy_mean": 0.23678121029818233,
+        "mean_chars_per_completion": 766.8008434420016,
+        "p_correct_given_attempted": 0.591588785046729
+      },
+      "aime_2024": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.03333333333333333,
+        "accuracy_mode_vote": 0.0,
+        "abstention_rate_mean": 0.7083333333333334,
+        "abstention_rate_all_K": 0.06666666666666667,
+        "ece_passatk_vs_any": 0.03125,
+        "ece_modeconf_vs_modecorrect": 0.08541666666666667,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.0,
+          "selacc_at_cov_0.75": 0.0,
+          "selacc_at_cov_0.9": 0.0,
+          "selacc_at_cov_1.0": 0.0
+        },
+        "auacc_mode_vote": 0.0,
+        "oracle_adj_selectivity": 0.0,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 21,
+            "bin_conf_mean": 0.05654761904761905,
+            "bin_accuracy": 0.0,
+            "gap": 0.05654761904761905
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 9,
+            "bin_conf_mean": 0.1527777777777778,
+            "bin_accuracy": 0.0,
+            "gap": 0.1527777777777778
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0020833333333333333,
+          "4": 0.008333333333333333,
+          "8": 0.016666666666666666,
+          "16": 0.03333333333333333
+        },
+        "ans_entropy_mean": 1.2073675715250645,
+        "mean_chars_per_completion": 1414.575,
+        "p_correct_given_attempted": 0.007142857142857143
+      },
+      "aime_2025": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.0,
+        "accuracy_mode_vote": 0.0,
+        "abstention_rate_mean": 0.7145833333333333,
+        "abstention_rate_all_K": 0.03333333333333333,
+        "ece_passatk_vs_any": 0.0,
+        "ece_modeconf_vs_modecorrect": 0.07916666666666666,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.0,
+          "selacc_at_cov_0.75": 0.0,
+          "selacc_at_cov_0.9": 0.0,
+          "selacc_at_cov_1.0": 0.0
+        },
+        "auacc_mode_vote": 0.0,
+        "oracle_adj_selectivity": 0.0,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 22,
+            "bin_conf_mean": 0.05965909090909091,
+            "bin_accuracy": 0.0,
+            "gap": 0.05965909090909091
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 8,
+            "bin_conf_mean": 0.1328125,
+            "bin_accuracy": 0.0,
+            "gap": 0.1328125
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0,
+          "4": 0.0,
+          "8": 0.0,
+          "16": 0.0
+        },
+        "ans_entropy_mean": 1.2741759994352564,
+        "mean_chars_per_completion": 1412.8083333333334,
+        "p_correct_given_attempted": 0.0
+      },
+      "mmlu_stem": {
+        "n_problems": 3153,
+        "K": 16,
+        "accuracy_any": 0.7513479226133841,
+        "accuracy_mode_vote": 0.5207738661592134,
+        "abstention_rate_mean": 0.602045670789724,
+        "abstention_rate_all_K": 0.08880431335236283,
+        "ece_passatk_vs_any": 0.5657310497938471,
+        "ece_modeconf_vs_modecorrect": 0.2762250237868697,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.765079365079365,
+          "selacc_at_cov_0.25": 0.7170050761421319,
+          "selacc_at_cov_0.5": 0.6440355329949239,
+          "selacc_at_cov_0.75": 0.5945031712473573,
+          "selacc_at_cov_0.9": 0.5747004933051445,
+          "selacc_at_cov_1.0": 0.5207738661592134
+        },
+        "auacc_mode_vote": 0.654550217418763,
+        "oracle_adj_selectivity": 0.8711679339473869,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 771,
+            "bin_conf_mean": 0.03980220492866407,
+            "bin_accuracy": 0.29831387808041504,
+            "gap": 0.25851167315175094
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 901,
+            "bin_conf_mean": 0.15378745837957825,
+            "bin_accuracy": 0.4983351831298557,
+            "gap": 0.34454772475027745
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 344,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.5726744186046512,
+            "gap": 0.3226744186046512
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 524,
+            "bin_conf_mean": 0.3412452290076336,
+            "bin_accuracy": 0.6125954198473282,
+            "gap": 0.27135019083969464
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 193,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6632124352331606,
+            "gap": 0.22571243523316065
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 220,
+            "bin_conf_mean": 0.5278409090909091,
+            "bin_accuracy": 0.759090909090909,
+            "gap": 0.23124999999999996
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 109,
+            "bin_conf_mean": 0.6479357798165137,
+            "bin_accuracy": 0.7155963302752294,
+            "gap": 0.06766055045871566
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 36,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.8055555555555556,
+            "gap": 0.05555555555555558
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 43,
+            "bin_conf_mean": 0.8313953488372093,
+            "bin_accuracy": 0.7674418604651163,
+            "gap": 0.06395348837209303
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 12,
+            "bin_conf_mean": 0.953125,
+            "bin_accuracy": 0.8333333333333334,
+            "gap": 0.11979166666666663
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.18561687281953695,
+          "4": 0.456373835488964,
+          "8": 0.613101494833179,
+          "16": 0.7513479226133841
+        },
+        "ans_entropy_mean": 0.6398417458468132,
+        "mean_chars_per_completion": 922.3436211544561,
+        "p_correct_given_attempted": 0.4664275752141861
+      },
+      "truthful_qa_mc": {
+        "n_problems": 817,
+        "K": 16,
+        "accuracy_any": 0.3769889840881273,
+        "accuracy_mode_vote": 0.27906976744186046,
+        "abstention_rate_mean": 0.8668145654834761,
+        "abstention_rate_all_K": 0.2876376988984088,
+        "ece_passatk_vs_any": 0.3262698898408813,
+        "ece_modeconf_vs_modecorrect": 0.1895654834761322,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.5975609756097561,
+          "selacc_at_cov_0.25": 0.5049019607843137,
+          "selacc_at_cov_0.5": 0.42892156862745096,
+          "selacc_at_cov_0.75": 0.3719412724306688,
+          "selacc_at_cov_0.9": 0.31020408163265306,
+          "selacc_at_cov_1.0": 0.27906976744186046
+        },
+        "auacc_mode_vote": 0.44874651629747325,
+        "oracle_adj_selectivity": 1.1903438435553104,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 535,
+            "bin_conf_mean": 0.035046728971962614,
+            "bin_accuracy": 0.16448598130841122,
+            "gap": 0.1294392523364486
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 210,
+            "bin_conf_mean": 0.14583333333333334,
+            "bin_accuracy": 0.45714285714285713,
+            "gap": 0.3113095238095238
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 32,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.5,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 28,
+            "bin_conf_mean": 0.3325892857142857,
+            "bin_accuracy": 0.6428571428571429,
+            "gap": 0.3102678571428572
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 6,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6666666666666666,
+            "gap": 0.22916666666666663
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 1,
+            "bin_conf_mean": 0.5,
+            "bin_accuracy": 1.0,
+            "gap": 0.5
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 4,
+            "bin_conf_mean": 0.640625,
+            "bin_accuracy": 1.0,
+            "gap": 0.359375
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 1,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 1.0,
+            "gap": 0.25
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.05071909424724602,
+          "4": 0.1600488251039047,
+          "8": 0.2572210191549237,
+          "16": 0.3769889840881273
+        },
+        "ans_entropy_mean": 0.30527395497495413,
+        "mean_chars_per_completion": 396.5615055079559,
+        "p_correct_given_attempted": 0.3808156232050546
+      }
+    },
+    "C1": {
+      "math_test": {
+        "n_problems": 5000,
+        "K": 16,
+        "accuracy_any": 0.7934,
+        "accuracy_mode_vote": 0.638,
+        "abstention_rate_mean": 0.1515,
+        "abstention_rate_all_K": 0.0008,
+        "ece_passatk_vs_any": 0.34187499999999993,
+        "ece_modeconf_vs_modecorrect": 0.13607499999999997,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.998,
+          "selacc_at_cov_0.25": 0.9864,
+          "selacc_at_cov_0.5": 0.9384,
+          "selacc_at_cov_0.75": 0.7981333333333334,
+          "selacc_at_cov_0.9": 0.7006666666666667,
+          "selacc_at_cov_1.0": 0.638
+        },
+        "auacc_mode_vote": 0.8884183389622229,
+        "oracle_adj_selectivity": 1.1197609515530915,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 365,
+            "bin_conf_mean": 0.06181506849315069,
+            "bin_accuracy": 0.03561643835616438,
+            "gap": 0.026198630136986305
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 944,
+            "bin_conf_mean": 0.155323093220339,
+            "bin_accuracy": 0.21504237288135594,
+            "gap": 0.05971927966101695
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 342,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.3538011695906433,
+            "gap": 0.10380116959064328
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 565,
+            "bin_conf_mean": 0.34269911504424777,
+            "bin_accuracy": 0.5663716814159292,
+            "gap": 0.22367256637168142
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 274,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6532846715328468,
+            "gap": 0.21578467153284675
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 439,
+            "bin_conf_mean": 0.531748291571754,
+            "bin_accuracy": 0.8200455580865603,
+            "gap": 0.28829726651480636
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 445,
+            "bin_conf_mean": 0.6582865168539326,
+            "bin_accuracy": 0.8966292134831461,
+            "gap": 0.23834269662921348
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 266,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.9586466165413534,
+            "gap": 0.2086466165413534
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 644,
+            "bin_conf_mean": 0.84472049689441,
+            "bin_accuracy": 0.9720496894409938,
+            "gap": 0.1273291925465838
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 716,
+            "bin_conf_mean": 0.9646473463687151,
+            "bin_accuracy": 0.9972067039106145,
+            "gap": 0.032559357541899425
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.451525,
+          "4": 0.6646581318681319,
+          "8": 0.7355962082362083,
+          "16": 0.7934
+        },
+        "ans_entropy_mean": 1.1850847186639666,
+        "mean_chars_per_completion": 1507.6223125,
+        "p_correct_given_attempted": 0.5321449616971126
+      },
+      "gsm8k_test": {
+        "n_problems": 1319,
+        "K": 16,
+        "accuracy_any": 0.9446550416982562,
+        "accuracy_mode_vote": 0.8263836239575436,
+        "abstention_rate_mean": 0.20721190295678543,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.413997346474602,
+        "ece_modeconf_vs_modecorrect": 0.2643574677786202,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.9848484848484849,
+          "selacc_at_cov_0.25": 0.9787878787878788,
+          "selacc_at_cov_0.5": 0.9651515151515152,
+          "selacc_at_cov_0.75": 0.9332659251769464,
+          "selacc_at_cov_0.9": 0.8828980623420387,
+          "selacc_at_cov_1.0": 0.8263836239575436
+        },
+        "auacc_mode_vote": 0.9481768210555686,
+        "oracle_adj_selectivity": 1.0037281115347472,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 9,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.1111111111111111,
+            "gap": 0.048611111111111105
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 114,
+            "bin_conf_mean": 0.16392543859649122,
+            "bin_accuracy": 0.34210526315789475,
+            "gap": 0.17817982456140352
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 67,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.5223880597014925,
+            "gap": 0.2723880597014925
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 164,
+            "bin_conf_mean": 0.3410823170731707,
+            "bin_accuracy": 0.6829268292682927,
+            "gap": 0.341844512195122
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 108,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.8240740740740741,
+            "gap": 0.38657407407407407
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 215,
+            "bin_conf_mean": 0.5325581395348837,
+            "bin_accuracy": 0.9023255813953488,
+            "gap": 0.36976744186046506
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 250,
+            "bin_conf_mean": 0.657,
+            "bin_accuracy": 0.952,
+            "gap": 0.29499999999999993
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 121,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.9504132231404959,
+            "gap": 0.20041322314049592
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 214,
+            "bin_conf_mean": 0.835572429906542,
+            "bin_accuracy": 0.985981308411215,
+            "gap": 0.150408878504673
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 57,
+            "bin_conf_mean": 0.944078947368421,
+            "bin_accuracy": 0.9824561403508771,
+            "gap": 0.03837719298245612
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.5306576952236542,
+          "4": 0.8397828858025979,
+          "8": 0.905738907710098,
+          "16": 0.9446550416982562
+        },
+        "ans_entropy_mean": 0.8158490929959826,
+        "mean_chars_per_completion": 1053.2260235026536,
+        "p_correct_given_attempted": 0.6693562847409001
+      },
+      "aime_2024": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.1,
+        "accuracy_mode_vote": 0.06666666666666667,
+        "abstention_rate_mean": 0.4,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.08958333333333333,
+        "ece_modeconf_vs_modecorrect": 0.058333333333333334,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.13333333333333333,
+          "selacc_at_cov_0.75": 0.09090909090909091,
+          "selacc_at_cov_0.9": 0.07407407407407407,
+          "selacc_at_cov_1.0": 0.06666666666666667
+        },
+        "auacc_mode_vote": 0.05577654983876719,
+        "oracle_adj_selectivity": 0.5577654983876719,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 12,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 16,
+            "bin_conf_mean": 0.1484375,
+            "bin_accuracy": 0.125,
+            "gap": 0.0234375
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 1,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 1,
+            "bin_conf_mean": 0.375,
+            "bin_accuracy": 0.0,
+            "gap": 0.375
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.010416666666666666,
+          "4": 0.03833333333333333,
+          "8": 0.06777777777777777,
+          "16": 0.1
+        },
+        "ans_entropy_mean": 1.9812803552726423,
+        "mean_chars_per_completion": 2295.975,
+        "p_correct_given_attempted": 0.017361111111111112
+      },
+      "aime_2025": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.0,
+        "accuracy_mode_vote": 0.0,
+        "abstention_rate_mean": 0.3541666666666667,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.0,
+        "ece_modeconf_vs_modecorrect": 0.13333333333333333,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.0,
+          "selacc_at_cov_0.75": 0.0,
+          "selacc_at_cov_0.9": 0.0,
+          "selacc_at_cov_1.0": 0.0
+        },
+        "auacc_mode_vote": 0.0,
+        "oracle_adj_selectivity": 0.0,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 12,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 16,
+            "bin_conf_mean": 0.15625,
+            "bin_accuracy": 0.0,
+            "gap": 0.15625
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 1,
+            "bin_conf_mean": 0.3125,
+            "bin_accuracy": 0.0,
+            "gap": 0.3125
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 1,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.0,
+            "gap": 0.4375
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0,
+          "4": 0.0,
+          "8": 0.0,
+          "16": 0.0
+        },
+        "ans_entropy_mean": 2.0193213218672033,
+        "mean_chars_per_completion": 2193.9416666666666,
+        "p_correct_given_attempted": 0.0
+      },
+      "mmlu_stem": {
+        "n_problems": 3153,
+        "K": 16,
+        "accuracy_any": 0.8369806533460197,
+        "accuracy_mode_vote": 0.5740564541706311,
+        "abstention_rate_mean": 0.48215984776403426,
+        "abstention_rate_all_K": 0.035204567078972404,
+        "ece_passatk_vs_any": 0.5819854107199492,
+        "ece_modeconf_vs_modecorrect": 0.247046463685379,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.819047619047619,
+          "selacc_at_cov_0.25": 0.7563451776649747,
+          "selacc_at_cov_0.5": 0.6884517766497462,
+          "selacc_at_cov_0.75": 0.6300211416490487,
+          "selacc_at_cov_0.9": 0.6050035236081748,
+          "selacc_at_cov_1.0": 0.5740564541706311
+        },
+        "auacc_mode_vote": 0.7013606889714226,
+        "oracle_adj_selectivity": 0.837965233924553,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 405,
+            "bin_conf_mean": 0.04537037037037037,
+            "bin_accuracy": 0.3333333333333333,
+            "gap": 0.2879629629629629
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 709,
+            "bin_conf_mean": 0.1576163610719323,
+            "bin_accuracy": 0.49647390691114246,
+            "gap": 0.33885754583921013
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 396,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.5176767676767676,
+            "gap": 0.2676767676767676
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 633,
+            "bin_conf_mean": 0.3421208530805687,
+            "bin_accuracy": 0.6018957345971564,
+            "gap": 0.2597748815165877
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 260,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6423076923076924,
+            "gap": 0.20480769230769236
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 353,
+            "bin_conf_mean": 0.5281515580736544,
+            "bin_accuracy": 0.7082152974504249,
+            "gap": 0.18006373937677045
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 201,
+            "bin_conf_mean": 0.6545398009950248,
+            "bin_accuracy": 0.7810945273631841,
+            "gap": 0.12655472636815923
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 73,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.821917808219178,
+            "gap": 0.07191780821917804
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 85,
+            "bin_conf_mean": 0.8375,
+            "bin_accuracy": 0.8,
+            "gap": 0.03749999999999998
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 38,
+            "bin_conf_mean": 0.9457236842105263,
+            "bin_accuracy": 0.9210526315789473,
+            "gap": 0.024671052631578982
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.25499524262607043,
+          "4": 0.5660008085793052,
+          "8": 0.7189825996676614,
+          "16": 0.8369806533460197
+        },
+        "ans_entropy_mean": 0.7073198672493181,
+        "mean_chars_per_completion": 1020.9367863939106,
+        "p_correct_given_attempted": 0.49242076251722555
+      },
+      "truthful_qa_mc": {
+        "n_problems": 817,
+        "K": 16,
+        "accuracy_any": 0.5336597307221542,
+        "accuracy_mode_vote": 0.34761321909424725,
+        "abstention_rate_mean": 0.7721083231334149,
+        "abstention_rate_all_K": 0.13341493268053856,
+        "ece_passatk_vs_any": 0.4477509179926561,
+        "ece_modeconf_vs_modecorrect": 0.2034883720930232,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.573170731707317,
+          "selacc_at_cov_0.25": 0.4950980392156863,
+          "selacc_at_cov_0.5": 0.4387254901960784,
+          "selacc_at_cov_0.75": 0.4176182707993475,
+          "selacc_at_cov_0.9": 0.38639455782312926,
+          "selacc_at_cov_1.0": 0.34761321909424725
+        },
+        "auacc_mode_vote": 0.4699124321069536,
+        "oracle_adj_selectivity": 0.8805469197967456,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 344,
+            "bin_conf_mean": 0.04269622093023256,
+            "bin_accuracy": 0.22965116279069767,
+            "gap": 0.1869549418604651
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 302,
+            "bin_conf_mean": 0.1519039735099338,
+            "bin_accuracy": 0.37748344370860926,
+            "gap": 0.22557947019867547
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 70,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.45714285714285713,
+            "gap": 0.20714285714285713
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 69,
+            "bin_conf_mean": 0.34057971014492755,
+            "bin_accuracy": 0.5362318840579711,
+            "gap": 0.19565217391304351
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 10,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.6,
+            "gap": 0.16249999999999998
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 9,
+            "bin_conf_mean": 0.5416666666666666,
+            "bin_accuracy": 0.4444444444444444,
+            "gap": 0.09722222222222221
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 10,
+            "bin_conf_mean": 0.64375,
+            "bin_accuracy": 0.9,
+            "gap": 0.25625
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 3,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 1.0,
+            "gap": 0.25
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.08590881272949816,
+          "4": 0.25382665070547566,
+          "8": 0.3871831962407237,
+          "16": 0.5336597307221542
+        },
+        "ans_entropy_mean": 0.4877182769080275,
+        "mean_chars_per_completion": 484.56953794369645,
+        "p_correct_given_attempted": 0.37697213830144344
+      }
+    },
+    "C2": {
+      "math_test": {
+        "n_problems": 5000,
+        "K": 16,
+        "accuracy_any": 0.7824,
+        "accuracy_mode_vote": 0.632,
+        "abstention_rate_mean": 0.1777,
+        "abstention_rate_all_K": 0.001,
+        "ece_passatk_vs_any": 0.35648749999999996,
+        "ece_modeconf_vs_modecorrect": 0.16053749999999997,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.99,
+          "selacc_at_cov_0.25": 0.9848,
+          "selacc_at_cov_0.5": 0.934,
+          "selacc_at_cov_0.75": 0.7893333333333333,
+          "selacc_at_cov_0.9": 0.6971111111111111,
+          "selacc_at_cov_1.0": 0.632
+        },
+        "auacc_mode_vote": 0.8840235122563551,
+        "oracle_adj_selectivity": 1.129886902168143,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 383,
+            "bin_conf_mean": 0.06168407310704961,
+            "bin_accuracy": 0.018276762402088774,
+            "gap": 0.04340731070496084
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 1000,
+            "bin_conf_mean": 0.153875,
+            "bin_accuracy": 0.237,
+            "gap": 0.08312499999999998
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 364,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.3543956043956044,
+            "gap": 0.10439560439560441
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 593,
+            "bin_conf_mean": 0.3434865092748735,
+            "bin_accuracy": 0.5750421585160203,
+            "gap": 0.23155564924114674
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 277,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.7184115523465704,
+            "gap": 0.2809115523465704
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 504,
+            "bin_conf_mean": 0.529265873015873,
+            "bin_accuracy": 0.8412698412698413,
+            "gap": 0.31200396825396826
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 455,
+            "bin_conf_mean": 0.6550824175824176,
+            "bin_accuracy": 0.9384615384615385,
+            "gap": 0.28337912087912087
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 298,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.9630872483221476,
+            "gap": 0.21308724832214765
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 647,
+            "bin_conf_mean": 0.8459234930448223,
+            "bin_accuracy": 0.98145285935085,
+            "gap": 0.13552936630602774
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 479,
+            "bin_conf_mean": 0.9635960334029228,
+            "bin_accuracy": 0.9895615866388309,
+            "gap": 0.0259655532359081
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.4259125,
+          "4": 0.6532182417582417,
+          "8": 0.7261844755244755,
+          "16": 0.7824
+        },
+        "ans_entropy_mean": 1.2205155222299036,
+        "mean_chars_per_completion": 1485.325325,
+        "p_correct_given_attempted": 0.5179526936641129
+      },
+      "gsm8k_test": {
+        "n_problems": 1319,
+        "K": 16,
+        "accuracy_any": 0.9370735405610311,
+        "accuracy_mode_vote": 0.8142532221379833,
+        "abstention_rate_mean": 0.33927217589082637,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.5054018195602729,
+        "ece_modeconf_vs_modecorrect": 0.35841546626232,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.9848484848484849,
+          "selacc_at_cov_0.25": 0.9696969696969697,
+          "selacc_at_cov_0.5": 0.9575757575757575,
+          "selacc_at_cov_0.75": 0.9211324570273003,
+          "selacc_at_cov_0.9": 0.8744734625105307,
+          "selacc_at_cov_1.0": 0.8142532221379833
+        },
+        "auacc_mode_vote": 0.938870543681394,
+        "oracle_adj_selectivity": 1.001917675659999,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 24,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.125,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 183,
+            "bin_conf_mean": 0.16325136612021857,
+            "bin_accuracy": 0.4207650273224044,
+            "gap": 0.25751366120218583
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 113,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.6902654867256637,
+            "gap": 0.4402654867256637
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 221,
+            "bin_conf_mean": 0.3433257918552036,
+            "bin_accuracy": 0.8190045248868778,
+            "gap": 0.4756787330316742
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 130,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.8846153846153846,
+            "gap": 0.4471153846153846
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 288,
+            "bin_conf_mean": 0.5297309027777778,
+            "bin_accuracy": 0.9375,
+            "gap": 0.4077690972222222
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 228,
+            "bin_conf_mean": 0.653234649122807,
+            "bin_accuracy": 0.9649122807017544,
+            "gap": 0.31167763157894735
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 52,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 1.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 67,
+            "bin_conf_mean": 0.8367537313432836,
+            "bin_accuracy": 0.9701492537313433,
+            "gap": 0.13339552238805974
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 13,
+            "bin_conf_mean": 0.9471153846153846,
+            "bin_accuracy": 1.0,
+            "gap": 0.05288461538461542
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.4316717210007581,
+          "4": 0.7954940056153096,
+          "8": 0.8883669611493721,
+          "16": 0.9370735405610311
+        },
+        "ans_entropy_mean": 0.831647727355171,
+        "mean_chars_per_completion": 1009.622346474602,
+        "p_correct_given_attempted": 0.6533275960986804
+      },
+      "aime_2024": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.2,
+        "accuracy_mode_vote": 0.06666666666666667,
+        "abstention_rate_mean": 0.41458333333333336,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.17916666666666667,
+        "ece_modeconf_vs_modecorrect": 0.0875,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.13333333333333333,
+          "selacc_at_cov_0.75": 0.09090909090909091,
+          "selacc_at_cov_0.9": 0.07407407407407407,
+          "selacc_at_cov_1.0": 0.06666666666666667
+        },
+        "auacc_mode_vote": 0.08032718438940173,
+        "oracle_adj_selectivity": 0.40163592194700865,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 10,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 13,
+            "bin_conf_mean": 0.14903846153846154,
+            "bin_accuracy": 0.15384615384615385,
+            "gap": 0.004807692307692318
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 4,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 3,
+            "bin_conf_mean": 0.3125,
+            "bin_accuracy": 0.0,
+            "gap": 0.3125
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.020833333333333332,
+          "4": 0.07380952380952381,
+          "8": 0.12666666666666665,
+          "16": 0.2
+        },
+        "ans_entropy_mean": 1.805671653383116,
+        "mean_chars_per_completion": 2258.7520833333333,
+        "p_correct_given_attempted": 0.03558718861209965
+      },
+      "aime_2025": {
+        "n_problems": 30,
+        "K": 16,
+        "accuracy_any": 0.03333333333333333,
+        "accuracy_mode_vote": 0.0,
+        "abstention_rate_mean": 0.3958333333333333,
+        "abstention_rate_all_K": 0.0,
+        "ece_passatk_vs_any": 0.03125,
+        "ece_modeconf_vs_modecorrect": 0.15208333333333335,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.0,
+          "selacc_at_cov_0.25": 0.0,
+          "selacc_at_cov_0.5": 0.0,
+          "selacc_at_cov_0.75": 0.0,
+          "selacc_at_cov_0.9": 0.0,
+          "selacc_at_cov_1.0": 0.0
+        },
+        "auacc_mode_vote": 0.0,
+        "oracle_adj_selectivity": 0.0,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 12,
+            "bin_conf_mean": 0.0625,
+            "bin_accuracy": 0.0,
+            "gap": 0.0625
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 12,
+            "bin_conf_mean": 0.15104166666666666,
+            "bin_accuracy": 0.0,
+            "gap": 0.15104166666666666
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 1,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.0,
+            "gap": 0.25
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 4,
+            "bin_conf_mean": 0.328125,
+            "bin_accuracy": 0.0,
+            "gap": 0.328125
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 1,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.0,
+            "gap": 0.4375
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0020833333333333333,
+          "4": 0.008333333333333333,
+          "8": 0.016666666666666666,
+          "16": 0.03333333333333333
+        },
+        "ans_entropy_mean": 1.8718056661872862,
+        "mean_chars_per_completion": 2197.8541666666665,
+        "p_correct_given_attempted": 0.0034482758620689655
+      },
+      "mmlu_stem": {
+        "n_problems": 3153,
+        "K": 16,
+        "accuracy_any": 0.8160482080558199,
+        "accuracy_mode_vote": 0.5591500158579131,
+        "abstention_rate_mean": 0.5054313352362829,
+        "abstention_rate_all_K": 0.04345068189026324,
+        "ece_passatk_vs_any": 0.5751466856961623,
+        "ece_modeconf_vs_modecorrect": 0.24593640976847447,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.8253968253968254,
+          "selacc_at_cov_0.25": 0.7563451776649747,
+          "selacc_at_cov_0.5": 0.6694162436548223,
+          "selacc_at_cov_0.75": 0.6169133192389006,
+          "selacc_at_cov_0.9": 0.5909090909090909,
+          "selacc_at_cov_1.0": 0.5591500158579131
+        },
+        "auacc_mode_vote": 0.6887239328488075,
+        "oracle_adj_selectivity": 0.8439745667595375,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 471,
+            "bin_conf_mean": 0.044320594479830146,
+            "bin_accuracy": 0.3205944798301486,
+            "gap": 0.27627388535031844
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 740,
+            "bin_conf_mean": 0.15768581081081082,
+            "bin_accuracy": 0.48243243243243245,
+            "gap": 0.3247466216216216
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 416,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.5336538461538461,
+            "gap": 0.28365384615384615
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 597,
+            "bin_conf_mean": 0.3428601340033501,
+            "bin_accuracy": 0.592964824120603,
+            "gap": 0.25010469011725295
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 231,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.645021645021645,
+            "gap": 0.20752164502164505
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 322,
+            "bin_conf_mean": 0.5267857142857143,
+            "bin_accuracy": 0.7298136645962733,
+            "gap": 0.20302795031055898
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 209,
+            "bin_conf_mean": 0.6516148325358851,
+            "bin_accuracy": 0.7368421052631579,
+            "gap": 0.08522727272727271
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 56,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 0.8392857142857143,
+            "gap": 0.0892857142857143
+          },
+          {
+            "bin_lo": 0.8,
+            "bin_hi": 0.9,
+            "count": 83,
+            "bin_conf_mean": 0.8313253012048193,
+            "bin_accuracy": 0.8313253012048193,
+            "gap": 0.0
+          },
+          {
+            "bin_lo": 0.9,
+            "bin_hi": 1.0,
+            "count": 28,
+            "bin_conf_mean": 0.9486607142857143,
+            "bin_accuracy": 0.8928571428571429,
+            "gap": 0.0558035714285714
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.24090152235965748,
+          "4": 0.5437791672330207,
+          "8": 0.6963716306247228,
+          "16": 0.8160482080558199
+        },
+        "ans_entropy_mean": 0.6947914072618148,
+        "mean_chars_per_completion": 998.6845662860768,
+        "p_correct_given_attempted": 0.4870941883767535
+      },
+      "truthful_qa_mc": {
+        "n_problems": 817,
+        "K": 16,
+        "accuracy_any": 0.5079559363525091,
+        "accuracy_mode_vote": 0.34149326805385555,
+        "abstention_rate_mean": 0.7874082007343941,
+        "abstention_rate_all_K": 0.15177478580171358,
+        "ece_passatk_vs_any": 0.4282435740514076,
+        "ece_modeconf_vs_modecorrect": 0.2064718482252142,
+        "selective_accuracy": {
+          "selacc_at_cov_0.1": 0.6707317073170732,
+          "selacc_at_cov_0.25": 0.5245098039215687,
+          "selacc_at_cov_0.5": 0.44607843137254904,
+          "selacc_at_cov_0.75": 0.4257748776508972,
+          "selacc_at_cov_0.9": 0.3795918367346939,
+          "selacc_at_cov_1.0": 0.34149326805385555
+        },
+        "auacc_mode_vote": 0.48821593940904884,
+        "oracle_adj_selectivity": 0.9611383674631155,
+        "reliability_bins": [
+          {
+            "bin_lo": 0.0,
+            "bin_hi": 0.1,
+            "count": 377,
+            "bin_conf_mean": 0.04194297082228117,
+            "bin_accuracy": 0.21750663129973474,
+            "gap": 0.1755636604774536
+          },
+          {
+            "bin_lo": 0.1,
+            "bin_hi": 0.2,
+            "count": 283,
+            "bin_conf_mean": 0.14774734982332155,
+            "bin_accuracy": 0.37809187279151946,
+            "gap": 0.2303445229681979
+          },
+          {
+            "bin_lo": 0.2,
+            "bin_hi": 0.30000000000000004,
+            "count": 66,
+            "bin_conf_mean": 0.25,
+            "bin_accuracy": 0.4696969696969697,
+            "gap": 0.21969696969696972
+          },
+          {
+            "bin_lo": 0.30000000000000004,
+            "bin_hi": 0.4,
+            "count": 62,
+            "bin_conf_mean": 0.3316532258064516,
+            "bin_accuracy": 0.5967741935483871,
+            "gap": 0.2651209677419355
+          },
+          {
+            "bin_lo": 0.4,
+            "bin_hi": 0.5,
+            "count": 11,
+            "bin_conf_mean": 0.4375,
+            "bin_accuracy": 0.7272727272727273,
+            "gap": 0.2897727272727273
+          },
+          {
+            "bin_lo": 0.5,
+            "bin_hi": 0.6000000000000001,
+            "count": 9,
+            "bin_conf_mean": 0.5347222222222222,
+            "bin_accuracy": 0.5555555555555556,
+            "gap": 0.02083333333333337
+          },
+          {
+            "bin_lo": 0.6000000000000001,
+            "bin_hi": 0.7000000000000001,
+            "count": 8,
+            "bin_conf_mean": 0.65625,
+            "bin_accuracy": 1.0,
+            "gap": 0.34375
+          },
+          {
+            "bin_lo": 0.7000000000000001,
+            "bin_hi": 0.8,
+            "count": 1,
+            "bin_conf_mean": 0.75,
+            "bin_accuracy": 1.0,
+            "gap": 0.25
+          }
+        ],
+        "pass_at_k": {
+          "1": 0.0797123623011016,
+          "4": 0.23767267004721107,
+          "8": 0.36458207914756263,
+          "16": 0.5079559363525091
+        },
+        "ans_entropy_mean": 0.47278618197595323,
+        "mean_chars_per_completion": 458.76943084455326,
+        "p_correct_given_attempted": 0.3749550197912918
+      }
+    }
+  },
+  "math_by_level": {
+    "S0": {
+      "1": {
+        "n": 437,
+        "accuracy_any": 0.9702517162471396,
+        "abstention_rate": 0.04319221967963387,
+        "mode_conf_mean": 0.7876144164759725
+      },
+      "2": {
+        "n": 894,
+        "accuracy_any": 0.9474272930648769,
+        "abstention_rate": 0.07046979865771812,
+        "mode_conf_mean": 0.674496644295302
+      },
+      "3": {
+        "n": 1131,
+        "accuracy_any": 0.887709991158267,
+        "abstention_rate": 0.10958222811671088,
+        "mode_conf_mean": 0.5785809018567639
+      },
+      "4": {
+        "n": 1214,
+        "accuracy_any": 0.7874794069192751,
+        "abstention_rate": 0.16335461285008238,
+        "mode_conf_mean": 0.4575267710049423
+      },
+      "5": {
+        "n": 1324,
+        "accuracy_any": 0.5664652567975831,
+        "abstention_rate": 0.23286442598187312,
+        "mode_conf_mean": 0.313821752265861
+      }
+    },
+    "S1": {
+      "1": {
+        "n": 437,
+        "accuracy_any": 0.9725400457665904,
+        "abstention_rate": 0.0625,
+        "mode_conf_mean": 0.7637299771167048
+      },
+      "2": {
+        "n": 894,
+        "accuracy_any": 0.9519015659955258,
+        "abstention_rate": 0.08808724832214765,
+        "mode_conf_mean": 0.6528942953020134
+      },
+      "3": {
+        "n": 1131,
+        "accuracy_any": 0.8762157382847038,
+        "abstention_rate": 0.1301945181255526,
+        "mode_conf_mean": 0.5542661361626879
+      },
+      "4": {
+        "n": 1214,
+        "accuracy_any": 0.7841845140032949,
+        "abstention_rate": 0.1828665568369028,
+        "mode_conf_mean": 0.44141268533772654
+      },
+      "5": {
+        "n": 1324,
+        "accuracy_any": 0.5438066465256798,
+        "abstention_rate": 0.2476869335347432,
+        "mode_conf_mean": 0.29956570996978854
+      }
+    },
+    "S2": {
+      "1": {
+        "n": 437,
+        "accuracy_any": 0.9725400457665904,
+        "abstention_rate": 0.08237986270022883,
+        "mode_conf_mean": 0.7414187643020596
+      },
+      "2": {
+        "n": 894,
+        "accuracy_any": 0.9328859060402684,
+        "abstention_rate": 0.11024888143176734,
+        "mode_conf_mean": 0.6282158836689038
+      },
+      "3": {
+        "n": 1131,
+        "accuracy_any": 0.870026525198939,
+        "abstention_rate": 0.15473032714412024,
+        "mode_conf_mean": 0.532106542882405
+      },
+      "4": {
+        "n": 1214,
+        "accuracy_any": 0.7726523887973641,
+        "abstention_rate": 0.20459225700164746,
+        "mode_conf_mean": 0.4242174629324547
+      },
+      "5": {
+        "n": 1324,
+        "accuracy_any": 0.5362537764350453,
+        "abstention_rate": 0.26949584592145015,
+        "mode_conf_mean": 0.28582892749244715
+      }
+    },
+    "S3": {
+      "1": {
+        "n": 437,
+        "accuracy_any": 0.9725400457665904,
+        "abstention_rate": 0.10883867276887872,
+        "mode_conf_mean": 0.7145308924485125
+      },
+      "2": {
+        "n": 894,
+        "accuracy_any": 0.9407158836689038,
+        "abstention_rate": 0.13653523489932887,
+        "mode_conf_mean": 0.5995525727069351
+      },
+      "3": {
+        "n": 1131,
+        "accuracy_any": 0.870026525198939,
+        "abstention_rate": 0.17672413793103448,
+        "mode_conf_mean": 0.5113837312113174
+      },
+      "4": {
+        "n": 1214,
+        "accuracy_any": 0.7792421746293245,
+        "abstention_rate": 0.22003706754530478,
+        "mode_conf_mean": 0.40903006589785834
+      },
+      "5": {
+        "n": 1324,
+        "accuracy_any": 0.5370090634441088,
+        "abstention_rate": 0.28172205438066467,
+        "mode_conf_mean": 0.2722809667673716
+      }
+    },
+    "S4": {
+      "1": {
+        "n": 437,
+        "accuracy_any": 0.9107551487414187,
+        "abstention_rate": 0.5386155606407322,
+        "mode_conf_mean": 0.3376716247139588
+      },
+      "2": {
+        "n": 894,
+        "accuracy_any": 0.7807606263982103,
+        "abstention_rate": 0.5882270693512305,
+        "mode_conf_mean": 0.25461409395973156
+      },
+      "3": {
+        "n": 1131,
+        "accuracy_any": 0.7223695844385499,
+        "abstention_rate": 0.6062665782493368,
+        "mode_conf_mean": 0.20385720601237842
+      },
+      "4": {
+        "n": 1214,
+        "accuracy_any": 0.5930807248764415,
+        "abstention_rate": 0.6264415156507414,
+        "mode_conf_mean": 0.16464168039538715
+      },
+      "5": {
+        "n": 1324,
+        "accuracy_any": 0.33534743202416917,
+        "abstention_rate": 0.6490275679758308,
+        "mode_conf_mean": 0.12533043806646527
+      }
+    },
+    "C1": {
+      "1": {
+        "n": 437,
+        "accuracy_any": 0.9702517162471396,
+        "abstention_rate": 0.05120137299771167,
+        "mode_conf_mean": 0.7766018306636155
+      },
+      "2": {
+        "n": 894,
+        "accuracy_any": 0.9463087248322147,
+        "abstention_rate": 0.07955816554809843,
+        "mode_conf_mean": 0.6630313199105146
+      },
+      "3": {
+        "n": 1131,
+        "accuracy_any": 0.8859416445623343,
+        "abstention_rate": 0.12091069849690539,
+        "mode_conf_mean": 0.5659814323607427
+      },
+      "4": {
+        "n": 1214,
+        "accuracy_any": 0.7891268533772653,
+        "abstention_rate": 0.17148887973640856,
+        "mode_conf_mean": 0.45304777594728174
+      },
+      "5": {
+        "n": 1324,
+        "accuracy_any": 0.5566465256797583,
+        "abstention_rate": 0.24098376132930513,
+        "mode_conf_mean": 0.30702416918429004
+      }
+    },
+    "C2": {
+      "1": {
+        "n": 437,
+        "accuracy_any": 0.9725400457665904,
+        "abstention_rate": 0.07923340961098398,
+        "mode_conf_mean": 0.7424199084668193
+      },
+      "2": {
+        "n": 894,
+        "accuracy_any": 0.941834451901566,
+        "abstention_rate": 0.10850111856823266,
+        "mode_conf_mean": 0.6284256152125279
+      },
+      "3": {
+        "n": 1131,
+        "accuracy_any": 0.874447391688771,
+        "abstention_rate": 0.14920424403183025,
+        "mode_conf_mean": 0.5346485411140584
+      },
+      "4": {
+        "n": 1214,
+        "accuracy_any": 0.7742998352553542,
+        "abstention_rate": 0.19872322899505765,
+        "mode_conf_mean": 0.4276153212520593
+      },
+      "5": {
+        "n": 1324,
+        "accuracy_any": 0.540785498489426,
+        "abstention_rate": 0.2619901812688822,
+        "mode_conf_mean": 0.2873867069486405
+      }
+    }
+  },
+  "cross_condition": {
+    "ev_threshold_recovery": {
+      "S0": {
+        "math_test": {
+          "ev_threshold": 0.5,
+          "acc_given_attempted": 0.5350796635617556,
+          "shortfall": 0.0,
+          "meets_threshold": true
+        },
+        "gsm8k_test": {
+          "ev_threshold": 0.5,
+          "acc_given_attempted": 0.6725105992895611,
+          "shortfall": 0.0,
+          "meets_threshold": true
+        },
+        "mmlu_stem": {
+          "ev_threshold": 0.5,
+          "acc_given_attempted": 0.49511363200858466,
+          "shortfall": 0.004886367991415341,
+          "meets_threshold": false
+        },
+        "truthful_qa_mc": {
+          "ev_threshold": 0.5,
+          "acc_given_attempted": 0.37912637545848615,
+          "shortfall": 0.12087362454151385,
+          "meets_threshold": false
+        }
+      },
+      "S1": {
+        "math_test": {
+          "ev_threshold": 0.67,
+          "acc_given_attempted": 0.5258533388931912,
+          "shortfall": 0.14414666110680885,
+          "meets_threshold": false
+        },
+        "gsm8k_test": {
+          "ev_threshold": 0.67,
+          "acc_given_attempted": 0.6662346918939934,
+          "shortfall": 0.003765308106006615,
+          "meets_threshold": false
+        },
+        "mmlu_stem": {
+          "ev_threshold": 0.67,
+          "acc_given_attempted": 0.493733055675612,
+          "shortfall": 0.17626694432438805,
+          "meets_threshold": false
+        },
+        "truthful_qa_mc": {
+          "ev_threshold": 0.67,
+          "acc_given_attempted": 0.3767617738054314,
+          "shortfall": 0.29323822619456863,
+          "meets_threshold": false
+        }
+      },
+      "S2": {
+        "math_test": {
+          "ev_threshold": 0.8,
+          "acc_given_attempted": 0.5190624808763233,
+          "shortfall": 0.2809375191236767,
+          "meets_threshold": false
+        },
+        "gsm8k_test": {
+          "ev_threshold": 0.8,
+          "acc_given_attempted": 0.6517889542056753,
+          "shortfall": 0.14821104579432476,
+          "meets_threshold": false
+        },
+        "mmlu_stem": {
+          "ev_threshold": 0.8,
+          "acc_given_attempted": 0.4876385676688731,
+          "shortfall": 0.31236143233112695,
+          "meets_threshold": false
+        },
+        "truthful_qa_mc": {
+          "ev_threshold": 0.8,
+          "acc_given_attempted": 0.3763250883392226,
+          "shortfall": 0.4236749116607774,
+          "meets_threshold": false
+        }
+      },
+      "S3": {
+        "math_test": {
+          "ev_threshold": 0.91,
+          "acc_given_attempted": 0.5088337562259186,
+          "shortfall": 0.4011662437740814,
+          "meets_threshold": false
+        },
+        "gsm8k_test": {
+          "ev_threshold": 0.91,
+          "acc_given_attempted": 0.6453877281360971,
+          "shortfall": 0.2646122718639029,
+          "meets_threshold": false
+        },
+        "mmlu_stem": {
+          "ev_threshold": 0.91,
+          "acc_given_attempted": 0.4860367410824615,
+          "shortfall": 0.42396325891753855,
+          "meets_threshold": false
+        },
+        "truthful_qa_mc": {
+          "ev_threshold": 0.91,
+          "acc_given_attempted": 0.3724819460281262,
+          "shortfall": 0.5375180539718738,
+          "meets_threshold": false
+        }
+      },
+      "S4": {
+        "math_test": {
+          "ev_threshold": 1.0,
+          "acc_given_attempted": 0.4098021466442519,
+          "shortfall": 0.5901978533557481,
+          "meets_threshold": false
+        },
+        "gsm8k_test": {
+          "ev_threshold": 1.0,
+          "acc_given_attempted": 0.591588785046729,
+          "shortfall": 0.40841121495327104,
+          "meets_threshold": false
+        },
+        "mmlu_stem": {
+          "ev_threshold": 1.0,
+          "acc_given_attempted": 0.4664275752141861,
+          "shortfall": 0.5335724247858139,
+          "meets_threshold": false
+        },
+        "truthful_qa_mc": {
+          "ev_threshold": 1.0,
+          "acc_given_attempted": 0.3808156232050546,
+          "shortfall": 0.6191843767949454,
+          "meets_threshold": false
+        }
+      },
+      "C1": {
+        "math_test": {
+          "ev_threshold": 0.6,
+          "acc_given_attempted": 0.5321449616971126,
+          "shortfall": 0.06785503830288742,
+          "meets_threshold": false
+        },
+        "gsm8k_test": {
+          "ev_threshold": 0.6,
+          "acc_given_attempted": 0.6693562847409001,
+          "shortfall": 0.0,
+          "meets_threshold": true
+        },
+        "mmlu_stem": {
+          "ev_threshold": 0.6,
+          "acc_given_attempted": 0.49242076251722555,
+          "shortfall": 0.10757923748277443,
+          "meets_threshold": false
+        },
+        "truthful_qa_mc": {
+          "ev_threshold": 0.6,
+          "acc_given_attempted": 0.37697213830144344,
+          "shortfall": 0.22302786169855654,
+          "meets_threshold": false
+        }
+      },
+      "C2": {
+        "math_test": {
+          "ev_threshold": 0.75,
+          "acc_given_attempted": 0.5179526936641129,
+          "shortfall": 0.2320473063358871,
+          "meets_threshold": false
+        },
+        "gsm8k_test": {
+          "ev_threshold": 0.75,
+          "acc_given_attempted": 0.6533275960986804,
+          "shortfall": 0.09667240390131959,
+          "meets_threshold": false
+        },
+        "mmlu_stem": {
+          "ev_threshold": 0.75,
+          "acc_given_attempted": 0.4870941883767535,
+          "shortfall": 0.2629058116232465,
+          "meets_threshold": false
+        },
+        "truthful_qa_mc": {
+          "ev_threshold": 0.75,
+          "acc_given_attempted": 0.3749550197912918,
+          "shortfall": 0.3750449802087082,
+          "meets_threshold": false
+        }
+      }
+    },
+    "discrimination_index_math": {},
+    "capability_gap": {},
+    "c2_vs_s2_deltas": {
+      "math_test": {
+        "accuracy_any": {
+          "S2": 0.7782,
+          "C2": 0.7824,
+          "C2_minus_S2": 0.0041999999999999815
+        },
+        "accuracy_mode_vote": {
+          "S2": 0.6268,
+          "C2": 0.632,
+          "C2_minus_S2": 0.005199999999999982
+        },
+        "abstention_rate_mean": {
+          "S2": 0.18295,
+          "C2": 0.1777,
+          "C2_minus_S2": -0.005250000000000005
+        },
+        "ece_passatk_vs_any": {
+          "S2": 0.35409999999999997,
+          "C2": 0.35648749999999996,
+          "C2_minus_S2": 0.002387499999999987
+        },
+        "ece_modeconf_vs_modecorrect": {
+          "S2": 0.1557,
+          "C2": 0.16053749999999997,
+          "C2_minus_S2": 0.004837499999999967
+        },
+        "auacc_mode_vote": {
+          "S2": 0.8833538145818102,
+          "C2": 0.8840235122563551,
+          "C2_minus_S2": 0.0006696976745449446
+        },
+        "p_correct_given_attempted": {
+          "S2": 0.5190624808763233,
+          "C2": 0.5179526936641129,
+          "C2_minus_S2": -0.0011097872122104446
+        },
+        "ans_entropy_mean": {
+          "S2": 1.2138051456718983,
+          "C2": 1.2205155222299036,
+          "C2_minus_S2": 0.0067103765580052155
+        },
+        "mean_chars_per_completion": {
+          "S2": 1487.2691625,
+          "C2": 1485.325325,
+          "C2_minus_S2": -1.9438374999999724
+        }
+      },
+      "gsm8k_test": {
+        "accuracy_any": {
+          "S2": 0.9317664897649734,
+          "C2": 0.9370735405610311,
+          "C2_minus_S2": 0.005307050796057644
+        },
+        "accuracy_mode_vote": {
+          "S2": 0.8172858225928734,
+          "C2": 0.8142532221379833,
+          "C2_minus_S2": -0.0030326004548900665
+        },
+        "abstention_rate_mean": {
+          "S2": 0.34709059893858984,
+          "C2": 0.33927217589082637,
+          "C2_minus_S2": -0.007818423047763479
+        },
+        "ece_passatk_vs_any": {
+          "S2": 0.5062073540561031,
+          "C2": 0.5054018195602729,
+          "C2_minus_S2": -0.0008055344958302069
+        },
+        "ece_modeconf_vs_modecorrect": {
+          "S2": 0.3673711144806671,
+          "C2": 0.35841546626232,
+          "C2_minus_S2": -0.008955648218347101
+        },
+        "auacc_mode_vote": {
+          "S2": 0.936240221170034,
+          "C2": 0.938870543681394,
+          "C2_minus_S2": 0.0026303225113599726
+        },
+        "p_correct_given_attempted": {
+          "S2": 0.6517889542056753,
+          "C2": 0.6533275960986804,
+          "C2_minus_S2": 0.0015386418930051216
+        },
+        "ans_entropy_mean": {
+          "S2": 0.829542883474612,
+          "C2": 0.831647727355171,
+          "C2_minus_S2": 0.002104843880558982
+        },
+        "mean_chars_per_completion": {
+          "S2": 1010.4768764215314,
+          "C2": 1009.622346474602,
+          "C2_minus_S2": -0.8545299469294605
+        }
+      },
+      "mmlu_stem": {
+        "accuracy_any": {
+          "S2": 0.8239771646051379,
+          "C2": 0.8160482080558199,
+          "C2_minus_S2": -0.007928956549318023
+        },
+        "accuracy_mode_vote": {
+          "S2": 0.5597843323818585,
+          "C2": 0.5591500158579131,
+          "C2_minus_S2": -0.0006343165239454107
+        },
+        "abstention_rate_mean": {
+          "S2": 0.5028940691405012,
+          "C2": 0.5054313352362829,
+          "C2_minus_S2": 0.002537266095781754
+        },
+        "ece_passatk_vs_any": {
+          "S2": 0.58156914050111,
+          "C2": 0.5751466856961623,
+          "C2_minus_S2": -0.0064224548049476304
+        },
+        "ece_modeconf_vs_modecorrect": {
+          "S2": 0.24700681890263237,
+          "C2": 0.24593640976847447,
+          "C2_minus_S2": -0.0010704091341579014
+        },
+        "auacc_mode_vote": {
+          "S2": 0.6859372698307614,
+          "C2": 0.6887239328488075,
+          "C2_minus_S2": 0.002786663018046087
+        },
+        "p_correct_given_attempted": {
+          "S2": 0.4876385676688731,
+          "C2": 0.4870941883767535,
+          "C2_minus_S2": -0.00054437929211959
+        },
+        "ans_entropy_mean": {
+          "S2": 0.6957937626779596,
+          "C2": 0.6947914072618148,
+          "C2_minus_S2": -0.0010023554161447956
+        },
+        "mean_chars_per_completion": {
+          "S2": 1010.5474349825563,
+          "C2": 998.6845662860768,
+          "C2_minus_S2": -11.862868696479495
+        }
+      },
+      "truthful_qa_mc": {
+        "accuracy_any": {
+          "S2": 0.5214198286413708,
+          "C2": 0.5079559363525091,
+          "C2_minus_S2": -0.01346389228886169
+        },
+        "accuracy_mode_vote": {
+          "S2": 0.3427172582619339,
+          "C2": 0.34149326805385555,
+          "C2_minus_S2": -0.0012239902080783405
+        },
+        "abstention_rate_mean": {
+          "S2": 0.7835067319461444,
+          "C2": 0.7874082007343941,
+          "C2_minus_S2": 0.0039014687882497068
+        },
+        "ece_passatk_vs_any": {
+          "S2": 0.43994798041615674,
+          "C2": 0.4282435740514076,
+          "C2_minus_S2": -0.01170440636474912
+        },
+        "ece_modeconf_vs_modecorrect": {
+          "S2": 0.20555385556915542,
+          "C2": 0.2064718482252142,
+          "C2_minus_S2": 0.0009179926560587692
+        },
+        "auacc_mode_vote": {
+          "S2": 0.48555985326539386,
+          "C2": 0.48821593940904884,
+          "C2_minus_S2": 0.0026560861436549787
+        },
+        "p_correct_given_attempted": {
+          "S2": 0.3763250883392226,
+          "C2": 0.3749550197912918,
+          "C2_minus_S2": -0.001370068547930814
+        },
+        "ans_entropy_mean": {
+          "S2": 0.47715028142030247,
+          "C2": 0.47278618197595323,
+          "C2_minus_S2": -0.004364099444349234
+        },
+        "mean_chars_per_completion": {
+          "S2": 470.55117809057526,
+          "C2": 458.76943084455326,
+          "C2_minus_S2": -11.781747246022007
+        }
+      },
+      "aime_2024": {
+        "accuracy_any": {
+          "S2": 0.16666666666666666,
+          "C2": 0.2,
+          "C2_minus_S2": 0.033333333333333354
+        },
+        "accuracy_mode_vote": {
+          "S2": 0.03333333333333333,
+          "C2": 0.06666666666666667,
+          "C2_minus_S2": 0.03333333333333333
+        },
+        "abstention_rate_mean": {
+          "S2": 0.42083333333333334,
+          "C2": 0.41458333333333336,
+          "C2_minus_S2": -0.006249999999999978
+        },
+        "ece_passatk_vs_any": {
+          "S2": 0.15208333333333332,
+          "C2": 0.17916666666666667,
+          "C2_minus_S2": 0.027083333333333348
+        },
+        "ece_modeconf_vs_modecorrect": {
+          "S2": 0.10625000000000001,
+          "C2": 0.0875,
+          "C2_minus_S2": -0.018750000000000017
+        },
+        "auacc_mode_vote": {
+          "S2": 0.029170326201434872,
+          "C2": 0.08032718438940173,
+          "C2_minus_S2": 0.05115685818796686
+        },
+        "p_correct_given_attempted": {
+          "S2": 0.025179856115107913,
+          "C2": 0.03558718861209965,
+          "C2_minus_S2": 0.010407332496991734
+        },
+        "ans_entropy_mean": {
+          "S2": 1.8532847236099286,
+          "C2": 1.805671653383116,
+          "C2_minus_S2": -0.04761307022681249
+        },
+        "mean_chars_per_completion": {
+          "S2": 2249.34375,
+          "C2": 2258.7520833333333,
+          "C2_minus_S2": 9.408333333333303
+        }
+      },
+      "aime_2025": {
+        "accuracy_any": {
+          "S2": 0.03333333333333333,
+          "C2": 0.03333333333333333,
+          "C2_minus_S2": 0.0
+        },
+        "accuracy_mode_vote": {
+          "S2": 0.0,
+          "C2": 0.0,
+          "C2_minus_S2": 0.0
+        },
+        "abstention_rate_mean": {
+          "S2": 0.39166666666666666,
+          "C2": 0.3958333333333333,
+          "C2_minus_S2": 0.004166666666666652
+        },
+        "ece_passatk_vs_any": {
+          "S2": 0.03125,
+          "C2": 0.03125,
+          "C2_minus_S2": 0.0
+        },
+        "ece_modeconf_vs_modecorrect": {
+          "S2": 0.12291666666666667,
+          "C2": 0.15208333333333335,
+          "C2_minus_S2": 0.029166666666666674
+        },
+        "auacc_mode_vote": {
+          "S2": 0.0,
+          "C2": 0.0,
+          "C2_minus_S2": 0.0
+        },
+        "p_correct_given_attempted": {
+          "S2": 0.003424657534246575,
+          "C2": 0.0034482758620689655,
+          "C2_minus_S2": 2.3618327822390317e-05
+        },
+        "ans_entropy_mean": {
+          "S2": 1.9577226248429018,
+          "C2": 1.8718056661872862,
+          "C2_minus_S2": -0.08591695865561566
+        },
+        "mean_chars_per_completion": {
+          "S2": 2225.4083333333333,
+          "C2": 2197.8541666666665,
+          "C2_minus_S2": -27.554166666666788
+        }
+      }
+    }
+  },
+  "discrimination_index_math": {
+    "S0": 5.391351213461116,
+    "S1": 3.962990936555891,
+    "S2": 3.271380129657603,
+    "S3": 2.588437062062559,
+    "S4": 1.204992234542488,
+    "C1": 4.706587874900842,
+    "C2": 3.306561998974773
+  },
+  "jaccard_abstention": {
+    "math_test": {
+      "n_problems": 5000,
+      "abst_threshold": 0.5,
+      "fraction_majority_abstained": {
+        "S0": 0.088,
+        "S1": 0.0954,
+        "S2": 0.1054,
+        "S3": 0.114,
+        "S4": 0.724,
+        "C1": 0.09,
+        "C2": 0.0992
+      },
+      "jaccard": {
+        "S0": {
+          "S0": 1.0,
+          "S1": 0.6345811051693404,
+          "S2": 0.5826513911620295,
+          "S3": 0.5052160953800298,
+          "S4": 0.11232876712328767,
+          "C1": 0.6666666666666666,
+          "C2": 0.5704697986577181
+        },
+        "S1": {
+          "S0": 0.6345811051693404,
+          "S1": 1.0,
+          "S2": 0.6540362438220758,
+          "S3": 0.5603576751117735,
+          "S4": 0.12185104052573932,
+          "C1": 0.6524064171122995,
+          "C2": 0.643581081081081
+        },
+        "S2": {
+          "S0": 0.5826513911620295,
+          "S1": 0.6540362438220758,
+          "S2": 1.0,
+          "S3": 0.6521084337349398,
+          "S4": 0.13523131672597866,
+          "C1": 0.5964052287581699,
+          "C2": 0.7021630615640599
+        },
+        "S3": {
+          "S0": 0.5052160953800298,
+          "S1": 0.5603576751117735,
+          "S2": 0.6521084337349398,
+          "S3": 1.0,
+          "S4": 0.14825979720471363,
+          "C1": 0.5201192250372578,
+          "C2": 0.6527131782945736
+        },
+        "S4": {
+          "S0": 0.11232876712328767,
+          "S1": 0.12185104052573932,
+          "S2": 0.13523131672597866,
+          "S3": 0.14825979720471363,
+          "S4": 1.0,
+          "C1": 0.11567982456140351,
+          "C2": 0.12890839275918814
+        },
+        "C1": {
+          "S0": 0.6666666666666666,
+          "S1": 0.6524064171122995,
+          "S2": 0.5964052287581699,
+          "S3": 0.5201192250372578,
+          "S4": 0.11567982456140351,
+          "C1": 1.0,
+          "C2": 0.5766666666666667
+        },
+        "C2": {
+          "S0": 0.5704697986577181,
+          "S1": 0.643581081081081,
+          "S2": 0.7021630615640599,
+          "S3": 0.6527131782945736,
+          "S4": 0.12890839275918814,
+          "C1": 0.5766666666666667,
+          "C2": 1.0
+        }
+      }
+    },
+    "gsm8k_test": {
+      "n_problems": 1319,
+      "abst_threshold": 0.5,
+      "fraction_majority_abstained": {
+        "S0": 0.021986353297952996,
+        "S1": 0.10462471569370735,
+        "S2": 0.2304776345716452,
+        "S3": 0.40788476118271416,
+        "S4": 1.0,
+        "C1": 0.0401819560272934,
+        "C2": 0.21076573161485973
+      },
+      "jaccard": {
+        "S0": {
+          "S0": 1.0,
+          "S1": 0.2014388489208633,
+          "S2": 0.08823529411764706,
+          "S3": 0.05,
+          "S4": 0.021986353297952996,
+          "C1": 0.30158730158730157,
+          "C2": 0.1003584229390681
+        },
+        "S1": {
+          "S0": 0.2014388489208633,
+          "S1": 1.0,
+          "S2": 0.3943217665615142,
+          "S3": 0.23583180987202926,
+          "S4": 0.10462471569370735,
+          "C1": 0.31724137931034485,
+          "C2": 0.4444444444444444
+        },
+        "S2": {
+          "S0": 0.08823529411764706,
+          "S1": 0.3943217665615142,
+          "S2": 1.0,
+          "S3": 0.5171171171171172,
+          "S4": 0.2304776345716452,
+          "C1": 0.17049180327868851,
+          "C2": 0.6967930029154519
+        },
+        "S3": {
+          "S0": 0.05,
+          "S1": 0.23583180987202926,
+          "S2": 0.5171171171171172,
+          "S3": 1.0,
+          "S4": 0.40788476118271416,
+          "C1": 0.09851301115241635,
+          "C2": 0.49177330895795246
+        },
+        "S4": {
+          "S0": 0.021986353297952996,
+          "S1": 0.10462471569370735,
+          "S2": 0.2304776345716452,
+          "S3": 0.40788476118271416,
+          "S4": 1.0,
+          "C1": 0.0401819560272934,
+          "C2": 0.21076573161485973
+        },
+        "C1": {
+          "S0": 0.30158730158730157,
+          "S1": 0.31724137931034485,
+          "S2": 0.17049180327868851,
+          "S3": 0.09851301115241635,
+          "S4": 0.0401819560272934,
+          "C1": 1.0,
+          "C2": 0.17375886524822695
+        },
+        "C2": {
+          "S0": 0.1003584229390681,
+          "S1": 0.4444444444444444,
+          "S2": 0.6967930029154519,
+          "S3": 0.49177330895795246,
+          "S4": 0.21076573161485973,
+          "C1": 0.17375886524822695,
+          "C2": 1.0
+        }
+      }
+    },
+    "aime_2024": {
+      "n_problems": 30,
+      "abst_threshold": 0.5,
+      "fraction_majority_abstained": {
+        "S0": 0.36666666666666664,
+        "S1": 0.3333333333333333,
+        "S2": 0.4666666666666667,
+        "S3": 0.43333333333333335,
+        "S4": 0.8666666666666667,
+        "C1": 0.4,
+        "C2": 0.3333333333333333
+      },
+      "jaccard": {
+        "S0": {
+          "S0": 1.0,
+          "S1": 0.6153846153846154,
+          "S2": 0.6666666666666666,
+          "S3": 0.7142857142857143,
+          "S4": 0.37037037037037035,
+          "C1": 0.7692307692307693,
+          "C2": 0.75
+        },
+        "S1": {
+          "S0": 0.6153846153846154,
+          "S1": 1.0,
+          "S2": 0.5,
+          "S3": 0.5333333333333333,
+          "S4": 0.3333333333333333,
+          "C1": 0.5714285714285714,
+          "C2": 0.6666666666666666
+        },
+        "S2": {
+          "S0": 0.6666666666666666,
+          "S1": 0.5,
+          "S2": 1.0,
+          "S3": 0.8,
+          "S4": 0.48148148148148145,
+          "C1": 0.625,
+          "C2": 0.7142857142857143
+        },
+        "S3": {
+          "S0": 0.7142857142857143,
+          "S1": 0.5333333333333333,
+          "S2": 0.8,
+          "S3": 1.0,
+          "S4": 0.4444444444444444,
+          "C1": 0.5625,
+          "C2": 0.7692307692307693
+        },
+        "S4": {
+          "S0": 0.37037037037037035,
+          "S1": 0.3333333333333333,
+          "S2": 0.48148148148148145,
+          "S3": 0.4444444444444444,
+          "S4": 1.0,
+          "C1": 0.4074074074074074,
+          "C2": 0.38461538461538464
+        },
+        "C1": {
+          "S0": 0.7692307692307693,
+          "S1": 0.5714285714285714,
+          "S2": 0.625,
+          "S3": 0.5625,
+          "S4": 0.4074074074074074,
+          "C1": 1.0,
+          "C2": 0.5714285714285714
+        },
+        "C2": {
+          "S0": 0.75,
+          "S1": 0.6666666666666666,
+          "S2": 0.7142857142857143,
+          "S3": 0.7692307692307693,
+          "S4": 0.38461538461538464,
+          "C1": 0.5714285714285714,
+          "C2": 1.0
+        }
+      }
+    },
+    "aime_2025": {
+      "n_problems": 30,
+      "abst_threshold": 0.5,
+      "fraction_majority_abstained": {
+        "S0": 0.4,
+        "S1": 0.4666666666666667,
+        "S2": 0.43333333333333335,
+        "S3": 0.5,
+        "S4": 0.8666666666666667,
+        "C1": 0.3,
+        "C2": 0.4666666666666667
+      },
+      "jaccard": {
+        "S0": {
+          "S0": 1.0,
+          "S1": 0.625,
+          "S2": 0.3157894736842105,
+          "S3": 0.5,
+          "S4": 0.46153846153846156,
+          "C1": 0.6153846153846154,
+          "C2": 0.3684210526315789
+        },
+        "S1": {
+          "S0": 0.625,
+          "S1": 1.0,
+          "S2": 0.5882352941176471,
+          "S3": 0.7058823529411765,
+          "S4": 0.5384615384615384,
+          "C1": 0.5333333333333333,
+          "C2": 0.6470588235294118
+        },
+        "S2": {
+          "S0": 0.3157894736842105,
+          "S1": 0.5882352941176471,
+          "S2": 1.0,
+          "S3": 0.6470588235294118,
+          "S4": 0.5,
+          "C1": 0.4666666666666667,
+          "C2": 0.6875
+        },
+        "S3": {
+          "S0": 0.5,
+          "S1": 0.7058823529411765,
+          "S2": 0.6470588235294118,
+          "S3": 1.0,
+          "S4": 0.5769230769230769,
+          "C1": 0.5,
+          "C2": 0.6111111111111112
+        },
+        "S4": {
+          "S0": 0.46153846153846156,
+          "S1": 0.5384615384615384,
+          "S2": 0.5,
+          "S3": 0.5769230769230769,
+          "S4": 1.0,
+          "C1": 0.34615384615384615,
+          "C2": 0.5384615384615384
+        },
+        "C1": {
+          "S0": 0.6153846153846154,
+          "S1": 0.5333333333333333,
+          "S2": 0.4666666666666667,
+          "S3": 0.5,
+          "S4": 0.34615384615384615,
+          "C1": 1.0,
+          "C2": 0.4375
+        },
+        "C2": {
+          "S0": 0.3684210526315789,
+          "S1": 0.6470588235294118,
+          "S2": 0.6875,
+          "S3": 0.6111111111111112,
+          "S4": 0.5384615384615384,
+          "C1": 0.4375,
+          "C2": 1.0
+        }
+      }
+    },
+    "mmlu_stem": {
+      "n_problems": 3153,
+      "abst_threshold": 0.5,
+      "fraction_majority_abstained": {
+        "S0": 0.5058674278464954,
+        "S1": 0.5176022835394862,
+        "S2": 0.5280685061845861,
+        "S3": 0.5470980019029495,
+        "S4": 0.6644465588328576,
+        "C1": 0.5030130034887409,
+        "C2": 0.5302886140183952
+      },
+      "jaccard": {
+        "S0": {
+          "S0": 1.0,
+          "S1": 0.931178934769599,
+          "S2": 0.9278533412182141,
+          "S3": 0.9014891179839634,
+          "S4": 0.7521367521367521,
+          "C1": 0.950337216431637,
+          "C2": 0.9251620506776664
+        },
+        "S1": {
+          "S0": 0.931178934769599,
+          "S1": 1.0,
+          "S2": 0.9462809917355371,
+          "S3": 0.9182857142857143,
+          "S4": 0.7713878326996197,
+          "C1": 0.9432367149758454,
+          "C2": 0.9492625368731563
+        },
+        "S2": {
+          "S0": 0.9278533412182141,
+          "S1": 0.9462809917355371,
+          "S2": 1.0,
+          "S3": 0.934931506849315,
+          "S4": 0.785375118708452,
+          "C1": 0.9270895080023711,
+          "C2": 0.9629411764705882
+        },
+        "S3": {
+          "S0": 0.9014891179839634,
+          "S1": 0.9182857142857143,
+          "S2": 0.934931506849315,
+          "S3": 1.0,
+          "S4": 0.811284969179706,
+          "C1": 0.8974212034383954,
+          "C2": 0.9422527158376215
+        },
+        "S4": {
+          "S0": 0.7521367521367521,
+          "S1": 0.7713878326996197,
+          "S2": 0.785375118708452,
+          "S3": 0.811284969179706,
+          "S4": 1.0,
+          "C1": 0.7486935866983373,
+          "C2": 0.7895486935866983
+        },
+        "C1": {
+          "S0": 0.950337216431637,
+          "S1": 0.9432367149758454,
+          "S2": 0.9270895080023711,
+          "S3": 0.8974212034383954,
+          "S4": 0.7486935866983373,
+          "C1": 1.0,
+          "C2": 0.9289520426287744
+        },
+        "C2": {
+          "S0": 0.9251620506776664,
+          "S1": 0.9492625368731563,
+          "S2": 0.9629411764705882,
+          "S3": 0.9422527158376215,
+          "S4": 0.7895486935866983,
+          "C1": 0.9289520426287744,
+          "C2": 1.0
+        }
+      }
+    },
+    "truthful_qa_mc": {
+      "n_problems": 817,
+      "abst_threshold": 0.5,
+      "fraction_majority_abstained": {
+        "S0": 0.9130966952264382,
+        "S1": 0.9167686658506732,
+        "S2": 0.9167686658506732,
+        "S3": 0.9228886168910648,
+        "S4": 0.97796817625459,
+        "C1": 0.9130966952264382,
+        "C2": 0.9143206854345165
+      },
+      "jaccard": {
+        "S0": {
+          "S0": 1.0,
+          "S1": 0.9853917662682603,
+          "S2": 0.9801324503311258,
+          "S3": 0.9815059445178336,
+          "S4": 0.9336670838548186,
+          "C1": 0.9866844207723036,
+          "C2": 0.980106100795756
+        },
+        "S1": {
+          "S0": 0.9853917662682603,
+          "S1": 1.0,
+          "S2": 0.986737400530504,
+          "S3": 0.9828496042216359,
+          "S4": 0.9374217772215269,
+          "C1": 0.9827586206896551,
+          "C2": 0.9814569536423841
+        },
+        "S2": {
+          "S0": 0.9801324503311258,
+          "S1": 0.986737400530504,
+          "S2": 1.0,
+          "S3": 0.9828496042216359,
+          "S4": 0.9374217772215269,
+          "C1": 0.9775132275132276,
+          "C2": 0.9867197875166003
+        },
+        "S3": {
+          "S0": 0.9815059445178336,
+          "S1": 0.9828496042216359,
+          "S2": 0.9828496042216359,
+          "S3": 1.0,
+          "S4": 0.9436795994993742,
+          "C1": 0.9762845849802372,
+          "C2": 0.9776021080368906
+        },
+        "S4": {
+          "S0": 0.9336670838548186,
+          "S1": 0.9374217772215269,
+          "S2": 0.9374217772215269,
+          "S3": 0.9436795994993742,
+          "S4": 1.0,
+          "C1": 0.9336670838548186,
+          "C2": 0.934918648310388
+        },
+        "C1": {
+          "S0": 0.9866844207723036,
+          "S1": 0.9827586206896551,
+          "S2": 0.9775132275132276,
+          "S3": 0.9762845849802372,
+          "S4": 0.9336670838548186,
+          "C1": 1.0,
+          "C2": 0.980106100795756
+        },
+        "C2": {
+          "S0": 0.980106100795756,
+          "S1": 0.9814569536423841,
+          "S2": 0.9867197875166003,
+          "S3": 0.9776021080368906,
+          "S4": 0.934918648310388,
+          "C1": 0.980106100795756,
+          "C2": 1.0
+        }
+      }
+    }
+  }
+}

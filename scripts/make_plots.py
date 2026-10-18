@@ -1,9 +1,9 @@
 """Generate 8 project-report figures from existing analysis JSONs.
 
 One-off helper for docs/PROJECT_REPORT.md. Reads:
-  outputs/eval/analysis_summary.json   (per-condition x per-benchmark metrics)
-  outputs/eval/trajectory_summary.json (per-problem stacking + difficulty axis)
-  outputs/eval/stacking_null.json      (empirical null comparison)
+  results/analysis_summary.json   (per-condition x per-benchmark metrics)
+  results/trajectory_summary.json (per-problem stacking + difficulty axis)
+  results/stacking_null.json      (empirical null comparison)
 
 Writes 8 PNGs to docs/figures/. Pure matplotlib + numpy; no seaborn.
 """
@@ -18,7 +18,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 REPO = Path(__file__).resolve().parent.parent
-EVAL = REPO / "outputs" / "eval"
+EVAL = REPO / "results"
 FIG = REPO / "docs" / "figures"
 FIG.mkdir(parents=True, exist_ok=True)
 
@@ -61,8 +61,7 @@ def fig01_abstention_sweep():
     ax.set_xticks(x)
     ax.set_xticklabels([BENCH_LABEL[b] for b in BENCHES])
     ax.set_ylabel("Abstention rate (mean over K=16 samples)")
-    ax.set_title("Abstention rate per condition x benchmark "
-                 "(monotonic S0 -> S4 across all 6 benchmarks)")
+    ax.set_title("Abstention rate per condition and benchmark (Qwen 2.5 1.5B, K=16)")
     ax.legend(ncol=7, loc="upper left", bbox_to_anchor=(0.0, 1.0), frameon=False, fontsize=9)
     ax.set_ylim(0, 1.0)
     ax.grid(axis="y", alpha=0.3)
