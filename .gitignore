@@ -66,3 +66,6 @@ research/voi_precheck.py
 research/plot_selectivity.py
 research/sc_selectivity.py
 research/cross_domain_probe.py
+
+# local review copies of the write-up
+research/*.docx
