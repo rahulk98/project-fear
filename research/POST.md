@@ -1,6 +1,6 @@
 # Under GRPO, asymmetric "don't guess" rewards reduce to a single abstention dial
 
-*Rahul Krishnan. Work done March to June 2026 at the University of Trier (Computational Linguistics, advised by Prof. Dr. Achim Rettinger), in collaboration with Sanjana Deshpande. Code: https://github.com/rahulk98/project-fear*
+*Rahul Krishnan. Work done March to June 2026, in collaboration with Sanjana Deshpande. Code: https://github.com/rahulk98/project-fear*
 
 **TL;DR.** We trained Qwen 2.5 1.5B and 3B base models with GRPO under seven reward schemes that punish wrong answers more than they reward right ones, hoping the models would learn to abstain when they are likely to be wrong. The rewards changed how often the models abstained. They did not improve accuracy on the questions the models still answered, and they did not change how well the models' confidence ranked right versus wrong answers. The reason is an elementary property of GRPO's within-group z-score normalization: after z-scoring, every (correct, wrong, abstain) reward triple is equivalent to (1, 0, t) for a single number t. The seven-condition sweep is one dial, not seven designs. A concurrent paper (Che et al. 2026) derives a closely related result formally; our contribution is the empirical side, including explicit abstention rewards, a 3B check, a no-normalization ablation and a cross-task transfer test.
 
@@ -182,4 +182,4 @@ What we think is new: the reduction stated for full three-level designs (every s
 
 ## Acknowledgements
 
-Sanjana Deshpande collaborated on the project. Prof. Dr. Achim Rettinger advised the work.
+Sanjana Deshpande collaborated on the project.
