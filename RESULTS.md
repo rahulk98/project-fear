@@ -269,7 +269,7 @@ as sound, one as understated, and tightened five that were overstated. Headlines
 - **H.** Reliability bins show systematic under-confidence.
 - **I.** Oracle-adjusted selectivity.
 - **J.** Cross-condition Jaccard on per-problem abstention masks.
-- **K.** Per-problem stacking: 92.4% MATH and 93.9% GSM8K, 25 to 99 sigma above the
+- **K.** Per-problem stacking: 92.4% MATH and 93.9% GSM8K, 25 to 98 sigma above the
   empirical null.
 - **L.** The recovered difficulty axis is human-meaningful.
 - **M.** Asymmetric pressure hurts per-attempt accuracy even on consistently-attempted

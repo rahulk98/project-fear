@@ -198,7 +198,7 @@ def fig06_stacking_null():
         ax.grid(axis="y", alpha=0.3)
     axes[0].set_ylabel("% of problems with stacked abstention pattern")
     fig.suptitle("Per-problem stacking observed vs empirical nulls "
-                 "(observed is 25-99 sigma above marginal-preserving null)")
+                 "(observed is 25-98 sigma above marginal-preserving null)")
     fig.tight_layout()
     fig.savefig(FIG / "fig06_stacking_null.png", dpi=130)
     plt.close(fig)

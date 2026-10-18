@@ -110,7 +110,12 @@
         },
         "ans_entropy_mean": 1.1772910909793122,
         "mean_chars_per_completion": 1519.0210125,
-        "p_correct_given_attempted": 0.5350796635617556
+        "p_correct_given_attempted": 0.5350796635617556,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "gsm8k_test": {
         "n_problems": 1319,
@@ -221,7 +226,12 @@
         },
         "ans_entropy_mean": 0.8225053826570761,
         "mean_chars_per_completion": 1069.3703563305535,
-        "p_correct_given_attempted": 0.6725105992895611
+        "p_correct_given_attempted": 0.6725105992895611,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2024": {
         "n_problems": 30,
@@ -284,7 +294,12 @@
         },
         "ans_entropy_mean": 1.888737079514876,
         "mean_chars_per_completion": 2311.525,
-        "p_correct_given_attempted": 0.02097902097902098
+        "p_correct_given_attempted": 0.02097902097902098,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2025": {
         "n_problems": 30,
@@ -339,7 +354,12 @@
         },
         "ans_entropy_mean": 1.9994524305389787,
         "mean_chars_per_completion": 2213.4354166666667,
-        "p_correct_given_attempted": 0.003389830508474576
+        "p_correct_given_attempted": 0.003389830508474576,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "mmlu_stem": {
         "n_problems": 3153,
@@ -450,7 +470,12 @@
         },
         "ans_entropy_mean": 0.7071775223547637,
         "mean_chars_per_completion": 1017.3469513162067,
-        "p_correct_given_attempted": 0.49511363200858466
+        "p_correct_given_attempted": 0.49511363200858466,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "truthful_qa_mc": {
         "n_problems": 817,
@@ -553,7 +578,12 @@
         },
         "ans_entropy_mean": 0.494783887973906,
         "mean_chars_per_completion": 485.8882343941248,
-        "p_correct_given_attempted": 0.37912637545848615
+        "p_correct_given_attempted": 0.37912637545848615,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       }
     },
     "S1": {
@@ -561,69 +591,69 @@
         "n_problems": 5000,
         "K": 16,
         "accuracy_any": 0.7878,
-        "accuracy_mode_vote": 0.6322,
-        "abstention_rate_mean": 0.16065,
-        "abstention_rate_all_K": 0.0006,
-        "ece_passatk_vs_any": 0.34642500000000004,
-        "ece_modeconf_vs_modecorrect": 0.1416375,
+        "accuracy_mode_vote": 0.632,
+        "abstention_rate_mean": 0.1627125,
+        "abstention_rate_all_K": 0.001,
+        "ece_passatk_vs_any": 0.34647500000000003,
+        "ece_modeconf_vs_modecorrect": 0.14148750000000002,
         "selective_accuracy": {
           "selacc_at_cov_0.1": 0.994,
           "selacc_at_cov_0.25": 0.9888,
           "selacc_at_cov_0.5": 0.9364,
-          "selacc_at_cov_0.75": 0.792,
-          "selacc_at_cov_0.9": 0.6971111111111111,
-          "selacc_at_cov_1.0": 0.6322
+          "selacc_at_cov_0.75": 0.7922666666666667,
+          "selacc_at_cov_0.9": 0.6968888888888889,
+          "selacc_at_cov_1.0": 0.632
         },
-        "auacc_mode_vote": 0.8857388299723581,
-        "oracle_adj_selectivity": 1.124319408444222,
+        "auacc_mode_vote": 0.8857420367704447,
+        "oracle_adj_selectivity": 1.1243234790180818,
         "reliability_bins": [
           {
             "bin_lo": 0.0,
             "bin_hi": 0.1,
             "count": 371,
-            "bin_conf_mean": 0.06199460916442048,
+            "bin_conf_mean": 0.06165768194070081,
             "bin_accuracy": 0.029649595687331536,
-            "gap": 0.032345013477088944
+            "gap": 0.032008086253369275
           },
           {
             "bin_lo": 0.1,
             "bin_hi": 0.2,
-            "count": 947,
-            "bin_conf_mean": 0.15397307286166842,
-            "bin_accuracy": 0.21647307286166842,
-            "gap": 0.0625
+            "count": 949,
+            "bin_conf_mean": 0.15404373024236037,
+            "bin_accuracy": 0.21496311907270813,
+            "gap": 0.060919388830347754
           },
           {
             "bin_lo": 0.2,
             "bin_hi": 0.30000000000000004,
-            "count": 370,
+            "count": 369,
             "bin_conf_mean": 0.25,
-            "bin_accuracy": 0.35405405405405405,
-            "gap": 0.10405405405405405
+            "bin_accuracy": 0.35501355013550134,
+            "gap": 0.10501355013550134
           },
           {
             "bin_lo": 0.30000000000000004,
             "bin_hi": 0.4,
-            "count": 578,
-            "bin_conf_mean": 0.3414792387543253,
-            "bin_accuracy": 0.5346020761245674,
-            "gap": 0.19312283737024216
+            "count": 577,
+            "bin_conf_mean": 0.341421143847487,
+            "bin_accuracy": 0.5355285961871751,
+            "gap": 0.19410745233968807
           },
           {
             "bin_lo": 0.4,
             "bin_hi": 0.5,
-            "count": 254,
+            "count": 255,
             "bin_conf_mean": 0.4375,
-            "bin_accuracy": 0.7086614173228346,
-            "gap": 0.2711614173228346
+            "bin_accuracy": 0.7098039215686275,
+            "gap": 0.2723039215686275
           },
           {
             "bin_lo": 0.5,
             "bin_hi": 0.6000000000000001,
-            "count": 480,
-            "bin_conf_mean": 0.5315104166666667,
-            "bin_accuracy": 0.80625,
-            "gap": 0.27473958333333337
+            "count": 479,
+            "bin_conf_mean": 0.5315762004175365,
+            "bin_accuracy": 0.8058455114822547,
+            "gap": 0.2742693110647182
           },
           {
             "bin_lo": 0.6000000000000001,
@@ -636,18 +666,18 @@
           {
             "bin_lo": 0.7000000000000001,
             "bin_hi": 0.8,
-            "count": 279,
+            "count": 280,
             "bin_conf_mean": 0.75,
-            "bin_accuracy": 0.9498207885304659,
-            "gap": 0.19982078853046592
+            "bin_accuracy": 0.95,
+            "gap": 0.19999999999999996
           },
           {
             "bin_lo": 0.8,
             "bin_hi": 0.9,
-            "count": 609,
-            "bin_conf_mean": 0.84688013136289,
-            "bin_accuracy": 0.9835796387520526,
-            "gap": 0.1366995073891626
+            "count": 608,
+            "bin_conf_mean": 0.846936677631579,
+            "bin_accuracy": 0.9835526315789473,
+            "gap": 0.13661595394736836
           },
           {
             "bin_lo": 0.9,
@@ -659,21 +689,26 @@
           }
         ],
         "pass_at_k": {
-          "1": 0.441375,
-          "4": 0.6595616483516483,
-          "8": 0.7310089355089355,
+          "1": 0.441325,
+          "4": 0.6595021978021978,
+          "8": 0.7309536130536132,
           "16": 0.7878
         },
-        "ans_entropy_mean": 1.2007567278203135,
+        "ans_entropy_mean": 1.1958476104481648,
         "mean_chars_per_completion": 1504.3851875,
-        "p_correct_given_attempted": 0.5258533388931912
+        "p_correct_given_attempted": 0.5270889628711762,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "gsm8k_test": {
         "n_problems": 1319,
         "K": 16,
         "accuracy_any": 0.9393479909021987,
         "accuracy_mode_vote": 0.824109173616376,
-        "abstention_rate_mean": 0.26871683093252463,
+        "abstention_rate_mean": 0.2688589840788476,
         "abstention_rate_all_K": 0.0,
         "ece_passatk_vs_any": 0.45214177407126604,
         "ece_modeconf_vs_modecorrect": 0.30984647460197123,
@@ -775,16 +810,21 @@
           "8": 0.8980592653071805,
           "16": 0.9393479909021987
         },
-        "ans_entropy_mean": 0.8142764086911157,
+        "ans_entropy_mean": 0.8139390384436119,
         "mean_chars_per_completion": 1037.0538760424563,
-        "p_correct_given_attempted": 0.6662346918939934
+        "p_correct_given_attempted": 0.6663642255346727,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2024": {
         "n_problems": 30,
         "K": 16,
         "accuracy_any": 0.16666666666666666,
         "accuracy_mode_vote": 0.06666666666666667,
-        "abstention_rate_mean": 0.3770833333333333,
+        "abstention_rate_mean": 0.38125,
         "abstention_rate_all_K": 0.0,
         "ece_passatk_vs_any": 0.15,
         "ece_modeconf_vs_modecorrect": 0.08125,
@@ -838,9 +878,14 @@
           "8": 0.10555555555555556,
           "16": 0.16666666666666666
         },
-        "ans_entropy_mean": 1.9509770582856738,
+        "ans_entropy_mean": 1.9438739511037169,
         "mean_chars_per_completion": 2282.5104166666665,
-        "p_correct_given_attempted": 0.026755852842809364
+        "p_correct_given_attempted": 0.026936026936026935,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2025": {
         "n_problems": 30,
@@ -903,35 +948,40 @@
         },
         "ans_entropy_mean": 1.9931387837266865,
         "mean_chars_per_completion": 2215.64375,
-        "p_correct_given_attempted": 0.003278688524590164
+        "p_correct_given_attempted": 0.003278688524590164,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "mmlu_stem": {
         "n_problems": 3153,
         "K": 16,
         "accuracy_any": 0.833174754202347,
         "accuracy_mode_vote": 0.5699333967649858,
-        "abstention_rate_mean": 0.495500317158262,
-        "abstention_rate_all_K": 0.035838883602917856,
-        "ece_passatk_vs_any": 0.5840865842055185,
-        "ece_modeconf_vs_modecorrect": 0.25099111956866477,
+        "abstention_rate_mean": 0.4957976530288614,
+        "abstention_rate_all_K": 0.03615604186489058,
+        "ece_passatk_vs_any": 0.584126228988265,
+        "ece_modeconf_vs_modecorrect": 0.25103076435141136,
         "selective_accuracy": {
           "selacc_at_cov_0.1": 0.8095238095238095,
           "selacc_at_cov_0.25": 0.7449238578680203,
-          "selacc_at_cov_0.5": 0.6865482233502538,
+          "selacc_at_cov_0.5": 0.6859137055837563,
           "selacc_at_cov_0.75": 0.6228329809725158,
           "selacc_at_cov_0.9": 0.5979563072586328,
           "selacc_at_cov_1.0": 0.5699333967649858
         },
-        "auacc_mode_vote": 0.6965344486751137,
-        "oracle_adj_selectivity": 0.8360004250752316,
+        "auacc_mode_vote": 0.6965150692551128,
+        "oracle_adj_selectivity": 0.8359771653450211,
         "reliability_bins": [
           {
             "bin_lo": 0.0,
             "bin_hi": 0.1,
             "count": 447,
-            "bin_conf_mean": 0.04670022371364653,
+            "bin_conf_mean": 0.04656040268456376,
             "bin_accuracy": 0.3512304250559284,
-            "gap": 0.30453020134228187
+            "gap": 0.30467002237136465
           },
           {
             "bin_lo": 0.1,
@@ -944,18 +994,18 @@
           {
             "bin_lo": 0.2,
             "bin_hi": 0.30000000000000004,
-            "count": 380,
+            "count": 381,
             "bin_conf_mean": 0.25,
-            "bin_accuracy": 0.5236842105263158,
-            "gap": 0.27368421052631575
+            "bin_accuracy": 0.5249343832020997,
+            "gap": 0.27493438320209973
           },
           {
             "bin_lo": 0.30000000000000004,
             "bin_hi": 0.4,
-            "count": 626,
-            "bin_conf_mean": 0.34035543130990414,
-            "bin_accuracy": 0.6214057507987221,
-            "gap": 0.2810503194888179
+            "count": 625,
+            "bin_conf_mean": 0.3404,
+            "bin_accuracy": 0.6208,
+            "gap": 0.28040000000000004
           },
           {
             "bin_lo": 0.4,
@@ -1007,24 +1057,29 @@
           }
         ],
         "pass_at_k": {
-          "1": 0.24908816999682842,
-          "4": 0.5589832463762054,
-          "8": 0.7137897553692034,
+          "1": 0.24904852521408183,
+          "4": 0.5588910613648959,
+          "8": 0.7136970475695499,
           "16": 0.833174754202347
         },
-        "ans_entropy_mean": 0.6998273510938969,
+        "ans_entropy_mean": 0.6988513241756721,
         "mean_chars_per_completion": 1013.6771725340946,
-        "p_correct_given_attempted": 0.493733055675612
+        "p_correct_given_attempted": 0.4939455889290769,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "truthful_qa_mc": {
         "n_problems": 817,
         "K": 16,
         "accuracy_any": 0.5336597307221542,
         "accuracy_mode_vote": 0.3537331701346389,
-        "abstention_rate_mean": 0.7774632802937577,
+        "abstention_rate_mean": 0.7777692778457772,
         "abstention_rate_all_K": 0.13341493268053856,
         "ece_passatk_vs_any": 0.44981640146878826,
-        "ece_modeconf_vs_modecorrect": 0.2128212974296206,
+        "ece_modeconf_vs_modecorrect": 0.21289779681762552,
         "selective_accuracy": {
           "selacc_at_cov_0.1": 0.5487804878048781,
           "selacc_at_cov_0.25": 0.5049019607843137,
@@ -1033,24 +1088,24 @@
           "selacc_at_cov_0.9": 0.39319727891156464,
           "selacc_at_cov_1.0": 0.3537331701346389
         },
-        "auacc_mode_vote": 0.4831925546977143,
-        "oracle_adj_selectivity": 0.9054319201560381,
+        "auacc_mode_vote": 0.4833822429181757,
+        "oracle_adj_selectivity": 0.9057873680370403,
         "reliability_bins": [
           {
             "bin_lo": 0.0,
             "bin_hi": 0.1,
-            "count": 362,
-            "bin_conf_mean": 0.04368093922651934,
-            "bin_accuracy": 0.23756906077348067,
-            "gap": 0.19388812154696133
+            "count": 363,
+            "bin_conf_mean": 0.043732782369146,
+            "bin_accuracy": 0.2369146005509642,
+            "gap": 0.19318181818181818
           },
           {
             "bin_lo": 0.1,
             "bin_hi": 0.2,
-            "count": 296,
-            "bin_conf_mean": 0.14991554054054054,
-            "bin_accuracy": 0.40202702702702703,
-            "gap": 0.2521114864864865
+            "count": 295,
+            "bin_conf_mean": 0.15,
+            "bin_accuracy": 0.4033898305084746,
+            "gap": 0.25338983050847463
           },
           {
             "bin_lo": 0.2,
@@ -1099,9 +1154,14 @@
           "8": 0.38434024835493624,
           "16": 0.5336597307221542
         },
-        "ans_entropy_mean": 0.4852328629536782,
+        "ans_entropy_mean": 0.4840516441871204,
         "mean_chars_per_completion": 478.0093329253366,
-        "p_correct_given_attempted": 0.3767617738054314
+        "p_correct_given_attempted": 0.37728055077452666,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       }
     },
     "S2": {
@@ -1214,7 +1274,12 @@
         },
         "ans_entropy_mean": 1.2138051456718983,
         "mean_chars_per_completion": 1487.2691625,
-        "p_correct_given_attempted": 0.5190624808763233
+        "p_correct_given_attempted": 0.5190624808763233,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "gsm8k_test": {
         "n_problems": 1319,
@@ -1325,7 +1390,12 @@
         },
         "ans_entropy_mean": 0.829542883474612,
         "mean_chars_per_completion": 1010.4768764215314,
-        "p_correct_given_attempted": 0.6517889542056753
+        "p_correct_given_attempted": 0.6517889542056753,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2024": {
         "n_problems": 30,
@@ -1396,7 +1466,12 @@
         },
         "ans_entropy_mean": 1.8532847236099286,
         "mean_chars_per_completion": 2249.34375,
-        "p_correct_given_attempted": 0.025179856115107913
+        "p_correct_given_attempted": 0.025179856115107913,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2025": {
         "n_problems": 30,
@@ -1467,7 +1542,12 @@
         },
         "ans_entropy_mean": 1.9577226248429018,
         "mean_chars_per_completion": 2225.4083333333333,
-        "p_correct_given_attempted": 0.003424657534246575
+        "p_correct_given_attempted": 0.003424657534246575,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "mmlu_stem": {
         "n_problems": 3153,
@@ -1578,7 +1658,12 @@
         },
         "ans_entropy_mean": 0.6957937626779596,
         "mean_chars_per_completion": 1010.5474349825563,
-        "p_correct_given_attempted": 0.4876385676688731
+        "p_correct_given_attempted": 0.4876385676688731,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "truthful_qa_mc": {
         "n_problems": 817,
@@ -1681,37 +1766,42 @@
         },
         "ans_entropy_mean": 0.47715028142030247,
         "mean_chars_per_completion": 470.55117809057526,
-        "p_correct_given_attempted": 0.3763250883392226
+        "p_correct_given_attempted": 0.3763250883392226,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       }
     },
     "S3": {
       "math_test": {
         "n_problems": 5000,
         "K": 16,
-        "accuracy_any": 0.7814,
-        "accuracy_mode_vote": 0.621,
-        "abstention_rate_mean": 0.201925,
+        "accuracy_any": 0.7812,
+        "accuracy_mode_vote": 0.6208,
+        "abstention_rate_mean": 0.20385,
         "abstention_rate_all_K": 0.0006,
-        "ece_passatk_vs_any": 0.37531250000000005,
-        "ece_modeconf_vs_modecorrect": 0.16991249999999997,
+        "ece_passatk_vs_any": 0.37517500000000004,
+        "ece_modeconf_vs_modecorrect": 0.16981249999999998,
         "selective_accuracy": {
           "selacc_at_cov_0.1": 0.996,
           "selacc_at_cov_0.25": 0.9792,
           "selacc_at_cov_0.5": 0.926,
-          "selacc_at_cov_0.75": 0.7813333333333333,
-          "selacc_at_cov_0.9": 0.6848888888888889,
-          "selacc_at_cov_1.0": 0.621
+          "selacc_at_cov_0.75": 0.7810666666666667,
+          "selacc_at_cov_0.9": 0.6846666666666666,
+          "selacc_at_cov_1.0": 0.6208
         },
-        "auacc_mode_vote": 0.8780569707361654,
-        "oracle_adj_selectivity": 1.1236971726851361,
+        "auacc_mode_vote": 0.8779794379940171,
+        "oracle_adj_selectivity": 1.1238856093113379,
         "reliability_bins": [
           {
             "bin_lo": 0.0,
             "bin_hi": 0.1,
-            "count": 421,
-            "bin_conf_mean": 0.06205463182897862,
-            "bin_accuracy": 0.028503562945368172,
-            "gap": 0.03355106888361045
+            "count": 422,
+            "bin_conf_mean": 0.06205568720379147,
+            "bin_accuracy": 0.02843601895734597,
+            "gap": 0.033619668246445494
           },
           {
             "bin_lo": 0.1,
@@ -1740,10 +1830,10 @@
           {
             "bin_lo": 0.4,
             "bin_hi": 0.5,
-            "count": 259,
+            "count": 258,
             "bin_conf_mean": 0.4375,
-            "bin_accuracy": 0.722007722007722,
-            "gap": 0.284507722007722
+            "bin_accuracy": 0.7209302325581395,
+            "gap": 0.2834302325581395
           },
           {
             "bin_lo": 0.5,
@@ -1787,21 +1877,26 @@
           }
         ],
         "pass_at_k": {
-          "1": 0.4060875,
-          "4": 0.6431125274725275,
-          "8": 0.7201616472416472,
-          "16": 0.7814
+          "1": 0.406025,
+          "4": 0.6429637362637363,
+          "8": 0.7199759595959596,
+          "16": 0.7812
         },
-        "ans_entropy_mean": 1.2356303963347428,
+        "ans_entropy_mean": 1.2308961258305813,
         "mean_chars_per_completion": 1465.5659,
-        "p_correct_given_attempted": 0.5088337562259186
+        "p_correct_given_attempted": 0.5099855554857753,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "gsm8k_test": {
         "n_problems": 1319,
         "K": 16,
         "accuracy_any": 0.9219105382865808,
         "accuracy_mode_vote": 0.8134950720242609,
-        "abstention_rate_mean": 0.42622251705837755,
+        "abstention_rate_mean": 0.4264120545868082,
         "abstention_rate_all_K": 0.0,
         "ece_passatk_vs_any": 0.5516015921152388,
         "ece_modeconf_vs_modecorrect": 0.42276345716451863,
@@ -1903,16 +1998,21 @@
           "8": 0.8646772147909374,
           "16": 0.9219105382865808
         },
-        "ans_entropy_mean": 0.8178947661984829,
+        "ans_entropy_mean": 0.8171484992388712,
         "mean_chars_per_completion": 975.4055629264594,
-        "p_correct_given_attempted": 0.6453877281360971
+        "p_correct_given_attempted": 0.6456009913258984,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2024": {
         "n_problems": 30,
         "K": 16,
         "accuracy_any": 0.16666666666666666,
         "accuracy_mode_vote": 0.1,
-        "abstention_rate_mean": 0.42916666666666664,
+        "abstention_rate_mean": 0.43125,
         "abstention_rate_all_K": 0.0,
         "ece_passatk_vs_any": 0.14791666666666667,
         "ece_modeconf_vs_modecorrect": 0.08541666666666667,
@@ -1966,16 +2066,21 @@
           "8": 0.11444444444444443,
           "16": 0.16666666666666666
         },
-        "ans_entropy_mean": 1.8048875477331836,
+        "ans_entropy_mean": 1.7952981453181576,
         "mean_chars_per_completion": 2181.577083333333,
-        "p_correct_given_attempted": 0.032846715328467155
+        "p_correct_given_attempted": 0.03296703296703297,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2025": {
         "n_problems": 30,
         "K": 16,
         "accuracy_any": 0.03333333333333333,
         "accuracy_mode_vote": 0.0,
-        "abstention_rate_mean": 0.42083333333333334,
+        "abstention_rate_mean": 0.42291666666666666,
         "abstention_rate_all_K": 0.0,
         "ece_passatk_vs_any": 0.03125,
         "ece_modeconf_vs_modecorrect": 0.13125,
@@ -2029,37 +2134,42 @@
           "8": 0.016666666666666666,
           "16": 0.03333333333333333
         },
-        "ans_entropy_mean": 1.9200425000087116,
+        "ans_entropy_mean": 1.914904144014503,
         "mean_chars_per_completion": 2138.360416666667,
-        "p_correct_given_attempted": 0.0035971223021582736
+        "p_correct_given_attempted": 0.0036101083032490976,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "mmlu_stem": {
         "n_problems": 3153,
         "K": 16,
         "accuracy_any": 0.8125594671741199,
-        "accuracy_mode_vote": 0.5559784332381859,
-        "abstention_rate_mean": 0.5187519822391373,
+        "accuracy_mode_vote": 0.5562955915001586,
+        "abstention_rate_mean": 0.5189502061528702,
         "abstention_rate_all_K": 0.04567078972407231,
         "ece_passatk_vs_any": 0.5786552489692357,
-        "ece_modeconf_vs_modecorrect": 0.25279495718363465,
+        "ece_modeconf_vs_modecorrect": 0.25311211544560736,
         "selective_accuracy": {
           "selacc_at_cov_0.1": 0.8031746031746032,
           "selacc_at_cov_0.25": 0.7525380710659898,
           "selacc_at_cov_0.5": 0.6649746192893401,
           "selacc_at_cov_0.75": 0.6131078224101479,
-          "selacc_at_cov_0.9": 0.5887949260042283,
-          "selacc_at_cov_1.0": 0.5559784332381859
+          "selacc_at_cov_0.9": 0.5891472868217055,
+          "selacc_at_cov_1.0": 0.5562955915001586
         },
-        "auacc_mode_vote": 0.6841706480175432,
-        "oracle_adj_selectivity": 0.8419945562838852,
+        "auacc_mode_vote": 0.6842097248427992,
+        "oracle_adj_selectivity": 0.8420426473182459,
         "reliability_bins": [
           {
             "bin_lo": 0.0,
             "bin_hi": 0.1,
             "count": 495,
             "bin_conf_mean": 0.04431818181818182,
-            "bin_accuracy": 0.3212121212121212,
-            "gap": 0.2768939393939394
+            "bin_accuracy": 0.32323232323232326,
+            "gap": 0.27891414141414145
           },
           {
             "bin_lo": 0.1,
@@ -2140,19 +2250,24 @@
           "8": 0.688432964646095,
           "16": 0.8125594671741199
         },
-        "ans_entropy_mean": 0.6898756949676069,
+        "ans_entropy_mean": 0.6887398282857887,
         "mean_chars_per_completion": 988.5655130034887,
-        "p_correct_given_attempted": 0.4860367410824615
+        "p_correct_given_attempted": 0.4862370199439591,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "truthful_qa_mc": {
         "n_problems": 817,
         "K": 16,
         "accuracy_any": 0.48714810281517745,
         "accuracy_mode_vote": 0.3157894736842105,
-        "abstention_rate_mean": 0.7987301101591188,
+        "abstention_rate_mean": 0.7989596083231334,
         "abstention_rate_all_K": 0.1689106487148103,
         "ece_passatk_vs_any": 0.4121787025703795,
-        "ece_modeconf_vs_modecorrect": 0.18749999999999997,
+        "ece_modeconf_vs_modecorrect": 0.18757649938800486,
         "selective_accuracy": {
           "selacc_at_cov_0.1": 0.6097560975609756,
           "selacc_at_cov_0.25": 0.5098039215686274,
@@ -2161,8 +2276,8 @@
           "selacc_at_cov_0.9": 0.3510204081632653,
           "selacc_at_cov_1.0": 0.3157894736842105
         },
-        "auacc_mode_vote": 0.463959602060367,
-        "oracle_adj_selectivity": 0.952399484631457,
+        "auacc_mode_vote": 0.46418766145749957,
+        "oracle_adj_selectivity": 0.9528676367104953,
         "reliability_bins": [
           {
             "bin_lo": 0.0,
@@ -2176,9 +2291,9 @@
             "bin_lo": 0.1,
             "bin_hi": 0.2,
             "count": 280,
-            "bin_conf_mean": 0.14776785714285715,
+            "bin_conf_mean": 0.14754464285714286,
             "bin_accuracy": 0.3821428571428571,
-            "gap": 0.23437499999999997
+            "gap": 0.23459821428571426
           },
           {
             "bin_lo": 0.2,
@@ -2235,9 +2350,14 @@
           "8": 0.34893716374744527,
           "16": 0.48714810281517745
         },
-        "ans_entropy_mean": 0.4546685804440739,
+        "ans_entropy_mean": 0.4541356304752668,
         "mean_chars_per_completion": 450.48951958384333,
-        "p_correct_given_attempted": 0.3724819460281262
+        "p_correct_given_attempted": 0.3729071537290715,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       }
     },
     "S4": {
@@ -2350,7 +2470,12 @@
         },
         "ans_entropy_mean": 1.0207652349113339,
         "mean_chars_per_completion": 976.0923625,
-        "p_correct_given_attempted": 0.4098021466442519
+        "p_correct_given_attempted": 0.4098021466442519,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "gsm8k_test": {
         "n_problems": 1319,
@@ -2429,7 +2554,12 @@
         },
         "ans_entropy_mean": 0.23678121029818233,
         "mean_chars_per_completion": 766.8008434420016,
-        "p_correct_given_attempted": 0.591588785046729
+        "p_correct_given_attempted": 0.591588785046729,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2024": {
         "n_problems": 30,
@@ -2476,7 +2606,12 @@
         },
         "ans_entropy_mean": 1.2073675715250645,
         "mean_chars_per_completion": 1414.575,
-        "p_correct_given_attempted": 0.007142857142857143
+        "p_correct_given_attempted": 0.007142857142857143,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2025": {
         "n_problems": 30,
@@ -2523,7 +2658,12 @@
         },
         "ans_entropy_mean": 1.2741759994352564,
         "mean_chars_per_completion": 1412.8083333333334,
-        "p_correct_given_attempted": 0.0
+        "p_correct_given_attempted": 0.0,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "mmlu_stem": {
         "n_problems": 3153,
@@ -2634,7 +2774,12 @@
         },
         "ans_entropy_mean": 0.6398417458468132,
         "mean_chars_per_completion": 922.3436211544561,
-        "p_correct_given_attempted": 0.4664275752141861
+        "p_correct_given_attempted": 0.4664275752141861,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "truthful_qa_mc": {
         "n_problems": 817,
@@ -2729,7 +2874,12 @@
         },
         "ans_entropy_mean": 0.30527395497495413,
         "mean_chars_per_completion": 396.5615055079559,
-        "p_correct_given_attempted": 0.3808156232050546
+        "p_correct_given_attempted": 0.3808156232050546,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       }
     },
     "C1": {
@@ -2842,7 +2992,12 @@
         },
         "ans_entropy_mean": 1.1850847186639666,
         "mean_chars_per_completion": 1507.6223125,
-        "p_correct_given_attempted": 0.5321449616971126
+        "p_correct_given_attempted": 0.5321449616971126,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "gsm8k_test": {
         "n_problems": 1319,
@@ -2953,7 +3108,12 @@
         },
         "ans_entropy_mean": 0.8158490929959826,
         "mean_chars_per_completion": 1053.2260235026536,
-        "p_correct_given_attempted": 0.6693562847409001
+        "p_correct_given_attempted": 0.6693562847409001,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2024": {
         "n_problems": 30,
@@ -3016,7 +3176,12 @@
         },
         "ans_entropy_mean": 1.9812803552726423,
         "mean_chars_per_completion": 2295.975,
-        "p_correct_given_attempted": 0.017361111111111112
+        "p_correct_given_attempted": 0.017361111111111112,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2025": {
         "n_problems": 30,
@@ -3079,7 +3244,12 @@
         },
         "ans_entropy_mean": 2.0193213218672033,
         "mean_chars_per_completion": 2193.9416666666666,
-        "p_correct_given_attempted": 0.0
+        "p_correct_given_attempted": 0.0,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "mmlu_stem": {
         "n_problems": 3153,
@@ -3190,7 +3360,12 @@
         },
         "ans_entropy_mean": 0.7073198672493181,
         "mean_chars_per_completion": 1020.9367863939106,
-        "p_correct_given_attempted": 0.49242076251722555
+        "p_correct_given_attempted": 0.49242076251722555,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "truthful_qa_mc": {
         "n_problems": 817,
@@ -3285,7 +3460,12 @@
         },
         "ans_entropy_mean": 0.4877182769080275,
         "mean_chars_per_completion": 484.56953794369645,
-        "p_correct_given_attempted": 0.37697213830144344
+        "p_correct_given_attempted": 0.37697213830144344,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       }
     },
     "C2": {
@@ -3398,7 +3578,12 @@
         },
         "ans_entropy_mean": 1.2205155222299036,
         "mean_chars_per_completion": 1485.325325,
-        "p_correct_given_attempted": 0.5179526936641129
+        "p_correct_given_attempted": 0.5179526936641129,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "gsm8k_test": {
         "n_problems": 1319,
@@ -3509,7 +3694,12 @@
         },
         "ans_entropy_mean": 0.831647727355171,
         "mean_chars_per_completion": 1009.622346474602,
-        "p_correct_given_attempted": 0.6533275960986804
+        "p_correct_given_attempted": 0.6533275960986804,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2024": {
         "n_problems": 30,
@@ -3572,7 +3762,12 @@
         },
         "ans_entropy_mean": 1.805671653383116,
         "mean_chars_per_completion": 2258.7520833333333,
-        "p_correct_given_attempted": 0.03558718861209965
+        "p_correct_given_attempted": 0.03558718861209965,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "aime_2025": {
         "n_problems": 30,
@@ -3643,7 +3838,12 @@
         },
         "ans_entropy_mean": 1.8718056661872862,
         "mean_chars_per_completion": 2197.8541666666665,
-        "p_correct_given_attempted": 0.0034482758620689655
+        "p_correct_given_attempted": 0.0034482758620689655,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "mmlu_stem": {
         "n_problems": 3153,
@@ -3754,7 +3954,12 @@
         },
         "ans_entropy_mean": 0.6947914072618148,
         "mean_chars_per_completion": 998.6845662860768,
-        "p_correct_given_attempted": 0.4870941883767535
+        "p_correct_given_attempted": 0.4870941883767535,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       },
       "truthful_qa_mc": {
         "n_problems": 817,
@@ -3849,7 +4054,12 @@
         },
         "ans_entropy_mean": 0.47278618197595323,
         "mean_chars_per_completion": 458.76943084455326,
-        "p_correct_given_attempted": 0.3749550197912918
+        "p_correct_given_attempted": 0.3749550197912918,
+        "rescore_changes": {
+          "extracted": 0,
+          "correct": 0,
+          "abstained": 0
+        }
       }
     }
   },
@@ -3890,32 +4100,32 @@
       "1": {
         "n": 437,
         "accuracy_any": 0.9725400457665904,
-        "abstention_rate": 0.0625,
+        "abstention_rate": 0.06264302059496568,
         "mode_conf_mean": 0.7637299771167048
       },
       "2": {
         "n": 894,
         "accuracy_any": 0.9519015659955258,
-        "abstention_rate": 0.08808724832214765,
-        "mode_conf_mean": 0.6528942953020134
+        "abstention_rate": 0.08878635346756152,
+        "mode_conf_mean": 0.6528243847874721
       },
       "3": {
         "n": 1131,
         "accuracy_any": 0.8762157382847038,
-        "abstention_rate": 0.1301945181255526,
-        "mode_conf_mean": 0.5542661361626879
+        "abstention_rate": 0.1322391688770999,
+        "mode_conf_mean": 0.554155614500442
       },
       "4": {
         "n": 1214,
         "accuracy_any": 0.7841845140032949,
-        "abstention_rate": 0.1828665568369028,
-        "mode_conf_mean": 0.44141268533772654
+        "abstention_rate": 0.18544069192751236,
+        "mode_conf_mean": 0.4413097199341021
       },
       "5": {
         "n": 1324,
         "accuracy_any": 0.5438066465256798,
-        "abstention_rate": 0.2476869335347432,
-        "mode_conf_mean": 0.29956570996978854
+        "abstention_rate": 0.2508496978851964,
+        "mode_conf_mean": 0.29942409365558914
       }
     },
     "S2": {
@@ -3954,32 +4164,32 @@
       "1": {
         "n": 437,
         "accuracy_any": 0.9725400457665904,
-        "abstention_rate": 0.10883867276887872,
+        "abstention_rate": 0.10912471395881007,
         "mode_conf_mean": 0.7145308924485125
       },
       "2": {
         "n": 894,
         "accuracy_any": 0.9407158836689038,
-        "abstention_rate": 0.13653523489932887,
+        "abstention_rate": 0.13751398210290827,
         "mode_conf_mean": 0.5995525727069351
       },
       "3": {
         "n": 1131,
         "accuracy_any": 0.870026525198939,
-        "abstention_rate": 0.17672413793103448,
-        "mode_conf_mean": 0.5113837312113174
+        "abstention_rate": 0.17854774535809018,
+        "mode_conf_mean": 0.5112732095490716
       },
       "4": {
         "n": 1214,
         "accuracy_any": 0.7792421746293245,
-        "abstention_rate": 0.22003706754530478,
-        "mode_conf_mean": 0.40903006589785834
+        "abstention_rate": 0.2221993410214168,
+        "mode_conf_mean": 0.4089271004942339
       },
       "5": {
         "n": 1324,
-        "accuracy_any": 0.5370090634441088,
-        "abstention_rate": 0.28172205438066467,
-        "mode_conf_mean": 0.2722809667673716
+        "accuracy_any": 0.5362537764350453,
+        "abstention_rate": 0.28469599697885195,
+        "mode_conf_mean": 0.2721865558912387
       }
     },
     "S4": {
@@ -4110,26 +4320,26 @@
       "S1": {
         "math_test": {
           "ev_threshold": 0.67,
-          "acc_given_attempted": 0.5258533388931912,
-          "shortfall": 0.14414666110680885,
+          "acc_given_attempted": 0.5270889628711762,
+          "shortfall": 0.1429110371288238,
           "meets_threshold": false
         },
         "gsm8k_test": {
           "ev_threshold": 0.67,
-          "acc_given_attempted": 0.6662346918939934,
-          "shortfall": 0.003765308106006615,
+          "acc_given_attempted": 0.6663642255346727,
+          "shortfall": 0.0036357744653273683,
           "meets_threshold": false
         },
         "mmlu_stem": {
           "ev_threshold": 0.67,
-          "acc_given_attempted": 0.493733055675612,
-          "shortfall": 0.17626694432438805,
+          "acc_given_attempted": 0.4939455889290769,
+          "shortfall": 0.17605441107092312,
           "meets_threshold": false
         },
         "truthful_qa_mc": {
           "ev_threshold": 0.67,
-          "acc_given_attempted": 0.3767617738054314,
-          "shortfall": 0.29323822619456863,
+          "acc_given_attempted": 0.37728055077452666,
+          "shortfall": 0.2927194492254734,
           "meets_threshold": false
         }
       },
@@ -4162,26 +4372,26 @@
       "S3": {
         "math_test": {
           "ev_threshold": 0.91,
-          "acc_given_attempted": 0.5088337562259186,
-          "shortfall": 0.4011662437740814,
+          "acc_given_attempted": 0.5099855554857753,
+          "shortfall": 0.40001444451422474,
           "meets_threshold": false
         },
         "gsm8k_test": {
           "ev_threshold": 0.91,
-          "acc_given_attempted": 0.6453877281360971,
-          "shortfall": 0.2646122718639029,
+          "acc_given_attempted": 0.6456009913258984,
+          "shortfall": 0.2643990086741016,
           "meets_threshold": false
         },
         "mmlu_stem": {
           "ev_threshold": 0.91,
-          "acc_given_attempted": 0.4860367410824615,
-          "shortfall": 0.42396325891753855,
+          "acc_given_attempted": 0.4862370199439591,
+          "shortfall": 0.4237629800560409,
           "meets_threshold": false
         },
         "truthful_qa_mc": {
           "ev_threshold": 0.91,
-          "acc_given_attempted": 0.3724819460281262,
-          "shortfall": 0.5375180539718738,
+          "acc_given_attempted": 0.3729071537290715,
+          "shortfall": 0.5370928462709286,
           "meets_threshold": false
         }
       },
@@ -4553,9 +4763,9 @@
   },
   "discrimination_index_math": {
     "S0": 5.391351213461116,
-    "S1": 3.962990936555891,
+    "S1": 4.004431706879664,
     "S2": 3.271380129657603,
-    "S3": 2.588437062062559,
+    "S3": 2.6089048635335947,
     "S4": 1.204992234542488,
     "C1": 4.706587874900842,
     "C2": 3.306561998974773
@@ -4566,9 +4776,9 @@
       "abst_threshold": 0.5,
       "fraction_majority_abstained": {
         "S0": 0.088,
-        "S1": 0.0954,
+        "S1": 0.0968,
         "S2": 0.1054,
-        "S3": 0.114,
+        "S3": 0.1176,
         "S4": 0.724,
         "C1": 0.09,
         "C2": 0.0992
@@ -4576,63 +4786,63 @@
       "jaccard": {
         "S0": {
           "S0": 1.0,
-          "S1": 0.6345811051693404,
+          "S1": 0.6353982300884956,
           "S2": 0.5826513911620295,
-          "S3": 0.5052160953800298,
+          "S3": 0.5073313782991202,
           "S4": 0.11232876712328767,
           "C1": 0.6666666666666666,
           "C2": 0.5704697986577181
         },
         "S1": {
-          "S0": 0.6345811051693404,
+          "S0": 0.6353982300884956,
           "S1": 1.0,
-          "S2": 0.6540362438220758,
-          "S3": 0.5603576751117735,
-          "S4": 0.12185104052573932,
-          "C1": 0.6524064171122995,
-          "C2": 0.643581081081081
+          "S2": 0.6573770491803279,
+          "S3": 0.5626822157434402,
+          "S4": 0.12315270935960591,
+          "C1": 0.6530973451327433,
+          "C2": 0.6415410385259631
         },
         "S2": {
           "S0": 0.5826513911620295,
-          "S1": 0.6540362438220758,
+          "S1": 0.6573770491803279,
           "S2": 1.0,
-          "S3": 0.6521084337349398,
+          "S3": 0.6469719350073855,
           "S4": 0.13523131672597866,
           "C1": 0.5964052287581699,
           "C2": 0.7021630615640599
         },
         "S3": {
-          "S0": 0.5052160953800298,
-          "S1": 0.5603576751117735,
-          "S2": 0.6521084337349398,
+          "S0": 0.5073313782991202,
+          "S1": 0.5626822157434402,
+          "S2": 0.6469719350073855,
           "S3": 1.0,
-          "S4": 0.14825979720471363,
-          "C1": 0.5201192250372578,
-          "C2": 0.6527131782945736
+          "S4": 0.15256094220761435,
+          "C1": 0.5219941348973607,
+          "C2": 0.6424242424242425
         },
         "S4": {
           "S0": 0.11232876712328767,
-          "S1": 0.12185104052573932,
+          "S1": 0.12315270935960591,
           "S2": 0.13523131672597866,
-          "S3": 0.14825979720471363,
+          "S3": 0.15256094220761435,
           "S4": 1.0,
           "C1": 0.11567982456140351,
           "C2": 0.12890839275918814
         },
         "C1": {
           "S0": 0.6666666666666666,
-          "S1": 0.6524064171122995,
+          "S1": 0.6530973451327433,
           "S2": 0.5964052287581699,
-          "S3": 0.5201192250372578,
+          "S3": 0.5219941348973607,
           "S4": 0.11567982456140351,
           "C1": 1.0,
           "C2": 0.5766666666666667
         },
         "C2": {
           "S0": 0.5704697986577181,
-          "S1": 0.643581081081081,
+          "S1": 0.6415410385259631,
           "S2": 0.7021630615640599,
-          "S3": 0.6527131782945736,
+          "S3": 0.6424242424242425,
           "S4": 0.12890839275918814,
           "C1": 0.5766666666666667,
           "C2": 1.0
@@ -4646,7 +4856,7 @@
         "S0": 0.021986353297952996,
         "S1": 0.10462471569370735,
         "S2": 0.2304776345716452,
-        "S3": 0.40788476118271416,
+        "S3": 0.4086429112964367,
         "S4": 1.0,
         "C1": 0.0401819560272934,
         "C2": 0.21076573161485973
@@ -4656,7 +4866,7 @@
           "S0": 1.0,
           "S1": 0.2014388489208633,
           "S2": 0.08823529411764706,
-          "S3": 0.05,
+          "S3": 0.04990757855822551,
           "S4": 0.021986353297952996,
           "C1": 0.30158730158730157,
           "C2": 0.1003584229390681
@@ -4665,7 +4875,7 @@
           "S0": 0.2014388489208633,
           "S1": 1.0,
           "S2": 0.3943217665615142,
-          "S3": 0.23583180987202926,
+          "S3": 0.2354014598540146,
           "S4": 0.10462471569370735,
           "C1": 0.31724137931034485,
           "C2": 0.4444444444444444
@@ -4674,25 +4884,25 @@
           "S0": 0.08823529411764706,
           "S1": 0.3943217665615142,
           "S2": 1.0,
-          "S3": 0.5171171171171172,
+          "S3": 0.5161870503597122,
           "S4": 0.2304776345716452,
           "C1": 0.17049180327868851,
           "C2": 0.6967930029154519
         },
         "S3": {
-          "S0": 0.05,
-          "S1": 0.23583180987202926,
-          "S2": 0.5171171171171172,
+          "S0": 0.04990757855822551,
+          "S1": 0.2354014598540146,
+          "S2": 0.5161870503597122,
           "S3": 1.0,
-          "S4": 0.40788476118271416,
-          "C1": 0.09851301115241635,
-          "C2": 0.49177330895795246
+          "S4": 0.4086429112964367,
+          "C1": 0.09833024118738404,
+          "C2": 0.4908759124087591
         },
         "S4": {
           "S0": 0.021986353297952996,
           "S1": 0.10462471569370735,
           "S2": 0.2304776345716452,
-          "S3": 0.40788476118271416,
+          "S3": 0.4086429112964367,
           "S4": 1.0,
           "C1": 0.0401819560272934,
           "C2": 0.21076573161485973
@@ -4701,7 +4911,7 @@
           "S0": 0.30158730158730157,
           "S1": 0.31724137931034485,
           "S2": 0.17049180327868851,
-          "S3": 0.09851301115241635,
+          "S3": 0.09833024118738404,
           "S4": 0.0401819560272934,
           "C1": 1.0,
           "C2": 0.17375886524822695
@@ -4710,7 +4920,7 @@
           "S0": 0.1003584229390681,
           "S1": 0.4444444444444444,
           "S2": 0.6967930029154519,
-          "S3": 0.49177330895795246,
+          "S3": 0.4908759124087591,
           "S4": 0.21076573161485973,
           "C1": 0.17375886524822695,
           "C2": 1.0
@@ -4722,7 +4932,7 @@
       "abst_threshold": 0.5,
       "fraction_majority_abstained": {
         "S0": 0.36666666666666664,
-        "S1": 0.3333333333333333,
+        "S1": 0.36666666666666664,
         "S2": 0.4666666666666667,
         "S3": 0.43333333333333335,
         "S4": 0.8666666666666667,
@@ -4732,7 +4942,7 @@
       "jaccard": {
         "S0": {
           "S0": 1.0,
-          "S1": 0.6153846153846154,
+          "S1": 0.5714285714285714,
           "S2": 0.6666666666666666,
           "S3": 0.7142857142857143,
           "S4": 0.37037037037037035,
@@ -4740,17 +4950,17 @@
           "C2": 0.75
         },
         "S1": {
-          "S0": 0.6153846153846154,
+          "S0": 0.5714285714285714,
           "S1": 1.0,
-          "S2": 0.5,
-          "S3": 0.5333333333333333,
-          "S4": 0.3333333333333333,
-          "C1": 0.5714285714285714,
-          "C2": 0.6666666666666666
+          "S2": 0.5625,
+          "S3": 0.5,
+          "S4": 0.37037037037037035,
+          "C1": 0.6428571428571429,
+          "C2": 0.6153846153846154
         },
         "S2": {
           "S0": 0.6666666666666666,
-          "S1": 0.5,
+          "S1": 0.5625,
           "S2": 1.0,
           "S3": 0.8,
           "S4": 0.48148148148148145,
@@ -4759,7 +4969,7 @@
         },
         "S3": {
           "S0": 0.7142857142857143,
-          "S1": 0.5333333333333333,
+          "S1": 0.5,
           "S2": 0.8,
           "S3": 1.0,
           "S4": 0.4444444444444444,
@@ -4768,7 +4978,7 @@
         },
         "S4": {
           "S0": 0.37037037037037035,
-          "S1": 0.3333333333333333,
+          "S1": 0.37037037037037035,
           "S2": 0.48148148148148145,
           "S3": 0.4444444444444444,
           "S4": 1.0,
@@ -4777,7 +4987,7 @@
         },
         "C1": {
           "S0": 0.7692307692307693,
-          "S1": 0.5714285714285714,
+          "S1": 0.6428571428571429,
           "S2": 0.625,
           "S3": 0.5625,
           "S4": 0.4074074074074074,
@@ -4786,7 +4996,7 @@
         },
         "C2": {
           "S0": 0.75,
-          "S1": 0.6666666666666666,
+          "S1": 0.6153846153846154,
           "S2": 0.7142857142857143,
           "S3": 0.7692307692307693,
           "S4": 0.38461538461538464,
@@ -4878,9 +5088,9 @@
       "abst_threshold": 0.5,
       "fraction_majority_abstained": {
         "S0": 0.5058674278464954,
-        "S1": 0.5176022835394862,
+        "S1": 0.5179194418014589,
         "S2": 0.5280685061845861,
-        "S3": 0.5470980019029495,
+        "S3": 0.5474151601649223,
         "S4": 0.6644465588328576,
         "C1": 0.5030130034887409,
         "C2": 0.5302886140183952
@@ -4888,63 +5098,63 @@
       "jaccard": {
         "S0": {
           "S0": 1.0,
-          "S1": 0.931178934769599,
+          "S1": 0.9317773788150808,
           "S2": 0.9278533412182141,
-          "S3": 0.9014891179839634,
+          "S3": 0.9009730967372639,
           "S4": 0.7521367521367521,
           "C1": 0.950337216431637,
           "C2": 0.9251620506776664
         },
         "S1": {
-          "S0": 0.931178934769599,
+          "S0": 0.9317773788150808,
           "S1": 1.0,
-          "S2": 0.9462809917355371,
-          "S3": 0.9182857142857143,
-          "S4": 0.7713878326996197,
-          "C1": 0.9432367149758454,
-          "C2": 0.9492625368731563
+          "S2": 0.9468713105076741,
+          "S3": 0.9183323814962878,
+          "S4": 0.7718631178707225,
+          "C1": 0.9426674713337356,
+          "C2": 0.9498525073746312
         },
         "S2": {
           "S0": 0.9278533412182141,
-          "S1": 0.9462809917355371,
+          "S1": 0.9468713105076741,
           "S2": 1.0,
-          "S3": 0.934931506849315,
+          "S3": 0.9343981745579008,
           "S4": 0.785375118708452,
           "C1": 0.9270895080023711,
           "C2": 0.9629411764705882
         },
         "S3": {
-          "S0": 0.9014891179839634,
-          "S1": 0.9182857142857143,
-          "S2": 0.934931506849315,
+          "S0": 0.9009730967372639,
+          "S1": 0.9183323814962878,
+          "S2": 0.9343981745579008,
           "S3": 1.0,
-          "S4": 0.811284969179706,
-          "C1": 0.8974212034383954,
-          "C2": 0.9422527158376215
+          "S4": 0.8117591275486012,
+          "C1": 0.8969072164948454,
+          "C2": 0.9417142857142857
         },
         "S4": {
           "S0": 0.7521367521367521,
-          "S1": 0.7713878326996197,
+          "S1": 0.7718631178707225,
           "S2": 0.785375118708452,
-          "S3": 0.811284969179706,
+          "S3": 0.8117591275486012,
           "S4": 1.0,
           "C1": 0.7486935866983373,
           "C2": 0.7895486935866983
         },
         "C1": {
           "S0": 0.950337216431637,
-          "S1": 0.9432367149758454,
+          "S1": 0.9426674713337356,
           "S2": 0.9270895080023711,
-          "S3": 0.8974212034383954,
+          "S3": 0.8969072164948454,
           "S4": 0.7486935866983373,
           "C1": 1.0,
           "C2": 0.9289520426287744
         },
         "C2": {
           "S0": 0.9251620506776664,
-          "S1": 0.9492625368731563,
+          "S1": 0.9498525073746312,
           "S2": 0.9629411764705882,
-          "S3": 0.9422527158376215,
+          "S3": 0.9417142857142857,
           "S4": 0.7895486935866983,
           "C1": 0.9289520426287744,
           "C2": 1.0
@@ -4956,7 +5166,7 @@
       "abst_threshold": 0.5,
       "fraction_majority_abstained": {
         "S0": 0.9130966952264382,
-        "S1": 0.9167686658506732,
+        "S1": 0.9179926560587516,
         "S2": 0.9167686658506732,
         "S3": 0.9228886168910648,
         "S4": 0.97796817625459,
@@ -4966,7 +5176,7 @@
       "jaccard": {
         "S0": {
           "S0": 1.0,
-          "S1": 0.9853917662682603,
+          "S1": 0.9867197875166003,
           "S2": 0.9801324503311258,
           "S3": 0.9815059445178336,
           "S4": 0.9336670838548186,
@@ -4974,17 +5184,17 @@
           "C2": 0.980106100795756
         },
         "S1": {
-          "S0": 0.9853917662682603,
+          "S0": 0.9867197875166003,
           "S1": 1.0,
-          "S2": 0.986737400530504,
-          "S3": 0.9828496042216359,
-          "S4": 0.9374217772215269,
-          "C1": 0.9827586206896551,
-          "C2": 0.9814569536423841
+          "S2": 0.9854304635761589,
+          "S3": 0.9841688654353562,
+          "S4": 0.9386733416770964,
+          "C1": 0.9840848806366048,
+          "C2": 0.9801587301587301
         },
         "S2": {
           "S0": 0.9801324503311258,
-          "S1": 0.986737400530504,
+          "S1": 0.9854304635761589,
           "S2": 1.0,
           "S3": 0.9828496042216359,
           "S4": 0.9374217772215269,
@@ -4993,7 +5203,7 @@
         },
         "S3": {
           "S0": 0.9815059445178336,
-          "S1": 0.9828496042216359,
+          "S1": 0.9841688654353562,
           "S2": 0.9828496042216359,
           "S3": 1.0,
           "S4": 0.9436795994993742,
@@ -5002,7 +5212,7 @@
         },
         "S4": {
           "S0": 0.9336670838548186,
-          "S1": 0.9374217772215269,
+          "S1": 0.9386733416770964,
           "S2": 0.9374217772215269,
           "S3": 0.9436795994993742,
           "S4": 1.0,
@@ -5011,7 +5221,7 @@
         },
         "C1": {
           "S0": 0.9866844207723036,
-          "S1": 0.9827586206896551,
+          "S1": 0.9840848806366048,
           "S2": 0.9775132275132276,
           "S3": 0.9762845849802372,
           "S4": 0.9336670838548186,
@@ -5020,7 +5230,7 @@
         },
         "C2": {
           "S0": 0.980106100795756,
-          "S1": 0.9814569536423841,
+          "S1": 0.9801587301587301,
           "S2": 0.9867197875166003,
           "S3": 0.9776021080368906,
           "S4": 0.934918648310388,
