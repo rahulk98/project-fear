@@ -8,3 +8,4 @@
 - Figures reproducible with `python scripts/make_plots.py`; requirements pinned.
 - Follow-up E4: 95% bootstrap error bars on fig01.
 - Follow-up E2: wise versus wasteful abstention split (RESULTS.md section 9, POST.md section 7).
+- Follow-up E3: P(True) and semantic-entropy baselines on the probe population (RESULTS.md section 9).

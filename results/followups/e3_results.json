@@ -1,0 +1,274 @@
+{
+  "model": "/home/s2sadesh/master-thesis-asymmetric-training/outputs/grpo/qwen2_5_1_5b_S0_s42/_merged_for_vllm_float16",
+  "note": "bootstrap 2000x over problems; label=K16 mode answer correct; SE/vote use first K cached samples (K=16 shares samples with the label)",
+  "benches": {
+    "math_test": {
+      "n": 1663,
+      "mode_correct_rate": 0.6753,
+      "signals": {
+        "ptrue_zero_A/B": {
+          "compute": "1 forward pass",
+          "auroc": 0.4819,
+          "ci": [
+            0.4522,
+            0.513
+          ]
+        },
+        "ptrue_zero_True/False": {
+          "compute": "1 forward pass",
+          "auroc": 0.5651,
+          "ci": [
+            0.5371,
+            0.5957
+          ]
+        },
+        "ptrue_two_shot_A/B": {
+          "compute": "1 forward pass",
+          "auroc": 0.6676,
+          "ci": [
+            0.6408,
+            0.6948
+          ]
+        },
+        "ptrue_two_shot_True/False": {
+          "compute": "1 forward pass",
+          "auroc": 0.6432,
+          "ci": [
+            0.6158,
+            0.6706
+          ]
+        },
+        "semantic_entropy_with_abstain_K2": {
+          "compute": "2 generations",
+          "auroc": 0.7088,
+          "ci": [
+            0.6868,
+            0.7298
+          ]
+        },
+        "semantic_entropy_excl_abstain_K2": {
+          "compute": "2 generations",
+          "auroc": 0.6097,
+          "ci": [
+            0.5838,
+            0.6351
+          ]
+        },
+        "mode_vote_agreement_K2": {
+          "compute": "2 generations",
+          "auroc": 0.7277,
+          "ci": [
+            0.7067,
+            0.7486
+          ]
+        },
+        "semantic_entropy_with_abstain_K4": {
+          "compute": "4 generations",
+          "auroc": 0.808,
+          "ci": [
+            0.7863,
+            0.8284
+          ]
+        },
+        "semantic_entropy_excl_abstain_K4": {
+          "compute": "4 generations",
+          "auroc": 0.7868,
+          "ci": [
+            0.7628,
+            0.8091
+          ]
+        },
+        "mode_vote_agreement_K4": {
+          "compute": "4 generations",
+          "auroc": 0.8351,
+          "ci": [
+            0.8166,
+            0.853
+          ]
+        },
+        "semantic_entropy_with_abstain_K8": {
+          "compute": "8 generations",
+          "auroc": 0.8512,
+          "ci": [
+            0.8324,
+            0.8691
+          ]
+        },
+        "semantic_entropy_excl_abstain_K8": {
+          "compute": "8 generations",
+          "auroc": 0.8468,
+          "ci": [
+            0.8277,
+            0.8653
+          ]
+        },
+        "mode_vote_agreement_K8": {
+          "compute": "8 generations",
+          "auroc": 0.8826,
+          "ci": [
+            0.867,
+            0.8987
+          ]
+        },
+        "semantic_entropy_with_abstain_K16": {
+          "compute": "16 generations",
+          "auroc": 0.873,
+          "ci": [
+            0.8558,
+            0.8894
+          ]
+        },
+        "semantic_entropy_excl_abstain_K16": {
+          "compute": "16 generations",
+          "auroc": 0.8811,
+          "ci": [
+            0.864,
+            0.897
+          ]
+        },
+        "mode_vote_agreement_K16": {
+          "compute": "16 generations",
+          "auroc": 0.9078,
+          "ci": [
+            0.8938,
+            0.9212
+          ]
+        }
+      }
+    },
+    "gsm8k_test": {
+      "n": 1033,
+      "mode_correct_rate": 0.7986,
+      "signals": {
+        "ptrue_zero_A/B": {
+          "compute": "1 forward pass",
+          "auroc": 0.5714,
+          "ci": [
+            0.5265,
+            0.6177
+          ]
+        },
+        "ptrue_zero_True/False": {
+          "compute": "1 forward pass",
+          "auroc": 0.5927,
+          "ci": [
+            0.5465,
+            0.6392
+          ]
+        },
+        "ptrue_two_shot_A/B": {
+          "compute": "1 forward pass",
+          "auroc": 0.5985,
+          "ci": [
+            0.5567,
+            0.6381
+          ]
+        },
+        "ptrue_two_shot_True/False": {
+          "compute": "1 forward pass",
+          "auroc": 0.5895,
+          "ci": [
+            0.5478,
+            0.6298
+          ]
+        },
+        "semantic_entropy_with_abstain_K2": {
+          "compute": "2 generations",
+          "auroc": 0.6259,
+          "ci": [
+            0.5922,
+            0.6591
+          ]
+        },
+        "semantic_entropy_excl_abstain_K2": {
+          "compute": "2 generations",
+          "auroc": 0.6594,
+          "ci": [
+            0.6228,
+            0.6953
+          ]
+        },
+        "mode_vote_agreement_K2": {
+          "compute": "2 generations",
+          "auroc": 0.6376,
+          "ci": [
+            0.6049,
+            0.6685
+          ]
+        },
+        "semantic_entropy_with_abstain_K4": {
+          "compute": "4 generations",
+          "auroc": 0.7557,
+          "ci": [
+            0.7197,
+            0.7891
+          ]
+        },
+        "semantic_entropy_excl_abstain_K4": {
+          "compute": "4 generations",
+          "auroc": 0.7722,
+          "ci": [
+            0.7364,
+            0.8073
+          ]
+        },
+        "mode_vote_agreement_K4": {
+          "compute": "4 generations",
+          "auroc": 0.742,
+          "ci": [
+            0.7076,
+            0.7749
+          ]
+        },
+        "semantic_entropy_with_abstain_K8": {
+          "compute": "8 generations",
+          "auroc": 0.8289,
+          "ci": [
+            0.7971,
+            0.8583
+          ]
+        },
+        "semantic_entropy_excl_abstain_K8": {
+          "compute": "8 generations",
+          "auroc": 0.8348,
+          "ci": [
+            0.804,
+            0.8627
+          ]
+        },
+        "mode_vote_agreement_K8": {
+          "compute": "8 generations",
+          "auroc": 0.8195,
+          "ci": [
+            0.7875,
+            0.8499
+          ]
+        },
+        "semantic_entropy_with_abstain_K16": {
+          "compute": "16 generations",
+          "auroc": 0.8552,
+          "ci": [
+            0.8257,
+            0.8818
+          ]
+        },
+        "semantic_entropy_excl_abstain_K16": {
+          "compute": "16 generations",
+          "auroc": 0.8608,
+          "ci": [
+            0.8323,
+            0.8862
+          ]
+        },
+        "mode_vote_agreement_K16": {
+          "compute": "16 generations",
+          "auroc": 0.8545,
+          "ci": [
+            0.8234,
+            0.8823
+          ]
+        }
+      }
+    }
+  }
+}

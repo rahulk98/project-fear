@@ -164,6 +164,26 @@ for S0 to S4 (AUROC 0.48 to 0.51). On MMLU-STEM and TruthfulQA-MC the wise fract
 below the random baseline. Variants using S0 or the condition itself as the difficulty
 reference give the same pattern. P0 on GSM8K abstains on under 1% of samples.
 
+**P(True) and semantic entropy (E3).** Same problems as the probe comparison (n = 1663 MATH,
+1033 GSM8K), S0 model, target = whether the K=16 majority answer is correct (as in
+research/matched_population.py). AUROC with 95% bootstrap intervals over problems.
+
+| Signal | Compute | MATH | GSM8K |
+|---|---|---|---|
+| P(True), zero-shot, (A)/(B) | 1 forward pass | 0.482 [0.452, 0.513] | 0.571 [0.527, 0.618] |
+| P(True), zero-shot, True/False | 1 forward pass | 0.565 [0.537, 0.596] | 0.593 [0.547, 0.639] |
+| P(True), 2-shot, (A)/(B) | 1 forward pass | 0.668 [0.641, 0.695] | 0.599 [0.557, 0.638] |
+| Semantic entropy, K=2 | 2 generations | 0.709 [0.687, 0.730] | 0.626 [0.592, 0.659] |
+| Semantic entropy, K=4 | 4 generations | 0.808 [0.786, 0.828] | 0.756 [0.720, 0.789] |
+| Semantic entropy, K=8 | 8 generations | 0.851 [0.832, 0.869] | 0.829 [0.797, 0.858] |
+| Semantic entropy, K=16 | 16 generations | 0.873 [0.856, 0.889] | 0.855 [0.826, 0.882] |
+
+Semantic entropy clusters final answers by math_verify equivalence, with abstentions as their
+own cluster. P(True) asks the same model whether the majority answer is correct. Caveat: the
+target is computed from the same 16 samples that semantic entropy draws from, so the larger-K
+rows share samples with the label and are optimistic; the same applies to self-consistency.
+The 2-shot negative example is the gold answer plus 2, which is crude.
+
 **Stale summary file.** results/analysis_summary.json (dated 2026-05-25) predates the final
 S1 and S3 rollouts (2026-05-26): 11 S1/S3 abstention cells differ from the raw rollouts by up
 to 0.004. fig01 now uses the raw values; fig02 to fig08 still read the summary file.
