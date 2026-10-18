@@ -46,6 +46,7 @@ COND_COLOR = {
 A = json.loads((EVAL / "analysis_summary.json").read_text())
 T = json.loads((EVAL / "trajectory_summary.json").read_text())
 N = json.loads((EVAL / "stacking_null.json").read_text())
+CI = json.loads((EVAL / "abstention_ci.json").read_text())["cells"]
 
 
 def fig01_abstention_sweep():
@@ -53,14 +54,14 @@ def fig01_abstention_sweep():
     x = np.arange(len(BENCHES))
     fig, ax = plt.subplots(figsize=(11, 5.5))
     for i, c in enumerate(CONDS):
-        vals = []
-        for b in BENCHES:
-            cell = A["per_condition_bench"][c].get(b, {})
-            vals.append(cell.get("abstention_rate_mean", 0.0))
-        ax.bar(x + (i - 3) * width, vals, width, label=c, color=COND_COLOR[c])
+        cells = [CI[f"{c}/{b}"] for b in BENCHES]
+        vals = [k["rate"] for k in cells]
+        err = [[k["rate"] - k["ci_lo"] for k in cells], [k["ci_hi"] - k["rate"] for k in cells]]
+        ax.bar(x + (i - 3) * width, vals, width, yerr=err, capsize=2, error_kw={"lw": 0.8},
+               label=c, color=COND_COLOR[c])
     ax.set_xticks(x)
     ax.set_xticklabels([BENCH_LABEL[b] for b in BENCHES])
-    ax.set_ylabel("Abstention rate (mean over K=16 samples)")
+    ax.set_ylabel("Abstention rate (K=16 mean)\nbars: 95% bootstrap CI over problems")
     ax.set_title("Abstention rate per condition and benchmark (Qwen 2.5 1.5B, K=16)")
     ax.legend(ncol=7, loc="upper left", bbox_to_anchor=(0.0, 1.0), frameon=False, fontsize=9)
     ax.set_ylim(0, 1.0)

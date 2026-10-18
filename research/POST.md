@@ -90,9 +90,9 @@ With K=16 sampling, accuracy when answering on MATH goes from 0.535 (S0) to 0.51
 
 ![Abstention rate by condition and benchmark](../docs/figures/fig01_abstention_sweep.png)
 
-*Figure 1. Abstention rate (mean over K=16 samples) per condition on six benchmarks, Qwen 2.5 1.5B.*
+*Figure 1. Abstention rate (mean over K=16 samples) per condition on six benchmarks, Qwen 2.5 1.5B. Error bars are 95% bootstrap intervals over problems; they show evaluation noise only, since each condition is one training seed.*
 
-Abstention rises with $t$ on every benchmark, though not strictly everywhere: on AIME 2024 and 2025 (30 problems each), S1 abstains slightly less than S0.
+Abstention rises with $t$ on every benchmark except AIME 2024 and 2025, where S1 abstains slightly less than S0; with 30 problems each, those intervals are wide and overlap.
 
 ### 2. The confidence ranking does not change
 
@@ -142,7 +142,25 @@ Now the penalty reaches behavior: S2 abstains three times as often as S0 on MATH
 
 We used the 1.5B adapters zero-shot as step-correctness judges on PRM800K. Judge abstention rises with $t$: 0.342, 0.367, 0.386, 0.426 and 0.549 for S0 to S4 at temperature 0, with the same order at 0.7. At 1.0 the order breaks (S0 0.717, S1 0.699, S2 0.743, S3 0.718, S4 0.747), with n = 2000. Judging accuracy on attempted items stays flat across S0 to S4 (0.635 to 0.648 at temperature 0). The willingness to abstain carries over; the competence does not change.
 
-### 7. What the probes showed
+### 7. When the model abstains, was it likely to be wrong?
+
+Abstention rate alone does not say whether the model abstains on the right questions. For each problem we estimate how hard it is from the base model's K=16 samples (the fraction of its answered samples that are correct), independent of the condition being judged. We call an abstention "wise" if the problem's estimated accuracy is below 0.5. A model that abstained at random would get a wise fraction equal to the share of hard problems.
+
+| Condition | $t$ | MATH abstention | MATH wise fraction [95% CI] | GSM8K wise fraction |
+|---|---|---|---|---|
+| P0 | 0 | 0.117 | 0.872 | 0.495 |
+| S0 | 0.50 | 0.142 | 0.797 [0.780, 0.813] | 0.288 |
+| C1 | 0.60 | 0.151 | 0.779 | |
+| S1 | 0.67 | 0.163 | 0.755 | |
+| C2 | 0.75 | 0.178 | 0.716 | |
+| S2 | 0.80 | 0.183 | 0.716 | |
+| S3 | 0.91 | 0.204 | 0.682 [0.665, 0.699] | 0.286 |
+| S4 | 1.00 | 0.613 | 0.526 [0.511, 0.540] | 0.291 |
+| random abstainer | | | 0.501 | 0.290 |
+
+On MATH, abstentions do land on hard problems more often than chance, but the wise fraction falls as $t$ rises: the extra abstention that a larger penalty buys is spread over easy and hard problems alike, and at S4 it is close to random. On GSM8K, abstention is unrelated to difficulty in every penalty condition (wise fraction equal to the random baseline). On MMLU-STEM and TruthfulQA-MC it is at or slightly below the random baseline. Raising the penalty buys more abstention, not better-targeted abstention, which is what the mechanism predicts. Two caveats: the difficulty estimate uses 16 samples per problem, and it is computed only from the base model's answered samples.
+
+### 8. What the probes showed
 
 We trained linear probes on last-token hidden states to predict whether a sampled answer is correct. A probe trained on one condition's rollouts decodes correctness on every other condition almost as well as that condition's own probe: across 14 trained conditions, mean off-diagonal AUROC is 0.989 on MATH and 0.992 on GSM8K, against 0.998 and 1.000 on the diagonal (worst single pair 0.787 on MATH). The conditions appear to share one internal correctness direction and differ mainly in the abstention threshold, as the mechanism predicts.
 
@@ -177,7 +195,7 @@ What we think is new: the reduction stated for full three-level designs (every s
 
 1. **Rewards that vary within an outcome class.** Any reward under which two correct answers can score differently escapes the reduction. A verbalized confidence scored with a proper scoring rule (as in RLCR) is one option. A probe score is another: our probes decode correctness well, so a probe-shaped reward would add a per-sample signal that group composition at $G = 8$ cannot.
 2. **Estimators that keep magnitude without collapsing.** RLOO or a mean-only baseline keep the reward scale, but our ablation suggests they need a guard against over-abstention, such as a decoupled abstention advantage (TIAR) or Che et al.'s report-level repair.
-3. **Measure per-question calibration directly.** Report "when the model abstains, was it likely to be wrong?" next to the abstention rate. This split is coded and will be run on the cached rollouts.
+3. **Measure per-question calibration directly.** Report the wise fraction of abstentions (section 7) next to the abstention rate, so that more abstention is not mistaken for better abstention.
 4. **More seeds and error bars** for the main 1.5B conditions, and the no-normalization ablation at 3B.
 
 ## Acknowledgements

@@ -132,6 +132,44 @@ generation carries over to step judging; the judging competence does not change.
 
 ---
 
+## 9. Follow-ups (2026-10-18)
+
+Run on the cached K=16 rollouts (1.5B, one training seed per condition). Scripts in
+research/followups/, outputs in results/followups/ and results/abstention_ci.json.
+
+**Abstention error bars.** 95% bootstrap intervals over problems for every condition and
+benchmark (fig01). Half-widths are at most about 0.01 on MATH, GSM8K, MMLU-STEM and
+TruthfulQA-MC and up to 0.095 on AIME 2024 and 2025 (30 problems each). These cover
+evaluation noise only, not training-seed variation.
+
+**Wise versus wasteful abstention.** Problem difficulty is estimated from the base model's
+K=16 samples (accuracy among its answered samples). An abstention is wise if that estimate is
+below 0.5. A random abstainer would score the share of hard problems (0.501 on MATH, 0.290 on
+GSM8K).
+
+| Condition | MATH abstention | MATH wise fraction [95% CI] | MATH AUROC | GSM8K wise fraction |
+|---|---|---|---|---|
+| P0 | 0.117 | 0.872 | 0.771 | 0.495 |
+| S0 | 0.142 | 0.797 [0.780, 0.813] | 0.758 | 0.288 |
+| C1 | 0.151 | 0.779 | 0.756 | |
+| S1 | 0.163 | 0.755 | 0.748 | |
+| C2 | 0.178 | 0.716 | 0.727 | |
+| S2 | 0.183 | 0.716 | 0.732 | |
+| S3 | 0.204 | 0.682 [0.665, 0.699] | 0.714 | 0.286 |
+| S4 | 0.613 | 0.526 [0.511, 0.540] | 0.570 | 0.291 |
+
+AUROC is problem-level abstention count against the hard-problem label. On MATH the wise
+fraction falls as the implied threshold rises; on GSM8K abstention is unrelated to difficulty
+for S0 to S4 (AUROC 0.48 to 0.51). On MMLU-STEM and TruthfulQA-MC the wise fraction is at or
+below the random baseline. Variants using S0 or the condition itself as the difficulty
+reference give the same pattern. P0 on GSM8K abstains on under 1% of samples.
+
+**Stale summary file.** results/analysis_summary.json (dated 2026-05-25) predates the final
+S1 and S3 rollouts (2026-05-26): 11 S1/S3 abstention cells differ from the raw rollouts by up
+to 0.004. fig01 now uses the raw values; fig02 to fig08 still read the summary file.
+
+---
+
 ## 8. Reference trace corpus (Phase 1)
 
 6000 reasoning traces generated with qwen3:30b (MoE A3B) via Ollama: 2000 MATH Level 4 to 5
