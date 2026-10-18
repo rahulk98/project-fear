@@ -44,28 +44,7 @@ scratch/
 .vscode/
 *.swp
 
-# write-up is kept locally and published on the personal site only
+# local only: write-up, its review copy, and project trackers
 research/POST.md
-
-# internal notes, logs and exploratory scripts kept locally only
-CHANGELOG.md
-CITATION.cff
-RESULTS.md
-docs/PROJECT_REPORT.md
-research/*.md
-research/figures/
-tasks/
-research/av_analyze.py
-research/av_gen_rollouts.py
-research/cost_sensitive_utility.py
-research/fear_domain_split.py
-research/probe_adaptive_compute.py
-research/probe_bestofn.py
-research/probe_gate.py
-research/voi_precheck.py
-research/plot_selectivity.py
-research/sc_selectivity.py
-research/cross_domain_probe.py
-
-# local review copies of the write-up
 research/*.docx
+tasks/
