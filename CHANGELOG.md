@@ -14,3 +14,4 @@
 - Corrected: the cross-condition probe transfer (0.989 / 0.992) was an abstained-vs-attempted probe, not a correctness probe; the "shared correctness direction" claim is withdrawn from README, RESULTS.md and the post.
 - Follow-up Q3: offline advantage analysis explaining the falling wise fraction; simple per-question abstain rewards did not help offline. Post mechanism wording made precise for t = 0 and t = 1. Post links the invariance test.
 - Regenerated results/analysis_summary.json, trajectory_summary.json and stacking_null.json from the final rollouts with stored labels (S1/S3 were stale); fig02 to fig08 redrawn. The all-attempted MATH subset is 1324 problems (was 1326), S4 per-attempt accuracy 0.494 (was 0.493); stacking significance 25 to 98 sigma (was 99).
+- Added evals/abstention/: an Inspect (UK AISI) eval of wise versus wasteful abstention on MATH and GSM8K for any model, with unit tests.

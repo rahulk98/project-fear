@@ -204,7 +204,7 @@ What we think is new: the reduction stated for full three-level designs (every s
 1. **Rewards that vary within an outcome class.** Any reward under which two correct answers can score differently escapes the reduction. A verbalized confidence scored with a proper scoring rule (as in RLCR) is one option. A probe score is another: the probe in section 8 carries per-question correctness information, so a probe-shaped reward would add a per-sample signal that group composition at $G = 8$ cannot.
    A caution from an offline check on cached samples (no training): two simple per-question abstention rewards, one set by within-group answer agreement and one by the probe score, did not separate hard from easy problems better than a fixed $t = 0.5$. The per-question signal has to be strong to beat what group composition already provides.
 2. **Estimators that keep magnitude without collapsing.** RLOO or a mean-only baseline keep the reward scale, but our ablation suggests they need a guard against over-abstention, such as a decoupled abstention advantage (TIAR) or Che et al.'s report-level repair.
-3. **Measure per-question calibration directly.** Report the wise fraction of abstentions (section 7) next to the abstention rate, so that more abstention is not mistaken for better abstention.
+3. **Measure per-question calibration directly.** Report the wise fraction of abstentions (section 7) next to the abstention rate, so that more abstention is not mistaken for better abstention. The repository packages this as an Inspect eval that runs on any model (`evals/abstention/`).
 4. **More seeds and error bars** for the main 1.5B conditions, and the no-normalization ablation at 3B.
 
 ## Acknowledgements

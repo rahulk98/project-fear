@@ -105,6 +105,9 @@ end-to-end [project report](docs/PROJECT_REPORT.md).
 
 ![Selective accuracy curves](docs/figures/fig04_auacc_curves.png)
 
+Measure wise versus wasteful abstention on any model with the Inspect eval in
+[evals/abstention/](evals/abstention/README.md).
+
 Regenerate the figures (needs only numpy and matplotlib; inputs are in `results/`):
 
 ```bash
