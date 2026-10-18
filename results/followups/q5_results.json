@@ -1,0 +1,671 @@
+{
+ "cap": 1024,
+ "margin": 8,
+ "refusal_patterns": [
+  "i don'?t know",
+  "i do not know",
+  "i'?m not sure",
+  "i am not sure",
+  "cannot determine",
+  "can'?not be determined",
+  "can'?t determine",
+  "not enough information",
+  "insufficient information",
+  "unable to (determine|solve|answer|find|provide|compute|calculate)",
+  "i (cannot|can'?t|am unable to|'?m unable to) (solve|answer|determine|provide|help|find)",
+  "no (way|means) to (determine|know)",
+  "cannot be (solved|answered|found)",
+  "\\bIDK\\b",
+  "double-check (the|your) (problem|information|question)",
+  "(please|kindly) (check|clarify|provide|verify)",
+  "i apologi[sz]e",
+  "(we|i) (can'?t|cannot) (find|solve|provide|calculate|proceed|run)",
+  "problem (statement )?(is|may be|might be) (incorrect|flawed|invalid)",
+  "no solution",
+  "not possible to (determine|find|solve)",
+  "need more information",
+  "without (further|more|additional) (information|context)"
+ ],
+ "unboxed_cue_pattern": "(the )?(final |correct )?answer( to [^.\\n]{0,60})? (is|=)|^\\s*####|\\banswer:",
+ "echo_suffix_pattern": "\\n?\\s*You are an AI assistant[^\\n]*$|\\n?\\s*(User will you give you|Your task is to answer as faithfully|Your goal is to complete the task|You will be given a task)[^\\n]*$",
+ "code_pattern": "^\\s*Let'?s (write|program|use|create)[^.\\n]{0,40}(Python|code|program)|```python|^(# Step \\d+[:.].*\\n?){3,}",
+ "cells": {
+  "S0/math_test": {
+   "n_samples": 80000,
+   "n_abstained": 11399,
+   "abst_rate": 0.1424875,
+   "counts": {
+    "truncated": 9705,
+    "explicit_refusal": 15,
+    "answer_unboxed": 1348,
+    "malformed_or_degenerate": 44,
+    "code_program": 283,
+    "unterminated_early_stop": 0,
+    "other": 4
+   },
+   "shares": {
+    "truncated": 0.8513904728484954,
+    "explicit_refusal": 0.001315904903938942,
+    "answer_unboxed": 0.11825598736731292,
+    "malformed_or_degenerate": 0.0038599877182208964,
+    "code_program": 0.02482673918764804,
+    "unterminated_early_stop": 0.0,
+    "other": 0.0003509079743837179
+   },
+   "n_trunc_looping": 426,
+   "n_with_echo_suffix": 275,
+   "len_pctl": {
+    "5": 211.89999999999998,
+    "25": 1024.0,
+    "50": 1024.0,
+    "75": 1024.0,
+    "95": 1024.0
+   },
+   "near_cap": {
+    "==1024": 9618,
+    "1016-1023": 78,
+    ">1024": 9,
+    "1000-1015": 5,
+    "900-999": 27
+   }
+  },
+  "S0/gsm8k_test": {
+   "n_samples": 21104,
+   "n_abstained": 3650,
+   "abst_rate": 0.1729529946929492,
+   "counts": {
+    "truncated": 98,
+    "explicit_refusal": 18,
+    "answer_unboxed": 3374,
+    "malformed_or_degenerate": 17,
+    "code_program": 143,
+    "unterminated_early_stop": 0,
+    "other": 0
+   },
+   "shares": {
+    "truncated": 0.02684931506849315,
+    "explicit_refusal": 0.004931506849315068,
+    "answer_unboxed": 0.9243835616438356,
+    "malformed_or_degenerate": 0.004657534246575342,
+    "code_program": 0.03917808219178082,
+    "unterminated_early_stop": 0.0,
+    "other": 0.0
+   },
+   "n_trunc_looping": 5,
+   "n_with_echo_suffix": 1586,
+   "len_pctl": {
+    "5": 92.0,
+    "25": 178.0,
+    "50": 239.0,
+    "75": 309.0,
+    "95": 501.5499999999997
+   },
+   "near_cap": {
+    "==1024": 97,
+    "1016-1023": 0,
+    ">1024": 1,
+    "1000-1015": 0,
+    "900-999": 2
+   }
+  },
+  "S3/math_test": {
+   "n_samples": 80000,
+   "n_abstained": 16308,
+   "abst_rate": 0.20385,
+   "counts": {
+    "truncated": 9470,
+    "explicit_refusal": 48,
+    "answer_unboxed": 3149,
+    "malformed_or_degenerate": 39,
+    "code_program": 3596,
+    "unterminated_early_stop": 0,
+    "other": 6
+   },
+   "shares": {
+    "truncated": 0.5806965906303655,
+    "explicit_refusal": 0.0029433406916850625,
+    "answer_unboxed": 0.1930954132940888,
+    "malformed_or_degenerate": 0.0023914643119941135,
+    "code_program": 0.22050527348540594,
+    "unterminated_early_stop": 0.0,
+    "other": 0.0003679175864606328
+   },
+   "n_trunc_looping": 458,
+   "n_with_echo_suffix": 691,
+   "len_pctl": {
+    "5": 78.0,
+    "25": 226.0,
+    "50": 1024.0,
+    "75": 1024.0,
+    "95": 1024.0
+   },
+   "near_cap": {
+    "==1024": 9372,
+    "1016-1023": 88,
+    ">1024": 10,
+    "1000-1015": 4,
+    "900-999": 41
+   }
+  },
+  "S3/gsm8k_test": {
+   "n_samples": 21104,
+   "n_abstained": 8999,
+   "abst_rate": 0.4264120545868082,
+   "counts": {
+    "truncated": 133,
+    "explicit_refusal": 33,
+    "answer_unboxed": 6811,
+    "malformed_or_degenerate": 19,
+    "code_program": 2000,
+    "unterminated_early_stop": 0,
+    "other": 3
+   },
+   "shares": {
+    "truncated": 0.014779419935548394,
+    "explicit_refusal": 0.003667074119346594,
+    "answer_unboxed": 0.7568618735415046,
+    "malformed_or_degenerate": 0.002111345705078342,
+    "code_program": 0.222246916324036,
+    "unterminated_early_stop": 0.0,
+    "other": 0.000333370374486054
+   },
+   "n_trunc_looping": 25,
+   "n_with_echo_suffix": 3371,
+   "len_pctl": {
+    "5": 72.90000000000003,
+    "25": 128.0,
+    "50": 207.0,
+    "75": 285.0,
+    "95": 440.10000000000036
+   },
+   "near_cap": {
+    "==1024": 130,
+    "1016-1023": 2,
+    ">1024": 1,
+    "1000-1015": 1,
+    "900-999": 2
+   }
+  },
+  "S4/math_test": {
+   "n_samples": 80000,
+   "n_abstained": 49068,
+   "abst_rate": 0.61335,
+   "counts": {
+    "truncated": 3944,
+    "explicit_refusal": 188,
+    "answer_unboxed": 11703,
+    "malformed_or_degenerate": 50,
+    "code_program": 33168,
+    "unterminated_early_stop": 0,
+    "other": 15
+   },
+   "shares": {
+    "truncated": 0.08037825059101655,
+    "explicit_refusal": 0.0038314176245210726,
+    "answer_unboxed": 0.23850574712643677,
+    "malformed_or_degenerate": 0.0010189940490747534,
+    "code_program": 0.6759598923942284,
+    "unterminated_early_stop": 0.0,
+    "other": 0.000305698214722426
+   },
+   "n_trunc_looping": 388,
+   "n_with_echo_suffix": 5999,
+   "len_pctl": {
+    "5": 58.0,
+    "25": 99.0,
+    "50": 157.0,
+    "75": 305.0,
+    "95": 1024.0
+   },
+   "near_cap": {
+    "==1024": 3897,
+    "1016-1023": 46,
+    ">1024": 1,
+    "1000-1015": 9,
+    "900-999": 101
+   }
+  },
+  "S4/gsm8k_test": {
+   "n_samples": 21104,
+   "n_abstained": 18964,
+   "abst_rate": 0.8985974222896134,
+   "counts": {
+    "truncated": 80,
+    "explicit_refusal": 46,
+    "answer_unboxed": 11082,
+    "malformed_or_degenerate": 5,
+    "code_program": 7751,
+    "unterminated_early_stop": 0,
+    "other": 0
+   },
+   "shares": {
+    "truncated": 0.004218519299725796,
+    "explicit_refusal": 0.002425648597342333,
+    "answer_unboxed": 0.584370385994516,
+    "malformed_or_degenerate": 0.00026365745623286224,
+    "code_program": 0.40872178865218306,
+    "unterminated_early_stop": 0.0,
+    "other": 0.0
+   },
+   "n_trunc_looping": 17,
+   "n_with_echo_suffix": 8931,
+   "len_pctl": {
+    "5": 71.0,
+    "25": 110.0,
+    "50": 187.0,
+    "75": 274.0,
+    "95": 409.0
+   },
+   "near_cap": {
+    "==1024": 79,
+    "1016-1023": 1,
+    ">1024": 0,
+    "1000-1015": 0,
+    "900-999": 3
+   }
+  },
+  "P0/math_test": {
+   "n_samples": 80000,
+   "n_abstained": 9340,
+   "abst_rate": 0.11675,
+   "counts": {
+    "truncated": 9231,
+    "explicit_refusal": 1,
+    "answer_unboxed": 80,
+    "malformed_or_degenerate": 11,
+    "code_program": 16,
+    "unterminated_early_stop": 0,
+    "other": 1
+   },
+   "shares": {
+    "truncated": 0.9883297644539615,
+    "explicit_refusal": 0.00010706638115631691,
+    "answer_unboxed": 0.008565310492505354,
+    "malformed_or_degenerate": 0.001177730192719486,
+    "code_program": 0.0017130620985010706,
+    "unterminated_early_stop": 0.0,
+    "other": 0.00010706638115631691
+   },
+   "n_trunc_looping": 397,
+   "n_with_echo_suffix": 2,
+   "len_pctl": {
+    "5": 1024.0,
+    "25": 1024.0,
+    "50": 1024.0,
+    "75": 1024.0,
+    "95": 1024.0
+   },
+   "near_cap": {
+    "==1024": 9157,
+    "1016-1023": 69,
+    ">1024": 5,
+    "1000-1015": 3,
+    "900-999": 3
+   }
+  },
+  "P0/gsm8k_test": {
+   "n_samples": 21104,
+   "n_abstained": 200,
+   "abst_rate": 0.009476876421531463,
+   "counts": {
+    "truncated": 72,
+    "explicit_refusal": 0,
+    "answer_unboxed": 119,
+    "malformed_or_degenerate": 3,
+    "code_program": 5,
+    "unterminated_early_stop": 0,
+    "other": 1
+   },
+   "shares": {
+    "truncated": 0.36,
+    "explicit_refusal": 0.0,
+    "answer_unboxed": 0.595,
+    "malformed_or_degenerate": 0.015,
+    "code_program": 0.025,
+    "unterminated_early_stop": 0.0,
+    "other": 0.005
+   },
+   "n_trunc_looping": 11,
+   "n_with_echo_suffix": 19,
+   "len_pctl": {
+    "5": 90.65,
+    "25": 171.0,
+    "50": 288.5,
+    "75": 1024.0,
+    "95": 1024.0
+   },
+   "near_cap": {
+    "==1024": 71,
+    "1016-1023": 1,
+    ">1024": 0,
+    "1000-1015": 1,
+    "900-999": 1
+   }
+  }
+ },
+ "examples": {
+  "truncated": [
+   {
+    "cond": "P0",
+    "bench": "math_test",
+    "pid": "math_test_2691",
+    "idx": 15,
+    "ntok": 1024,
+    "echo_suffix_stripped": false,
+    "tail": "and the recurrence relation.\n\n### Step 4: Derive the constants \\(a\\) and \\(b\\)\nGiven the initial conditions:\n\\[ G_2 = F_6, \\quad G_3 = F_9 \\]\n\nUsing the recurrence relation for \\(G_n\\):\n\\[ G_n = a G_{"
+   },
+   {
+    "cond": "S3",
+    "bench": "math_test",
+    "pid": "math_test_2297",
+    "idx": 7,
+    "ntok": 1024,
+    "echo_suffix_stripped": false,
+    "tail": " the variable\nomega = sp.exp(2 * sp.pi * sp.I / 1997)\n\n# Calculate the sum\nsum_value = sum(1 / (1 + omega**k) for k in range(1, 1998))\n\n# Simplify the sum\nsum_value_simplified = sp.simplify(sum_value)"
+   },
+   {
+    "cond": "P0",
+    "bench": "math_test",
+    "pid": "math_test_1657",
+    "idx": 14,
+    "ntok": 1024,
+    "echo_suffix_stripped": false,
+    "tail": ", 6, 7, 8, 9\\) gives us \\(600, 601, 602, 603, 604, 605, 606, 607, 608, 609\\).\n\n- **Case 2: The digit \\(6\\) is in the tens place.**\n  - The number is of the form \\(60 + n\\) where \\(30 \\leq n \\leq 99\\)."
+   },
+   {
+    "cond": "P0",
+    "bench": "math_test",
+    "pid": "math_test_3122",
+    "idx": 13,
+    "ntok": 1024,
+    "echo_suffix_stripped": false,
+    "tail": "\\( p_1^{e_1 - 1} p_2^{e_2 - 1} p_3^{e_3 - 1} \\) and \\( p_1^{e_1 - 1} p_2^{e_2 - 1} p_3^{e_3 - 1} p_4^{e_4 - 1} \\) where \\( e_1, e_2, e_3, e_4 \\) are all 1. This means \\( n \\) must be of the form \\( p_"
+   },
+   {
+    "cond": "S3",
+    "bench": "math_test",
+    "pid": "math_test_2562",
+    "idx": 3,
+    "ntok": 1024,
+    "echo_suffix_stripped": false,
+    "tail": "c \\implies 25 + b^2 + c^2 = 5b + 5c + bc.\\]\n\nRearrange to get:\n\n\\[25 + b^2 + c^2 - 5b - 5c = bc.\\]\n\nThis is also not easily factorable with simple integer solutions for \\(b, c > 1\\). Let's try \\(a = 6"
+   }
+  ],
+  "explicit_refusal": [
+   {
+    "cond": "S0",
+    "bench": "gsm8k_test",
+    "pid": "gsm8k_test_182",
+    "idx": 15,
+    "ntok": 517,
+    "echo_suffix_stripped": true,
+    "tail": "mation provided, meaning it cannot be solved using the information given. We can adjust the information to make the problem solvable or provide additional information to answer the question correctly."
+   },
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_464",
+    "idx": 6,
+    "ntok": 275,
+    "echo_suffix_stripped": false,
+    "tail": "ng as the equation remains true. However, without additional information or constraints, there is no specific value of $x$ that can be determined. The value of $x$ can be any non-negative real number."
+   },
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_3382",
+    "idx": 15,
+    "ntok": 340,
+    "echo_suffix_stripped": true,
+    "tail": "the sum of all possible values of h(x).\nStep 8:  With the given information, we cannot determine the sum of all possible values of h(x).\nStep 9:  We need more details to solve this problem accurately."
+   },
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_3216",
+    "idx": 5,
+    "ntok": 96,
+    "echo_suffix_stripped": false,
+    "tail": "h all possible values of k\nfor k in range(1, modulus):\n    # check if the congruence has no solutions\n    if (3 * k) % modulus > 0:\n        count += 1\n\n# print the count of valid k values\nprint(count)"
+   },
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_2184",
+    "idx": 13,
+    "ntok": 361,
+    "echo_suffix_stripped": false,
+    "tail": "olve for $x$:\n\n$2x^2+7x-c=0$\n\nUnfortunately, without knowing the value of $c$, we cannot find the exact vertical asymptote. If you have the value of $c$, we can proceed to find the vertical asymptote."
+   }
+  ],
+  "answer_unboxed": [
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_2025",
+    "idx": 8,
+    "ntok": 482,
+    "echo_suffix_stripped": true,
+    "tail": "dians.\nStep 11:  We can then express the length of arc AB in terms of the given angle and the radius.\nStep 12:  Therefore, the number of inches in the length of the arc AB is 2\u03c0r \u00d7 (50/180) = (5\u03c0r)/9."
+   },
+   {
+    "cond": "S4",
+    "bench": "gsm8k_test",
+    "pid": "gsm8k_test_591",
+    "idx": 14,
+    "ntok": 206,
+    "echo_suffix_stripped": false,
+    "tail": "e weight of the fourth dog. The fourth dog is the Mastiff, who weighs 44 times the weight of the Papillon. So, the weight of the Mastiff is 44 * 5 = 220 pounds.\n\nAnswer:\nThe Mastiff weighs 220 pounds."
+   },
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_3849",
+    "idx": 7,
+    "ntok": 297,
+    "echo_suffix_stripped": false,
+    "tail": "tance traveled in 3 seconds by the time it took (3 seconds):\nSpeed = Distance in 3 seconds / Time taken\nSpeed = 36\u03c0 in / 3 s\nSpeed = 12\u03c0 in/s\n\nTherefore, the unicycle's speed is 12\u03c0 inches per second."
+   },
+   {
+    "cond": "S3",
+    "bench": "gsm8k_test",
+    "pid": "gsm8k_test_1256",
+    "idx": 3,
+    "ntok": 177,
+    "echo_suffix_stripped": false,
+    "tail": "water at a speed of 10 yards per minute, it will take him 100/10 = 10 minutes to cover the water distance. Thus, the total time Phineas will take to return home is 5 + 10 = 15 minutes. The answer: 15."
+   },
+   {
+    "cond": "S4",
+    "bench": "gsm8k_test",
+    "pid": "gsm8k_test_805",
+    "idx": 12,
+    "ntok": 226,
+    "echo_suffix_stripped": true,
+    "tail": "f the ring, add the premium cost to the total cost before premium.\n$900 (total cost before premium) + $270 (premium cost) = $1170 (final cost of the ring)\n\nFinal answer: James paid $1170 for the ring."
+   }
+  ],
+  "malformed_or_degenerate": [
+   {
+    "cond": "S0",
+    "bench": "math_test",
+    "pid": "math_test_4349",
+    "idx": 14,
+    "ntok": 929,
+    "echo_suffix_stripped": false,
+    "tail": ":\n\n100 / 99\n\nTherefore, $.0\\overline{3} \\div .\\overline{03} = 100 / 99$\n\nFinally, we can express the answer as a mixed number:\n\n100 / 99 = 1 1 / 99\n\nSo, $.0\\overline{3} \\div .\\overline{03}$ = 1 1 / 99"
+   },
+   {
+    "cond": "S3",
+    "bench": "math_test",
+    "pid": "math_test_1348",
+    "idx": 10,
+    "ntok": 0,
+    "echo_suffix_stripped": false,
+    "tail": ""
+   },
+   {
+    "cond": "S0",
+    "bench": "math_test",
+    "pid": "math_test_2492",
+    "idx": 10,
+    "ntok": 18,
+    "echo_suffix_stripped": false,
+    "tail": "Justified by your answer, this sum of all possible values of $n$ is:"
+   },
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_3834",
+    "idx": 13,
+    "ntok": 570,
+    "echo_suffix_stripped": true,
+    "tail": "ch number formed:\nTotal prime numbers = 1 (from 13) + 2 (from 17, 37, and 73) + 2 (from 61 and 71) = 5\n\nSo, we can create 5 prime numbers using two or fewer different digits from the set {1, 3, 6, 7}."
+   },
+   {
+    "cond": "S3",
+    "bench": "math_test",
+    "pid": "math_test_536",
+    "idx": 10,
+    "ntok": 7,
+    "echo_suffix_stripped": false,
+    "tail": "Please write a program to solve it"
+   }
+  ],
+  "code_program": [
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_4278",
+    "idx": 12,
+    "ntok": 127,
+    "echo_suffix_stripped": false,
+    "tail": "alue\ndimes = total_value / dime_value\nquarters = total_value / quarter_value\n\n# calculate the total number of coins\ntotal_coins = nickels + dimes + quarters\n\n# print the result\nprint(int(total_coins))"
+   },
+   {
+    "cond": "S4",
+    "bench": "gsm8k_test",
+    "pid": "gsm8k_test_1186",
+    "idx": 12,
+    "ntok": 92,
+    "echo_suffix_stripped": false,
+    "tail": "istance = 5\n\n# calculate the total distance\ntotal_distance = (monday_distance + wednesday_distance + friday_distance) + (tuesday_distance + thursday_distance)\n\n# print the result\nprint(total_distance)"
+   },
+   {
+    "cond": "S4",
+    "bench": "gsm8k_test",
+    "pid": "gsm8k_test_40",
+    "idx": 13,
+    "ntok": 69,
+    "echo_suffix_stripped": false,
+    "tail": "ogram to solve it.\n\n# define the ages\nsuzy_age = 1  # in years\n\n# calculate ben's age\nben_age = 2 * suzy_age\n\n# calculate brandon's age\nbrandon_age = 4 * ben_age\n\n# print the result\nprint(brandon_age)"
+   },
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_491",
+    "idx": 13,
+    "ntok": 60,
+    "echo_suffix_stripped": false,
+    "tail": "ite a Python program to solve it.\nimport math\n\n# define the given values\nbase = math.pow(5, 1/3)\nvalue = 125\n\n# calculate the logarithm\nresult = math.log(value, base)\n\n# print the result\nprint(result)"
+   },
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_2099",
+    "idx": 15,
+    "ntok": 488,
+    "echo_suffix_stripped": false,
+    "tail": "   # Therefore, L1 = L2 = d\n    # The chord parallel to these chords and midway between them is of length \u221aa\n    # So, \u221aa = L1/2 = 10/2 = 5\n    # Therefore, a = 5^2 = 25\n    return 25\n\nprint(find_a())"
+   }
+  ],
+  "unterminated_early_stop": [],
+  "other": [
+   {
+    "cond": "S0",
+    "bench": "math_test",
+    "pid": "math_test_4563",
+    "idx": 15,
+    "ntok": 396,
+    "echo_suffix_stripped": false,
+    "tail": "ir(210);\nF = (r + s)*dir(90);\n\nfilldraw(Circle(O,s),blue);\nfilldraw(Circle(D,r),red);\nfilldraw(Circle(E,r),red);\nfilldraw(Circle(F,r),red);\ndraw(Circle(A,1));\ndraw(Circle(B,1));\ndraw(Circle(C,1));\n```"
+   },
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_2744",
+    "idx": 13,
+    "ntok": 495,
+    "echo_suffix_stripped": false,
+    "tail": "constraint, filters out duplicates, and then sums the distinct solutions.\n\nBy following these steps, we ensure all conditions are met correctly, and we obtain the correct sum of distinct ( x ) values."
+   },
+   {
+    "cond": "S0",
+    "bench": "math_test",
+    "pid": "math_test_2156",
+    "idx": 14,
+    "ntok": 354,
+    "echo_suffix_stripped": false,
+    "tail": " the original equation. \n\nNote: The actual solving of the polynomial equation is beyond the scope of this response. It may require numerical methods or advanced algebraic techniques to find the roots."
+   },
+   {
+    "cond": "P0",
+    "bench": "math_test",
+    "pid": "math_test_644",
+    "idx": 14,
+    "ntok": 23,
+    "echo_suffix_stripped": false,
+    "tail": "If there is more than one set of primes, submit them all in the order given in the sample test cases."
+   },
+   {
+    "cond": "S4",
+    "bench": "math_test",
+    "pid": "math_test_4813",
+    "idx": 5,
+    "ntok": 517,
+    "echo_suffix_stripped": false,
+    "tail": "$ is $\\left(\\frac{1}{5}, \\frac{4}{5}\\right)$.\n```asy\nunitsize(1 cm);\n\npair A, B, P;\n\nA = (0,0);\nB = (5,1);\nP = interp(A,B,-1/5);\n\ndraw(B--P);\n\ndot(\"$A$\", A, S);\ndot(\"$B$\", B, S);\ndot(\"$P$\", P, S);\n```"
+   }
+  ]
+ },
+ "validation": {
+  "note": "Manual validation by the analyst: stratified sample, 9 per rule category (seed 2), 54 completions, read head and tail, labels assigned blind to rule output. Done on rule version v3. Rules were tuned earlier on two separate 63-completion dev samples (seeds 0, 1; agreement 36/63 and 38/63 before tuning). After the v3 validation one rule was changed (a prompt-restating 'in \\boxed{}' no longer counts as a malformed box); it was not re-validated, counts below are from the final rules.",
+  "n": 54,
+  "agree": 34,
+  "agree_frac": 0.6296296296296297,
+  "population_weighted_agreement": 0.8897792626762846,
+  "per_rule_category": {
+   "truncated": [
+    9,
+    9
+   ],
+   "explicit_refusal": [
+    2,
+    9
+   ],
+   "answer_unboxed": [
+    6,
+    9
+   ],
+   "malformed_or_degenerate": [
+    3,
+    9
+   ],
+   "code_program": [
+    9,
+    9
+   ],
+   "other": [
+    5,
+    9
+   ]
+  },
+  "per_rule_category_format": "[agree, n]",
+  "main_disagreements": [
+   "rule malformed_or_degenerate but analyst answer_unboxed: 5 (v3 box rule; since fixed)",
+   "rule explicit_refusal but analyst answer_unboxed: 3 ('no solution' conclusions)",
+   "rule explicit_refusal but analyst other: 3",
+   "analyst explicit_refusal, rule other: 2"
+  ]
+ }
+}

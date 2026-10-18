@@ -1,0 +1,160 @@
+{
+ "math_test": {
+  "n_groups": 10000,
+  "n_samples": 80000,
+  "group_counts": {
+   "all-same": 2120,
+   "two-outcome": 5672,
+   "three-outcome": 2208
+  },
+  "A_vs_B_(both t=.75)": {
+   "all": {
+    "groups": 10000,
+    "max_abs_diff": 0.0006995201110839844,
+    "mean_abs_diff": 4.410702604218386e-05,
+    "mean_abs_adv_ref": 0.6197063326835632,
+    "mean_rel_diff": 7.117407949408516e-05,
+    "max_rel_to_max_adv": 0.0002826687996275723
+   },
+   "all-same": {
+    "groups": 2120,
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0,
+    "mean_abs_adv_ref": 0.0,
+    "mean_rel_diff": null,
+    "max_rel_to_max_adv": null
+   },
+   "two-outcome": {
+    "groups": 5672,
+    "max_abs_diff": 0.0006995201110839844,
+    "mean_abs_diff": 5.92635951761622e-05,
+    "mean_abs_adv_ref": 0.7728763818740845,
+    "mean_rel_diff": 7.667926547583193e-05,
+    "max_rel_to_max_adv": 0.0002826687996275723
+   },
+   "three-outcome": {
+    "groups": 2208,
+    "max_abs_diff": 0.00020265579223632812,
+    "mean_abs_diff": 4.752136374008842e-05,
+    "mean_abs_adv_ref": 0.821245014667511,
+    "mean_rel_diff": 5.786502515547909e-05,
+    "max_rel_to_max_adv": 8.454414637526497e-05
+   }
+  },
+  "C2_vs_S2like_(t .75 vs .80)": {
+   "all": {
+    "groups": 10000,
+    "max_abs_diff": 0.15988028049468994,
+    "mean_abs_diff": 0.006848120130598545,
+    "mean_abs_adv_ref": 0.6196622848510742,
+    "mean_rel_diff": 0.011051374487578869,
+    "max_rel_to_max_adv": 0.06461052596569061
+   },
+   "all-same": {
+    "groups": 2120,
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0,
+    "mean_abs_adv_ref": 0.0,
+    "mean_rel_diff": null,
+    "max_rel_to_max_adv": null
+   },
+   "two-outcome": {
+    "groups": 5672,
+    "max_abs_diff": 0.00011658668518066406,
+    "mean_abs_diff": 2.01648217625916e-05,
+    "mean_abs_adv_ref": 0.7728171348571777,
+    "mean_rel_diff": 2.609261719044298e-05,
+    "max_rel_to_max_adv": 4.711479778052308e-05
+   },
+   "three-outcome": {
+    "groups": 2208,
+    "max_abs_diff": 0.15988028049468994,
+    "mean_abs_diff": 0.030963238328695297,
+    "mean_abs_adv_ref": 0.821197509765625,
+    "mean_rel_diff": 0.03770498186349869,
+    "max_rel_to_max_adv": 0.06670375168323517
+   }
+  },
+  "sign_flip_frac_A_vs_B": 0.0,
+  "sign_flip_frac_C2_vs_S2like": 0.002725000027567148
+ },
+ "gsm8k_test": {
+  "n_groups": 2638,
+  "n_samples": 21104,
+  "group_counts": {
+   "all-same": 267,
+   "two-outcome": 1286,
+   "three-outcome": 1085
+  },
+  "A_vs_B_(both t=.75)": {
+   "all": {
+    "groups": 2638,
+    "max_abs_diff": 0.0006995201110839844,
+    "mean_abs_diff": 7.400522008538246e-05,
+    "mean_abs_adv_ref": 0.6942512392997742,
+    "mean_rel_diff": 0.00010659717372618616,
+    "max_rel_to_max_adv": 0.0002826687996275723
+   },
+   "all-same": {
+    "groups": 267,
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0,
+    "mean_abs_adv_ref": 0.0,
+    "mean_rel_diff": null,
+    "max_rel_to_max_adv": null
+   },
+   "two-outcome": {
+    "groups": 1286,
+    "max_abs_diff": 0.0006995201110839844,
+    "mean_abs_diff": 0.00011211328819626942,
+    "mean_abs_adv_ref": 0.7626276612281799,
+    "mean_rel_diff": 0.00014700921019539237,
+    "max_rel_to_max_adv": 0.0002826687996275723
+   },
+   "three-outcome": {
+    "groups": 1085,
+    "max_abs_diff": 0.00020265579223632812,
+    "mean_abs_diff": 4.704892126028426e-05,
+    "mean_abs_adv_ref": 0.7840512990951538,
+    "mean_rel_diff": 6.000745270284824e-05,
+    "max_rel_to_max_adv": 8.454414637526497e-05
+   }
+  },
+  "C2_vs_S2like_(t .75 vs .80)": {
+   "all": {
+    "groups": 2638,
+    "max_abs_diff": 0.15988028049468994,
+    "mean_abs_diff": 0.014864564873278141,
+    "mean_abs_adv_ref": 0.6941772103309631,
+    "mean_rel_diff": 0.02141321450471878,
+    "max_rel_to_max_adv": 0.06461052596569061
+   },
+   "all-same": {
+    "groups": 267,
+    "max_abs_diff": 0.0,
+    "mean_abs_diff": 0.0,
+    "mean_abs_adv_ref": 0.0,
+    "mean_rel_diff": null,
+    "max_rel_to_max_adv": null
+   },
+   "two-outcome": {
+    "groups": 1286,
+    "max_abs_diff": 0.00011658668518066406,
+    "mean_abs_diff": 1.0128024769073818e-05,
+    "mean_abs_adv_ref": 0.7625154256820679,
+    "mean_rel_diff": 1.328238704445539e-05,
+    "max_rel_to_max_adv": 4.711479778052308e-05
+   },
+   "three-outcome": {
+    "groups": 1085,
+    "max_abs_diff": 0.15988028049468994,
+    "mean_abs_diff": 0.036128751933574677,
+    "mean_abs_adv_ref": 0.784004271030426,
+    "mean_rel_diff": 0.04608234018087387,
+    "max_rel_to_max_adv": 0.06670375168323517
+   }
+  },
+  "sign_flip_frac_A_vs_B": 0.0,
+  "sign_flip_frac_C2_vs_S2like": 0.014641773886978626
+ }
+}

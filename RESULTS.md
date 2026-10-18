@@ -266,6 +266,50 @@ exactly two outcome types, advantages are identical for all interior t (0.50 to 
 are held fixed, so this says nothing about how a policy trained on these rewards would behave.
 Outputs: results/followups/q3_results.json.
 
+**Abstention audit (Q5).** Rule-based classification of every abstained K=16 completion
+(no boxed answer), validated by hand on a stratified sample (about 89% agreement weighted by
+category size). Generation cap 1024 tokens.
+
+| Cell | Abstained | Token limit | Answer unboxed | Python code | Refusal |
+|---|---|---|---|---|---|
+| P0 MATH | 9340 | 98.8% | 0.9% | 0.2% | 0.0% |
+| S0 MATH | 11399 | 85.1% | 11.8% | 2.5% | 0.1% |
+| S3 MATH | 16308 | 58.1% | 19.3% | 22.1% | 0.3% |
+| S4 MATH | 49068 | 8.0% | 23.9% | 67.6% | 0.4% |
+| S0 GSM8K | 3650 | 2.7% | 92.4% | 3.9% | 0.5% |
+| S3 GSM8K | 8999 | 1.5% | 75.7% | 22.2% | 0.4% |
+| S4 GSM8K | 18964 | 0.4% | 58.4% | 40.9% | 0.2% |
+
+Abstention is almost never a refusal. It is truncation (symmetric reward, MATH) or an
+ungradeable answer format that grows with the penalty. Outputs: results/followups/q5_results.json.
+
+**Paired differences (Q6).** Problem-level paired bootstrap (2000), K=16, 95% CI.
+
+| Difference | MATH | GSM8K |
+|---|---|---|
+| accuracy when answering S3 - S0 | -0.025 [-0.029, -0.022] | -0.027 [-0.035, -0.019] |
+| accuracy when answering C2 - S2 | -0.001 [-0.003, 0.001] | 0.002 [-0.003, 0.006] |
+| AURC S3 - S0 | 0.009 [0.006, 0.013] | 0.015 [0.006, 0.024] |
+| AURC P0 - S0 | -0.006 [-0.009, -0.002] | -0.011 [-0.018, -0.004] |
+| AURC S1 - S0 | 0.002 [-0.001, 0.006] | 0.003 [-0.003, 0.009] |
+| wise fraction S3 - S0 | -0.115 [-0.125, -0.106] | -0.002 [-0.015, 0.012] |
+| greedy accuracy when answering S3 - S0 | -0.016 [-0.027, -0.006] | |
+
+S4 AURC depends on tie-breaking in the confidence ranking (0.23 to 0.29 on MATH). Outputs:
+results/followups/q6_results.json.
+
+**Probe-guided abstention at matched answer rate (Q7).** S0 greedy answers; abstain where the
+nested out-of-fold probe score is lowest, at each penalty-trained model's answer rate
+(n = 1663 MATH, 1033 GSM8K problems; paired bootstrap). GSM8K: S1 +0.029 [0.012, 0.045],
+S2 +0.047 [0.024, 0.071], C2 +0.053 [0.029, 0.078], S3 +0.110 [0.075, 0.141] accuracy when
+answering in favor of the probe selector. MATH: within noise for S1 to S3 and C2 (S3 +0.016
+[-0.001, 0.033]); S4 +0.332 [0.285, 0.376]. Outputs: results/followups/q7_results.json.
+
+**Matched-t check (Q8).** Trainer's exact advantage code on 12638 real groups of 8: the triples
+(1, -3, 0) and (1, -1, 0.5), both t = 0.75, differ by at most 7e-4 in advantage (the 1e-4
+stabilizer); t = 0.75 versus 0.80 differs by 3.8% to 4.6% on average in three-outcome groups.
+Outputs: results/followups/q8_results.json.
+
 **Stale summary file.** results/analysis_summary.json (dated 2026-05-25) predates the final
 S1 and S3 rollouts (2026-05-26): 11 S1/S3 abstention cells differ from the raw rollouts by up
 to 0.004. Fixed on 2026-10-18: the summary files were regenerated from the final rollouts

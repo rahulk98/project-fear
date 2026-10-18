@@ -64,6 +64,12 @@ often the model abstained without improving accuracy when answering, the confide
 ranking, or how well abstention targeted hard problems. This is an empirical finding for
 this reward family and these runs, not an impossibility result.
 
+An audit of the abstained answers shows they are almost never refusals (at most 0.5%): they
+are truncated solutions, or, as the penalty grows, answers in Python code or unboxed text that
+the grader cannot score. A probe on the symmetric model's hidden state, used to abstain at the
+same answer rate, matches or beats the penalty-trained models. Write-up:
+[research/POST.md](research/POST.md).
+
 Supporting results:
 
 1. **Explicit and implicit abstention behave alike.** C2 (a positive reward for silence,
